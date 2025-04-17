@@ -9,6 +9,7 @@ export default function Home() {
     <main className="transition p-3 max-w-7xl mx-auto">
       {/* Hero Section */}
       <div className="h-[calc(100vh-6rem)] flex flex-col justify-center items-center text-center space-y-4">
+        <div className="absolute top-60 left-1/2 transform -translate-x-1/2 w-[800px] h-[400px] bg-primary opacity-13 rounded-full blur-3xl -z-10"></div>
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -72,7 +73,7 @@ export default function Home() {
           </div>
           <div>
             <span className="text-foreground text-xl font-semibold block">
-              + {useCountUp(1000, 100)}
+              +{useCountUp(1000, 100)}
             </span>
             Active Users
           </div>
