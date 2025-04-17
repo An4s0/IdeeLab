@@ -7,7 +7,8 @@ const firaCode = Fira_Code({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "IdeeLab",
-  description: "A platform for daily, weekly, and monthly coding challenges to level up your programming skills.",
+  description:
+    "A platform for daily, weekly, and monthly coding challenges to level up your programming skills.",
 };
 
 export default function RootLayout({
@@ -18,13 +19,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${firaCode.className}`}>
-        <AppProvider>
-          {children}
-
-
-
-
-        </AppProvider>
+        <AppProvider>{children}</AppProvider>
       </body>
     </html>
   );

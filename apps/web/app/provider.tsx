@@ -1,13 +1,13 @@
 import { ThemeProvider } from "next-themes";
 
 export default function AppProvider({
-    children,
+  children,
 }: Readonly<{
-    children: React.ReactNode;
+  children: React.ReactNode;
 }>) {
-    return (
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem={true}>
-            {children}
-        </ThemeProvider>
-    );
+  return (
+    <ThemeProvider attribute="class" defaultTheme="system" enableSystem={true}>
+      {children}
+    </ThemeProvider>
+  );
 }
