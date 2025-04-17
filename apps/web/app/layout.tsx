@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { Fira_Code } from "next/font/google";
+
 import AppProvider from "./provider";
+import Header from "@/components/header/header";
+
 import "./globals.css";
 
 const firaCode = Fira_Code({ subsets: ["latin"] });
@@ -17,9 +20,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body className={`${firaCode.className}`}>
-        <AppProvider>{children}</AppProvider>
+        <AppProvider>
+          <Header />
+          {children}
+        </AppProvider>
       </body>
     </html>
   );
