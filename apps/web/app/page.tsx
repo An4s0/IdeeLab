@@ -1,4 +1,5 @@
 "use client";
+import { useState } from "react";
 import Link from "next/link";
 import {
   ArrowRightIcon,
@@ -10,9 +11,53 @@ import {
   UserGroupIcon,
   DiamondTrophyIcon,
   UserCogIcon,
+  ArrowDownIcon,
+  ArrowUpIcon,
 } from "@/components/icons";
 
 export default function Home() {
+  const faqs = [
+    {
+      question: "What is IdeeLab?",
+      answer:
+        "IdeeLab is a platform offering daily and weekly coding challenges to help developers grow and sharpen their skills through consistency and fun competition.",
+    },
+    {
+      question: "Is IdeeLab free to use?",
+      answer:
+        "Yes! You can start solving challenges for free. Premium features may be added in the future to enhance the experience.",
+    },
+    {
+      question: "How do I get started?",
+      answer:
+        "Simply create an account and start solving challenges. You can also track your progress.",
+    },
+    {
+      question: "What types of challenges are available?",
+      answer:
+        "We offer a variety of challenges ranging from algorithms and data structures to real-world problems. New challenges are added daily!",
+    },
+    {
+      question: "Can I track my progress?",
+      answer:
+        "Absolutely! You can view your progress, streaks, and performance over time through our analytics dashboard.",
+    },
+    {
+      question: "Can I create my own challenges?",
+      answer:
+        "Currently, we are focusing on curated challenges. However, we plan to introduce a feature for users to create and share their own challenges in the future.",
+    },
+  ];
+
+  const [activeFAQ, setActiveFAQ] = useState<number | null>(null);
+  const toggleFAQ = (index: number) => {
+    if (activeFAQ === index) {
+      setActiveFAQ(null);
+    } else {
+      setActiveFAQ(index);
+    }
+  };
+
   return (
     <main className="relative overflow-hidden min-h-screen transition">
       {/* Hero Section */}
@@ -189,6 +234,47 @@ export default function Home() {
               className="text-outline/50 group-hover:text-subtle/70 m-8 transition-colors duration-300 hidden md:block"
             />
           </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="flex flex-col items-center justify-center space-y-2 mt-32 max-w-6xl mx-auto px-2 md:px-1">
+        <h2 className="text-3xl font-semibold sm:text-4xl">
+          FA<span className="text-primary">Q</span>
+        </h2>
+        <div className="flex flex-col gap-4 mt-8 w-full px-4 transition">
+          {faqs.map((faq, index) => (
+            <div key={index}>
+              <div
+                className="border border-outline/50 bg-feature-bg rounded-xl px-6 py-4 cursor-pointer hover:border-outline"
+                onClick={() => toggleFAQ(index)}
+              >
+                <div className="flex justify-between items-center">
+                  <h2 className="font-semibold">{faq.question}</h2>
+                  {activeFAQ === index ? (
+                    <ArrowUpIcon
+                      size={20}
+                      className="transition-transform transform"
+                    />
+                  ) : (
+                    <ArrowDownIcon
+                      size={20}
+                      className="transition-transform transform"
+                    />
+                  )}
+                </div>
+
+                {activeFAQ === index && (
+                  <div
+                    className={`mt-4 text-sm text-subtle overflow-hidden transition-all duration-300'
+                    }`}
+                  >
+                    {faq.answer}
+                  </div>
+                )}
+              </div>
+            </div>
+          ))}
         </div>
       </section>
     </main>
