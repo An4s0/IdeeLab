@@ -9,6 +9,8 @@ import UsersIcon from "./users";
 import UserGroupIcon from "./user-group";
 import DiamondTrophyIcon from "./diamond-trophy";
 import UserCogIcon from "./user-cog";
+import ArrowDownIcon from "./arrow-down";
+import ArrowUpIcon from "./arrow-up";
 
 export {
   Error404Icon,
@@ -23,4 +25,6 @@ export {
   UserGroupIcon,
   DiamondTrophyIcon,
   UserCogIcon,
+  ArrowDownIcon,
+  ArrowUpIcon,
 };
