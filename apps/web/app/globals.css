@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root {
-  --background: #f7f7f7;
+  --background: #fcfcfc;
   --foreground: #000;
 
   --subtle: #666;
@@ -10,6 +10,8 @@
   --outline-hover: #999;
 
   --scrollbar: #e7e7e7;
+
+  --feature-bg: #fcfcfc;
 
   --primary: #F97316;
 }
@@ -25,6 +27,8 @@
 
   --scrollbar: #222;
 
+  --feature-bg: #171717;
+
   --primary: #F97316;
 }
 
@@ -36,6 +40,8 @@
 
   --color-outline: var(--outline);
   --color-outline-hover: var(--outline-hover);
+
+  --color-feature-bg: var(--feature-bg);
 
   --color-primary: var(--primary);
 }
