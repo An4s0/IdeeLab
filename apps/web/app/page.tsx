@@ -39,6 +39,16 @@ export default function Home() {
             </div>
           </Link>
         </div>
+        <div className="flex flex-wrap gap-2 mt-4 text-xs text-foreground/80">
+          <span className="px-2 py-1 bg-subtle/15 rounded-full">Daily Practice</span>
+          <span className="px-2 py-1 bg-subtle/15 rounded-full">Beginner Friendly</span>
+          <span className="px-2 py-1 bg-subtle/15 rounded-full">100% Free</span>
+        </div>
+        <div className="mt-2 flex gap-6 text-sm text-subtle">
+          <div><span className="font-bold text-foreground">8k+</span> developers</div>
+          <div><span className="font-bold text-foreground">135+</span> challenges</div>
+          <div><span className="font-bold text-foreground">100%</span> free</div>
+        </div>
       </section>
     </main>
   );
