@@ -7,6 +7,8 @@ import SparklesIcon from "./sparkles";
 import UserCheckIcon from "./user-check";
 import UsersIcon from "./users";
 import UserGroupIcon from "./user-group";
+import DiamondTrophyIcon from "./diamond-trophy";
+import UserCogIcon from "./user-cog";
 
 export {
   Error404Icon,
@@ -19,4 +21,6 @@ export {
   UserCheckIcon,
   UsersIcon,
   UserGroupIcon,
+  DiamondTrophyIcon,
+  UserCogIcon,
 };
