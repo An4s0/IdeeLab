@@ -1,4 +1,4 @@
-export function Sun({
+export function SunIcon({
   size = 24,
   className = "",
 }: {
@@ -21,7 +21,7 @@ export function Sun({
   );
 }
 
-export function Moon({
+export function MoonIcon({
   size = 24,
   className = "",
 }: {

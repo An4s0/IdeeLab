@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { useTheme } from "next-themes";
 import Image from "next/image";
 import Link from "next/link";
-import { Sun, Moon } from "../icons";
+import { SunIcon, MoonIcon } from "../icons";
 
 export default function Header() {
   const { theme, setTheme } = useTheme();
@@ -30,9 +30,9 @@ export default function Header() {
             className="p-2 rounded-md hover:bg-outline/20 cursor-pointer"
           >
             {theme === "dark" ? (
-              <Sun size={20} className="text-yellow-500" />
+              <SunIcon size={20} className="text-yellow-500" />
             ) : (
-              <Moon size={20} className="text-gray-800" />
+              <MoonIcon size={20} className="text-gray-800" />
             )}
           </div>
           <Link

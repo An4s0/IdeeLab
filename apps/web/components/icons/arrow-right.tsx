@@ -1,4 +1,4 @@
-export default function ArrowRight({
+export default function ArrowRightIcon({
   size = 24,
   className = "",
 }: {
