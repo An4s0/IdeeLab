@@ -13,7 +13,7 @@
 }
 
 .dark {
-  --background: #1a1a1a;
+  --background: #121212;
   --foreground: #fff;
 
   --subtle: #999;
@@ -34,4 +34,9 @@
   --color-outline-hover: var(--outline-hover);
 
   --color-primary: var(--primary);
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
 }
