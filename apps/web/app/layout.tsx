@@ -3,6 +3,7 @@ import { Fira_Code } from "next/font/google";
 
 import AppProvider from "./provider";
 import Header from "@/components/header/header";
+import Footer from "@/components/footer/footer";
 
 import "./globals.css";
 
@@ -25,6 +26,7 @@ export default function RootLayout({
         <AppProvider>
           <Header />
           {children}
+          <Footer />
         </AppProvider>
       </body>
     </html>
