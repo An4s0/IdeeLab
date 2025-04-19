@@ -117,122 +117,124 @@ export default function Home() {
       </section>
 
       {/* Features Section */}
-      <section className="flex flex-col items-center justify-center space-y-2 mt-20 max-w-6xl mx-auto px-2 md:px-1">
-        <h2 className="text-3xl font-semibold sm:text-4xl">
-          Why choose <span className="text-primary">IdeeLab</span>?
-        </h2>
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-2 w-full mt-8 px-4">
-          <div className="group border border-outline/50 bg-feature-bg rounded-xl col-span-2 h-88 px-6 py-8 cursor-pointer hover:border-outline flex justify-between">
-            <div className="w-full md:w-1/2 flex flex-col justify-between">
-              <div>
+      <section className="bg-foreground/3 py-10 mt-20">
+        <div className="flex flex-col items-center justify-center space-y-2 max-w-6xl mx-auto px-2 md:px-1">
+          <h2 className="text-3xl font-semibold sm:text-4xl">
+            Why choose <span className="text-primary">IdeeLab</span>?
+          </h2>
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-2 w-full mt-8 px-4">
+            <div className="group border border-outline/50 bg-feature-bg rounded-xl col-span-2 h-88 px-6 py-8 cursor-pointer hover:border-outline flex justify-between">
+              <div className="w-full md:w-1/2 flex flex-col justify-between">
+                <div>
+                  <h2 className="font-semibold mb-2 flex justify-start items-center">
+                    <ChartLineIcon
+                      size={20}
+                      className="inline-block mr-2 text-foreground"
+                    />
+                    Real-Time Progress Tracking
+                  </h2>
+                  <p className="text-sm text-subtle">
+                    Track your progress with real-time analytics. See how you
+                    improve over time and stay motivated.
+                  </p>
+                </div>
+                <ul className="text-sm text-subtle space-y-1 pl-1">
+                  <li className="flex items-center">
+                    <span className="mr-2 text-primary">✔</span> Live stats on
+                    every challenge
+                  </li>
+                  <li className="flex items-center">
+                    <span className="mr-2 text-primary">✔</span> Visual
+                    progress over time
+                  </li>
+                  <li className="flex items-center">
+                    <span className="mr-2 text-primary">✔</span> Consistency
+                    streak tracking
+                  </li>
+                </ul>
+              </div>
+              <PieChartLineIcon
+                size={220}
+                className="text-outline/50 group-hover:text-subtle/70 m-8 transition-colors duration-300 hidden md:block"
+              />
+            </div>
+            <div className="group border border-outline/50 bg-feature-bg rounded-xl col-span-2 lg:col-span-1  h-88 px-6 py-8 cursor-pointer hover:border-outline flex flex-col justify-between">
+              <div className="w-full">
                 <h2 className="font-semibold mb-2 flex justify-start items-center">
-                  <ChartLineIcon
+                  <SparklesIcon
                     size={20}
                     className="inline-block mr-2 text-foreground"
                   />
-                  Real-Time Progress Tracking
+                  Daily Curated Challenges
                 </h2>
                 <p className="text-sm text-subtle">
-                  Track your progress with real-time analytics. See how you
-                  improve over time and stay motivated.
+                  Fresh and exciting challenges every day to sharpen your skills
+                  and keep you engaged.
                 </p>
               </div>
-              <ul className="text-sm text-subtle space-y-1 pl-1">
-                <li className="flex items-center">
-                  <span className="mr-2 text-primary">✔</span> Live stats on
-                  every challenge
-                </li>
-                <li className="flex items-center">
-                  <span className="mr-2 text-primary">✔</span> Visual progress
-                  over time
-                </li>
-                <li className="flex items-center">
-                  <span className="mr-2 text-primary">✔</span> Consistency
-                  streak tracking
-                </li>
-              </ul>
-            </div>
-            <PieChartLineIcon
-              size={220}
-              className="text-outline/50 group-hover:text-subtle/70 m-8 transition-colors duration-300 hidden md:block"
-            />
-          </div>
-          <div className="group border border-outline/50 bg-feature-bg rounded-xl col-span-2 lg:col-span-1  h-88 px-6 py-8 cursor-pointer hover:border-outline flex flex-col justify-between">
-            <div className="w-full">
-              <h2 className="font-semibold mb-2 flex justify-start items-center">
-                <SparklesIcon
-                  size={20}
-                  className="inline-block mr-2 text-foreground"
+              <div className="flex justify-center items-center">
+                <DiamondTrophyIcon
+                  size={180}
+                  className="text-outline/50 group-hover:text-subtle/70 transition-colors duration-300"
                 />
-                Daily Curated Challenges
-              </h2>
-              <p className="text-sm text-subtle">
-                Fresh and exciting challenges every day to sharpen your skills
-                and keep you engaged.
-              </p>
+              </div>
             </div>
-            <div className="flex justify-center items-center">
-              <DiamondTrophyIcon
-                size={180}
-                className="text-outline/50 group-hover:text-subtle/70 transition-colors duration-300"
-              />
-            </div>
-          </div>
-          <div className="group border border-outline/50 bg-feature-bg rounded-xl col-span-2 lg:col-span-1 h-88 px-6 py-8 cursor-pointer hover:border-outline flex flex-col justify-between">
-            <div className="w-full">
-              <h2 className="font-semibold mb-2 flex justify-start items-center">
-                <UserCheckIcon
-                  size={20}
-                  className="inline-block mr-2 text-foreground"
-                />
-                Personalized Experience
-              </h2>
-              <p className="text-sm text-subtle">
-                Challenges, recommendations, and feedback tailored to your skill
-                level and goals.
-              </p>
-            </div>
-            <div className="flex justify-center items-center">
-              <UserCogIcon
-                size={180}
-                className="text-outline/50 group-hover:text-subtle/70 transition-colors duration-300"
-              />
-            </div>
-          </div>
-          <div className="group border border-outline/50 bg-feature-bg rounded-xl col-span-2 h-88 px-6 py-8 cursor-pointer hover:border-outline flex justify-between">
-            <div className="w-full md:w-1/2 flex flex-col justify-between">
-              <div>
+            <div className="group border border-outline/50 bg-feature-bg rounded-xl col-span-2 lg:col-span-1 h-88 px-6 py-8 cursor-pointer hover:border-outline flex flex-col justify-between">
+              <div className="w-full">
                 <h2 className="font-semibold mb-2 flex justify-start items-center">
-                  <UsersIcon
+                  <UserCheckIcon
                     size={20}
                     className="inline-block mr-2 text-foreground"
                   />
-                  Community & Collaboration
+                  Personalized Experience
                 </h2>
                 <p className="text-sm text-subtle">
-                  Learn and grow with a passionate community of coders. Share
-                  solutions, give feedback, and grow together.
+                  Challenges, recommendations, and feedback tailored to your
+                  skill level and goals.
                 </p>
               </div>
-              <ul className="text-sm text-subtle space-y-1 pl-1">
-                <li className="flex items-center">
-                  <span className="mr-2 text-primary">✔</span> Public solutions
-                  & discussions
-                </li>
-                <li className="flex items-center">
-                  <span className="mr-2 text-primary">✔</span> Challenge
-                  leaderboards
-                </li>
-                <li className="flex items-center">
-                  <span className="mr-2 text-primary">✔</span> Peer reviews &
-                  feedback
-                </li>
-              </ul>
+              <div className="flex justify-center items-center">
+                <UserCogIcon
+                  size={180}
+                  className="text-outline/50 group-hover:text-subtle/70 transition-colors duration-300"
+                />
+              </div>
             </div>
-            <UserGroupIcon
-              size={220}
-              className="text-outline/50 group-hover:text-subtle/70 m-8 transition-colors duration-300 hidden md:block"
-            />
+            <div className="group border border-outline/50 bg-feature-bg rounded-xl col-span-2 h-88 px-6 py-8 cursor-pointer hover:border-outline flex justify-between">
+              <div className="w-full md:w-1/2 flex flex-col justify-between">
+                <div>
+                  <h2 className="font-semibold mb-2 flex justify-start items-center">
+                    <UsersIcon
+                      size={20}
+                      className="inline-block mr-2 text-foreground"
+                    />
+                    Community & Collaboration
+                  </h2>
+                  <p className="text-sm text-subtle">
+                    Learn and grow with a passionate community of coders. Share
+                    solutions, give feedback, and grow together.
+                  </p>
+                </div>
+                <ul className="text-sm text-subtle space-y-1 pl-1">
+                  <li className="flex items-center">
+                    <span className="mr-2 text-primary">✔</span> Public
+                    solutions & discussions
+                  </li>
+                  <li className="flex items-center">
+                    <span className="mr-2 text-primary">✔</span> Challenge
+                    leaderboards
+                  </li>
+                  <li className="flex items-center">
+                    <span className="mr-2 text-primary">✔</span> Peer reviews &
+                    feedback
+                  </li>
+                </ul>
+              </div>
+              <UserGroupIcon
+                size={220}
+                className="text-outline/50 group-hover:text-subtle/70 m-8 transition-colors duration-300 hidden md:block"
+              />
+            </div>
           </div>
         </div>
       </section>
