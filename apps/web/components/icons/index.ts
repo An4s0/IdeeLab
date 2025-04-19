@@ -11,6 +11,7 @@ import DiamondTrophyIcon from "./diamond-trophy";
 import UserCogIcon from "./user-cog";
 import ArrowDownIcon from "./arrow-down";
 import ArrowUpIcon from "./arrow-up";
+import IdeeLabIcon from "./ideelab";
 
 export {
   Error404Icon,
@@ -27,4 +28,5 @@ export {
   UserCogIcon,
   ArrowDownIcon,
   ArrowUpIcon,
+  IdeeLabIcon,
 };
