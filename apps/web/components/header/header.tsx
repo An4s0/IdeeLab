@@ -17,7 +17,7 @@ export default function Header() {
     return null;
   }
   return (
-    <header className="fixed w-full top-0 left-0 right-0 z-50 border-b border-outline bg-background/80 backdrop-blur">
+    <header className="fixed w-full top-0 left-0 right-0 z-50 border-b border-outline bg-background/80 backdrop-blur px-2">
       <div className="flex justify-between items-center p-2 max-w-7xl mx-auto">
         <div className="flex items-center space-x-4">
           <Link href="/">
