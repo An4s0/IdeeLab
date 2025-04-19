@@ -2,8 +2,6 @@ import type { Metadata } from "next";
 import { Fira_Code } from "next/font/google";
 
 import AppProvider from "./provider";
-import Header from "@/components/header/header";
-import Footer from "@/components/footer/footer";
 
 import "./globals.css";
 
@@ -23,11 +21,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${firaCode.className}`}>
-        <AppProvider>
-          <Header />
-          {children}
-          <Footer />
-        </AppProvider>
+        <AppProvider>{children}</AppProvider>
       </body>
     </html>
   );

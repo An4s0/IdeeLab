@@ -90,7 +90,7 @@ export default function Header() {
     <header
       className={`fixed w-full top-0 left-0 right-0 z-50 border-b border-outline backdrop-blur ${isMenuOpen ? "h-screen bg-background/95 overflow-auto" : "h-auto bg-background/80"}`}
     >
-      <div className="flex justify-between items-center p-2 max-w-7xl mx-auto">
+      <div className="flex justify-between items-center p-2 px-4 max-w-7xl mx-auto">
         <div className="flex items-center space-x-10">
           <Link href="/">
             <Image src="/logo.svg" alt="Logo" width={34} height={34} />
@@ -285,7 +285,7 @@ export default function Header() {
             )}
           </div>
           <Link
-            href="/sign-in"
+            href="/auth"
             className="items-center py-1 px-5 rounded-md border border-primary/50 bg-primary/40 text-sm hover:bg-primary/60 hover:border-primary hidden md:inline-flex"
           >
             Sign In
@@ -500,10 +500,10 @@ export default function Header() {
               Insights
             </Link>
 
-            <div className="flex flex-col items-center justify-between pt-4">
+            <div className="flex w-full gap-x-2 mt-4">
               <div
                 onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-                className="p-2 flex rounded-md hover:bg-outline/20 cursor-pointer m-2 md:m-0"
+                className="p-2 flex items-center justify-center rounded-md hover:bg-outline/20 cursor-pointer w-1/6"
               >
                 {theme === "dark" ? (
                   <SunIcon size={20} className="text-yellow-500" />
@@ -513,12 +513,17 @@ export default function Header() {
               </div>
 
               <Link
-                href="/sign-in"
-                className="items-center py-1 px-5 rounded-md border border-primary/50 bg-primary/40 text-sm hover:bg-primary/60 hover:border-primary flex md:inline-flex w-full justify-center"
+                href="/auth"
+                className="items-center py-2 rounded-md border border-primary/50 bg-primary/40 text-md hover:bg-primary/60 hover:border-primary flex w-5/6 justify-center"
               >
                 Sign In
               </Link>
             </div>
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
           </div>
         </div>
       )}
