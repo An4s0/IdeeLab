@@ -182,8 +182,6 @@ export default function HomePage() {
 
         <section className="mx-auto max-w-5xl px-4 mb-24">
           <div className="relative rounded-3xl overflow-hidden bg-gradient-to-br from-primary/20 to-primary/5 border border-primary/20 p-8 md:p-12">
-            <div className="absolute inset-0 bg-[url('/grid-pattern.svg')] bg-center opacity-[0.05]" />
-
             <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-8">
               <div className="text-center md:text-left">
                 <h3 className="text-2xl md:text-3xl font-bold mb-4">
