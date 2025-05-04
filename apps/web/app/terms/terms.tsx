@@ -8,7 +8,7 @@ export default function TermsPage() {
 
       <div className="flex-grow container mx-auto md:px-4 py-12 max-w-4xl">
         <div className="p-6 md:p-8">
-          <h1 className="text-3xl md:text-4xl font-bold text-center text-primary mb-8">
+          <h1 className="text-3xl md:text-4xl font-bold text-center mb-8">
             Terms of Service
           </h1>
 
