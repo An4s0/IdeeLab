@@ -20,22 +20,8 @@ export const metadata: Metadata = {
     template: "IdeeLab - %s",
   },
   description: ideelab.description,
-  openGraph: {
-    title: ideelab.title,
-    description: ideelab.description,
-    url: ideelab.url,
-    siteName: ideelab.title,
-    images: [
-      {
-        url: `${ideelab.url}/opengraph-image.png`,
-        width: 1200,
-        height: 630,
-      },
-    ],
-  },
   twitter: {
     card: "summary_large_image",
-    site: "@ideelab",
   },
 };
 

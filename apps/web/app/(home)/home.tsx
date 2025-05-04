@@ -1,8 +1,6 @@
 "use client";
 import { useState } from "react";
 import Link from "next/link";
-
-// Importing icons from react-icons
 import {
   FaArrowDown,
   FaArrowUp,
@@ -21,8 +19,6 @@ import { RiJavascriptFill, RiPieChartLine } from "react-icons/ri";
 import { TbBrandCpp, TbBrandCSharp } from "react-icons/tb";
 import { DiRuby } from "react-icons/di";
 import { BiLogoTypescript } from "react-icons/bi";
-
-// Importing components
 import Header from "@/components/header/header";
 import Footer from "@/components/footer/footer";
 
@@ -107,7 +103,7 @@ export default function HomePage() {
               </div>
             </Link>
           </div>
-          <div className="flex flex-wrap gap-2 mt-4 text-xs text-foreground/80">
+          <div className="flex items-center justify-center flex-wrap gap-2 mt-4 text-xs text-foreground/80">
             <span className="px-2 py-1 bg-subtle/15 rounded-full">
               Daily Practice
             </span>
@@ -115,7 +111,7 @@ export default function HomePage() {
               Beginner Friendly
             </span>
             <span className="px-2 py-1 bg-subtle/15 rounded-full">
-              100% Free
+              Real-Time Progress
             </span>
           </div>
           <div className="mt-2 flex gap-6 text-sm text-subtle">
