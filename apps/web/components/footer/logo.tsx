@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function LogoSection() {
   return (
-    <div className="w-full md:w-1/4">
+    <div className="w-full md:w-1/2">
       <div className="flex items-center space-x-2 mb-6">
         <Image
           src="/logo.svg"

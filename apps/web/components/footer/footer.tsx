@@ -11,15 +11,7 @@ type ThemeIcon = {
 
 const platformLinks = [
   { name: "Challenges", href: "/challenges" },
-  { name: "Contest", href: "/contest" },
   { name: "Leaderboard", href: "/leaderboard" },
-];
-
-const resourceLinks = [
-  { name: "Documentation", href: "/docs" },
-  { name: "Community Forum", href: "/community" },
-  { name: "Blog Posts", href: "/blog" },
-  { name: "Help Center", href: "/support" },
 ];
 
 const contactLinks = [
@@ -101,9 +93,8 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row gap-10">
           <LogoSection />
 
-          <div className="w-full md:w-3/4 grid grid-cols-2 lg:grid-cols-3 gap-y-8 gap-x-6">
+          <div className="w-full md:w-1/2 grid grid-cols-2 gap-y-8 gap-x-6">
             <LinkSection title="Platform" items={platformLinks} />
-            <LinkSection title="Resources" items={resourceLinks} />
             <LinkSection title="Get in Touch" items={contactLinks} />
           </div>
         </div>
