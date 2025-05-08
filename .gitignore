@@ -23,6 +23,3 @@ dist
 # typescript
 *.tsbuildinfo
 next-env.d.ts
-
-# Temporary
-apps/api
