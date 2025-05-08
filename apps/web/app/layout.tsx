@@ -10,7 +10,7 @@ const firaCode = Fira_Code({ subsets: ["latin"] });
 const ideelab = {
   title: "IdeeLab",
   description:
-    "A platform for daily, weekly, and monthly coding challenges to level up your programming skills.",
+    "A platform for daily coding challenges to level up your programming skills.",
   url: "https://ideelab.com",
 };
 

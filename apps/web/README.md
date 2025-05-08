@@ -15,4 +15,4 @@ This document outlines the routes in the web application and the purpose of each
 | `/reset-password`  | `ResetPasswordPage`  | Allows users to set a new password after requesting a reset.          |
 | `/logout`          | `LogoutPage`         | Logs the user out of their account.                                   |
 | `/verify-email`    | `VerifyEmailPage`    | Page for users to verify their email address after registration.      |
-| `/challenge`       | `ChallengePage`      | Shows a list of all challenges with categories and difficulty levels. |
+| `/challenge`       | `ChallengePage`      | Shows a list of all difficulty levels.                                |

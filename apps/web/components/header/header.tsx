@@ -9,7 +9,7 @@ import { motion, AnimatePresence } from "framer-motion";
 export default function Header({ fixed = true }: { fixed?: boolean }) {
   const [userDropdown, setUserDropdown] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [isAuthenticated] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -30,8 +30,6 @@ export default function Header({ fixed = true }: { fixed?: boolean }) {
       ) {
         setUserDropdown(false);
       }
-
-      setIsAuthenticated(true);
     }
 
     document.addEventListener("mousedown", handleClickOutside);
