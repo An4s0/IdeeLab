@@ -2,7 +2,7 @@ module.exports = {
   apps: [
     {
       namespace: "ideelab",
-      name: "ideelab-web",
+      name: "web",
       script: "pnpm start",  
       cwd: "./apps/web", 
       watch: ".",  
@@ -10,7 +10,7 @@ module.exports = {
     },
     {
       namespace: "ideelab",
-      name: "ideelab-api",
+      name: "api",
       script: "pnpm start",  
       cwd: "./apps/api",
       watch: ".",  
