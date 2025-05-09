@@ -3,20 +3,23 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "dev": "echo 'Add dev script here'",
-    "build": "echo 'Add build script here'",
-    "start": "echo 'Add start script here'",
-    "lint": "echo 'Add lint script here'",
+    "dev": "tsx watch index.ts",
+    "build": "tsc -b",
+    "start": "node dist/index.js",
+    "lint": "eslint . --max-warnings 0",
     "check-types": "tsc --noEmit"
   },
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^5.1.0",
     "mongoose": "^8.14.1"
   },
   "devDependencies": {
     "@repo/eslint-config": "workspace:*",
     "@repo/typescript-config": "workspace:*",
-    "nodemon": "^3.1.10",
+    "@types/cors": "^2.8.18",
+    "@types/express": "^5.0.1",
+    "tsx": "^4.19.4",
     "typescript": "^5.8.3"
   }
 }
