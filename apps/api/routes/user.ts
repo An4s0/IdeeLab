@@ -69,7 +69,7 @@ router.post("/register", async (req, res) => {
         message: "Password must contain at least one number",
       } as ApiResponse);
       return;
-    }
+    } 
     if (!password.match(/[^a-zA-Z0-9]/)) {
       res.status(400).json({
         success: false,
