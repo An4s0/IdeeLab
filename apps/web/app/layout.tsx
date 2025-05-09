@@ -11,7 +11,7 @@ const ideelab = {
   title: "IdeeLab",
   description:
     "A platform for daily coding challenges to level up your programming skills.",
-  url: process.env.NEXT_PUBLIC_URL!,
+  url: process.env.NEXT_BASE_URL!,
 };
 
 export const metadata: Metadata = {
