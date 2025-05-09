@@ -11,10 +11,11 @@ const ideelab = {
   title: "IdeeLab",
   description:
     "A platform for daily coding challenges to level up your programming skills.",
-  url: "https://ideelab.com",
+  url: process.env.NEXT_PUBLIC_URL!,
 };
 
 export const metadata: Metadata = {
+  metadataBase: new URL(ideelab.url),
   title: {
     default: ideelab.title,
     template: "IdeeLab - %s",
