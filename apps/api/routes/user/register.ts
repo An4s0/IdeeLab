@@ -1,7 +1,9 @@
 import { Router } from "express";
 const router: Router = Router();
-
+import bcrypt from 'bcryptjs';
 import { ApiResponse } from "@/types";
+import User from "@/models/user";
+import { generateToken } from "@/utils/jwt";
 
 router.post("/register", async (req, res) => {
   try {
@@ -69,7 +71,7 @@ router.post("/register", async (req, res) => {
         message: "Password must contain at least one number",
       } as ApiResponse);
       return;
-    } 
+    }
     if (!password.match(/[^a-zA-Z0-9]/)) {
       res.status(400).json({
         success: false,
@@ -77,6 +79,53 @@ router.post("/register", async (req, res) => {
       } as ApiResponse);
       return;
     }
+
+    const existingUsername = await User.findOne({ username });
+    if (existingUsername) {
+      res.status(400).json({
+        success: false,
+        message: "Username already exists",
+      } as ApiResponse);
+      return;
+    }
+    const existingEmail = await User.findOne({ email });
+    if (existingEmail) {
+      res.status(400).json({
+        success: false,
+        message: "Email already exists",
+      } as ApiResponse);
+      return;
+    }
+
+    const hashedPassword = await bcrypt.hash(password, 10);
+
+    const newUser = new User({
+      name,
+      username,
+      email,
+      password: hashedPassword,
+    });
+    await newUser.save();
+
+    const payload = {
+      id: newUser._id,
+      username,
+      email,
+    };
+
+    const token = generateToken(payload);
+
+    res.status(201).json({
+      success: true,
+      message: "User registered successfully",
+      data: {
+        token,
+        name,
+        username,
+        email,
+      }
+    } as ApiResponse);
+
   } catch (error) {
     res.status(500).json({
       success: false,
