@@ -3,6 +3,7 @@ import { useState } from "react";
 import Link from "next/link";
 import LeftSide from "../left-side";
 import { FaEye, FaEyeSlash, FaGithub } from "react-icons/fa6";
+import user from "@/lib/user";
 
 type data = {
   name: string;
@@ -23,6 +24,21 @@ export default function RegisterPage() {
     terms: false,
   });
   const [showPassword, setShowPassword] = useState(false);
+  const [error, setError] = useState<string>("")
+
+  const handleSubmit = async () => {
+    setError("")
+    if (data.terms != true) {
+      setError("Please agree to the terms and privacy")
+      return
+    }
+
+    const register = await user.register(data)
+
+    if (register.success != true) {
+      setError(register.message)
+    }
+  }
 
   return (
     <main className="flex h-screen w-full">
@@ -31,7 +47,7 @@ export default function RegisterPage() {
         <div className="w-full max-w-md">
           <h1 className="text-4xl font-bold mb-2">Create an account</h1>
 
-          <p className="text-subtle mb-6">
+          <p className="text-subtle mb-2">
             Already have an account?{" "}
             <Link
               href="/login"
@@ -40,6 +56,12 @@ export default function RegisterPage() {
               Login
             </Link>
           </p>
+
+          {error && (
+            <p className="text-red-500 mb-3">
+              {error}
+            </p>
+          )}
 
           <div className="space-y-4">
             <input
@@ -106,6 +128,7 @@ export default function RegisterPage() {
               <input
                 type="checkbox"
                 id="terms"
+                onClick={() => setData({ ...data, terms: !data.terms })}
                 className="h-4 w-4 text-primary rounded"
               />
               <label htmlFor="terms" className="ml-2 text-sm text-subtle">
@@ -120,7 +143,10 @@ export default function RegisterPage() {
               </label>
             </div>
 
-            <button className="w-full bg-primary text-white py-3 rounded-lg font-medium hover:bg-primary/90 cursor-pointer">
+            <button
+              className="w-full bg-primary text-white py-3 rounded-lg font-medium hover:bg-primary/90 cursor-pointer"
+              onClick={handleSubmit}
+            >
               Register
             </button>
 
