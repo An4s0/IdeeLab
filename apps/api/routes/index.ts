@@ -7,6 +7,6 @@ router.get("/", (req, res) => {
   res.send("Welcome to the IdeeLab API!");
 });
 
-router.use("/", user);
+router.use("/auth", user);
 
 export default router;

@@ -7,7 +7,7 @@ import { generateToken } from "@/utils/jwt";
 
 router.post("/register", async (req, res) => {
   try {
-    const { name, username, email, password } = req.body;
+    const { name, username, email, password, confirmPassword } = req.body;
     if (!name || !username || !email || !password) {
       res.status(400).json({
         success: false,
@@ -76,6 +76,13 @@ router.post("/register", async (req, res) => {
       res.status(400).json({
         success: false,
         message: "Password must contain at least one special character",
+      } as ApiResponse);
+      return;
+    }
+    if (password != confirmPassword) {
+      res.status(400).json({
+        success: false,
+        message: "Password does not match the confirmation password"
       } as ApiResponse);
       return;
     }

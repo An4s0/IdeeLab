@@ -1,3 +1,3 @@
-import { ApiResponse } from "./ApiResponse";
+import { ApiResponse } from "./api-res";
 
 export type { ApiResponse };

@@ -3,6 +3,6 @@ const router: Router = Router();
 
 import register from "./register";
 
-router.use("/register", register);
+router.use("/", register);
 
 export default router;
