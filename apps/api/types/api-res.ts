@@ -1,5 +1,5 @@
-export interface ApiResponse {
+export interface ApiResponse<T = object> {
   success: boolean;
   message: string;
-  data?: object;
+  data?: T;
 }
