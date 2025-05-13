@@ -1,6 +1,6 @@
 import { Router } from "express";
 const router: Router = Router();
-import bcrypt from 'bcryptjs';
+import bcrypt from "bcryptjs";
 import { ApiResponse } from "@/types";
 import User from "@/models/user";
 import { generateToken } from "@/utils/jwt";
@@ -82,24 +82,24 @@ router.post("/register", async (req, res) => {
     if (password != confirmPassword) {
       res.status(400).json({
         success: false,
-        message: "Password does not match the confirmation password"
+        message: "Password does not match the confirmation password",
       } as ApiResponse);
       return;
     }
 
-    const existingUsername = await User.findOne({ username });
-    if (existingUsername) {
-      res.status(400).json({
-        success: false,
-        message: "Username already exists",
-      } as ApiResponse);
-      return;
-    }
     const existingEmail = await User.findOne({ email });
     if (existingEmail) {
       res.status(400).json({
         success: false,
         message: "Email already exists",
+      } as ApiResponse);
+      return;
+    }
+    const existingUsername = await User.findOne({ username });
+    if (existingUsername) {
+      res.status(400).json({
+        success: false,
+        message: "Username already exists",
       } as ApiResponse);
       return;
     }
@@ -111,6 +111,7 @@ router.post("/register", async (req, res) => {
       username,
       email,
       password: hashedPassword,
+      picture: "/default.png",
     });
     await newUser.save();
 
@@ -130,9 +131,8 @@ router.post("/register", async (req, res) => {
         name,
         username,
         email,
-      }
+      },
     } as ApiResponse);
-
   } catch (error) {
     res.status(500).json({
       success: false,
