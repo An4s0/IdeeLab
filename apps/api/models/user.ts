@@ -21,7 +21,7 @@ const userSchema = new mongoose.Schema({
   },
   picture: {
     type: String,
-    default: process.env.NEXT_PUBLIC_BASE_URL + "/picture.png",
+    required: true,
   },
   bio: {
     type: String,
@@ -42,11 +42,11 @@ const userSchema = new mongoose.Schema({
   },
   provider: {
     type: String,
-    required: true,
+    default: "credentials",
   },
   providerId: {
     type: String,
-    required: true,
+    default: null,
   },
   providerAccessToken: {
     type: String,
