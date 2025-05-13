@@ -4,6 +4,9 @@
         "esModuleInterop": true,
         "outDir": "./dist",
         "rootDir": "./",
+        "baseUrl": ".",
+        "module": "ESNext",
+        "moduleResolution": "Bundler",
         "paths": {
             "@/*": [
                 "./*"
