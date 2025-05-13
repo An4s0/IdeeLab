@@ -5,12 +5,15 @@ import Link from "next/link";
 import { AiOutlineUser, AiOutlineSetting } from "react-icons/ai";
 import { HiOutlineLogout } from "react-icons/hi";
 import { motion, AnimatePresence } from "framer-motion";
+import userLib from "@/lib/user";
+import { User } from "@/types";
 
 export default function Header({ fixed = true }: { fixed?: boolean }) {
   const [userDropdown, setUserDropdown] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
-  const [isAuthenticated] = useState(false);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [user, setUser] = useState<User | null>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -34,6 +37,18 @@ export default function Header({ fixed = true }: { fixed?: boolean }) {
 
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
+  useEffect(() => {
+    const checkAuth = async () => {
+      const auth = await userLib.get();
+
+      if (auth.success) {
+        setIsAuthenticated(true);
+        setUser(auth.data!);
+      }
+    };
+    checkAuth();
   }, []);
 
   const dropdownVariants = {
@@ -95,7 +110,7 @@ export default function Header({ fixed = true }: { fixed?: boolean }) {
                 aria-label="User menu"
               >
                 <Image
-                  src="/picture.png"
+                  src={user?.picture || "/default.png"}
                   alt="User Avatar"
                   width={36}
                   height={36}
@@ -115,8 +130,8 @@ export default function Header({ fixed = true }: { fixed?: boolean }) {
                   >
                     <div className="py-2 px-1">
                       <div className="pb-1 px-3 mb-1 border-b border-outline/30">
-                        <p className="text-sm font-medium">Anas Almutary</p>
-                        <p className="text-xs text-subtle">@anas__0123456789</p>
+                        <p className="text-sm font-medium">{user?.name}</p>
+                        <p className="text-xs text-subtle">@{user?.username}</p>
                       </div>
 
                       <Link href="/profile">
