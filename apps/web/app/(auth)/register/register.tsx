@@ -4,6 +4,7 @@ import Link from "next/link";
 import LeftSide from "../left-side";
 import { FaEye, FaEyeSlash, FaGithub } from "react-icons/fa6";
 import user from "@/lib/user";
+import cookies from "@/lib/cookies";
 
 type data = {
   name: string;
@@ -24,21 +25,69 @@ export default function RegisterPage() {
     terms: false,
   });
   const [showPassword, setShowPassword] = useState(false);
-  const [error, setError] = useState<string>("")
+  const [error, setError] = useState<string>("");
 
   const handleSubmit = async () => {
-    setError("")
-    if (data.terms != true) {
-      setError("Please agree to the terms and privacy")
-      return
+    setError("");
+
+    if (!data.name || !data.username || !data.email || !data.password) {
+      setError("Please fill all the fields");
+      return;
+    }
+    if (data.name.length < 3 || data.name.length > 20) {
+      setError("Name must be between 3 and 20 characters long");
+      return;
+    }
+    if (data.username.length < 3 || data.username.length > 20) {
+      setError("Username must be between 3 and 20 characters long");
+      return;
+    }
+    if (!data.email.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)) {
+      setError("Email is not valid");
+      return;
+    }
+    if (data.password.length < 8 || data.password.length > 30) {
+      setError("Password must be between 8 and 30 characters long");
+      return;
+    }
+    if (data.password.includes(" ")) {
+      setError("Password must not contain spaces");
+      return;
+    }
+    if (!data.password.match(/[a-z]/)) {
+      setError("Password must contain at least one lowercase letter");
+      return;
+    }
+    if (!data.password.match(/[A-Z]/)) {
+      setError("Password must contain at least one uppercase letter");
+      return;
+    }
+    if (!data.password.match(/[0-9]/)) {
+      setError("Password must contain at least one number");
+      return;
+    }
+    if (!data.password.match(/[^a-zA-Z0-9]/)) {
+      setError("Password must contain at least one special character");
+      return;
+    }
+    if (data.password != data.confirmPassword) {
+      setError("Passwords do not match");
+      return;
+    }
+    if (!data.terms) {
+      setError("Please agree to the terms and privacy");
+      return;
     }
 
-    const register = await user.register(data)
+    const register = await user.register(data);
 
-    if (register.success != true) {
-      setError(register.message)
+    if (register.success) {
+      cookies.set("token", register.data?.token || "", 7);
+      window.location.href = "/";
+    } else {
+      setError(register.message);
     }
-  }
+  };
 
   return (
     <main className="flex h-screen w-full">
@@ -57,11 +106,7 @@ export default function RegisterPage() {
             </Link>
           </p>
 
-          {error && (
-            <p className="text-red-500 mb-3">
-              {error}
-            </p>
-          )}
+          {error && <p className="text-red-500 mb-3">{error}</p>}
 
           <div className="space-y-4">
             <input

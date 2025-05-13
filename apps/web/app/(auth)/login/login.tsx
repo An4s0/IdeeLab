@@ -3,6 +3,8 @@ import { useState } from "react";
 import Link from "next/link";
 import LeftSide from "../left-side";
 import { FaEye, FaEyeSlash, FaGithub } from "react-icons/fa6";
+import user from "@/lib/user";
+import cookies from "@/lib/cookies";
 
 type data = {
   email: string;
@@ -17,7 +19,31 @@ export default function LoginPage() {
     terms: false,
   });
   const [showPassword, setShowPassword] = useState(false);
+  const [error, setError] = useState<string>("");
 
+  const handleSubmit = async () => {
+    if (!data.email || !data.password) {
+      setError("Please fill all the fields");
+      return;
+    }
+    if (!data.email.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)) {
+      setError("Email is not valid");
+      return;
+    }
+    if (!data.terms) {
+      setError("Please accept the terms and conditions");
+      return;
+    }
+
+    const login = await user.login(data);
+
+    if (login.success) {
+      cookies.set("token", login.data?.token as string, 7);
+      window.location.href = "/";
+    } else {
+      setError(login.message);
+    }
+  };
   return (
     <main className="flex h-screen w-full">
       <LeftSide />
@@ -34,6 +60,8 @@ export default function LoginPage() {
               Register
             </Link>
           </p>
+
+          {error && <p className="text-red-500 mb-3">{error}</p>}
 
           <div className="space-y-4">
             <div>
@@ -68,6 +96,7 @@ export default function LoginPage() {
                 type="checkbox"
                 id="terms"
                 className="h-4 w-4 text-primary rounded"
+                onClick={() => setData({ ...data, terms: !data.terms })}
               />
               <label htmlFor="terms" className="ml-2 text-sm text-subtle">
                 I agree to the{" "}
@@ -81,11 +110,13 @@ export default function LoginPage() {
               </label>
             </div>
 
-            <button className="w-full bg-primary text-white py-3 rounded-lg font-medium hover:bg-primary/90 cursor-pointer">
+            <button
+              className="w-full bg-primary text-white py-3 rounded-lg font-medium hover:bg-primary/90 cursor-pointer"
+              onClick={handleSubmit}
+            >
               Login
             </button>
 
-            {/* forget password */}
             <div className="text-center text-sm text-subtle my-2">
               <Link
                 href="/forgot-password"
