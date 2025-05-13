@@ -67,6 +67,9 @@ importers:
       '@types/jsonwebtoken':
         specifier: ^9.0.9
         version: 9.0.9
+      eslint:
+        specifier: ^9.25.0
+        version: 9.25.0(jiti@2.4.2)
       tsx:
         specifier: ^4.19.4
         version: 4.19.4

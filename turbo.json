@@ -11,8 +11,9 @@
         "MONGODB_URL",
         "NEXT_PUBLIC_BASE_URL",
         "NEXT_PUBLIC_API_URL",
-        "NEXT_PUBLIC_BASE_PORT",
-        "API_PORT"
+        "BASE_PORT",
+        "API_PORT",
+        "JWT_SECRET"
       ]
     },
     "lint": {
