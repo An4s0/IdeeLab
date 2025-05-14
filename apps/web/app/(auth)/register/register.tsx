@@ -5,6 +5,8 @@ import LeftSide from "../left-side";
 import { FaEye, FaEyeSlash, FaGithub } from "react-icons/fa6";
 import user from "@/lib/user";
 import cookies from "@/lib/cookies";
+import github from "@/lib/github";
+import google from "@/lib/google";
 
 type data = {
   name: string;
@@ -87,6 +89,14 @@ export default function RegisterPage() {
     } else {
       setError(register.message);
     }
+  };
+
+  const handleGithubClick = async () => {
+    await github.redirect();
+  };
+
+  const handleGoogleClick = async () => {
+    await google.redirect();
   };
 
   return (
@@ -200,7 +210,10 @@ export default function RegisterPage() {
             </div>
 
             <div className="flex gap-4">
-              <button className="w-1/2 border border-outline py-3 rounded-lg flex items-center justify-center cursor-pointer hover:bg-subtle/10">
+              <button
+                className="w-1/2 border border-outline py-3 rounded-lg flex items-center justify-center cursor-pointer hover:bg-subtle/10"
+                onClick={handleGoogleClick}
+              >
                 <svg
                   width="20"
                   height="20"
@@ -226,7 +239,10 @@ export default function RegisterPage() {
                 </svg>
                 Google
               </button>
-              <button className="w-1/2 border border-outline py-3 rounded-lg flex items-center justify-center cursor-pointer hover:bg-subtle/10">
+              <button
+                className="w-1/2 border border-outline py-3 rounded-lg flex items-center justify-center cursor-pointer hover:bg-subtle/10"
+                onClick={handleGithubClick}
+              >
                 <FaGithub size={20} className="mr-2" />
                 Github
               </button>

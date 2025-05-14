@@ -1,10 +1,12 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import LeftSide from "../left-side";
 import { FaEye, FaEyeSlash, FaGithub } from "react-icons/fa6";
 import user from "@/lib/user";
 import cookies from "@/lib/cookies";
+import github from "@/lib/github";
+import google from "@/lib/google";
 
 type data = {
   email: string;
@@ -20,6 +22,16 @@ export default function LoginPage() {
   });
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState<string>("");
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+
+    const { searchParams } = new URL(window.location.href);
+    const error = searchParams.get("error");
+    if (error) {
+      setError(error);
+    }
+  }, []);
 
   const handleSubmit = async () => {
     if (!data.email || !data.password) {
@@ -44,6 +56,15 @@ export default function LoginPage() {
       setError(login.message);
     }
   };
+
+  const handleGithubClick = async () => {
+    await github.redirect();
+  };
+
+  const handleGoogleClick = async () => {
+    await google.redirect();
+  };
+
   return (
     <main className="flex h-screen w-full">
       <LeftSide />
@@ -131,7 +152,10 @@ export default function LoginPage() {
             </div>
 
             <div className="flex gap-4">
-              <button className="w-1/2 border border-outline py-3 rounded-lg flex items-center justify-center cursor-pointer hover:bg-subtle/10">
+              <button
+                className="w-1/2 border border-outline py-3 rounded-lg flex items-center justify-center cursor-pointer hover:bg-subtle/10"
+                onClick={handleGoogleClick}
+              >
                 <svg
                   width="20"
                   height="20"
@@ -157,7 +181,10 @@ export default function LoginPage() {
                 </svg>
                 Google
               </button>
-              <button className="w-1/2 border border-outline py-3 rounded-lg flex items-center justify-center cursor-pointer hover:bg-subtle/10">
+              <button
+                className="w-1/2 border border-outline py-3 rounded-lg flex items-center justify-center cursor-pointer hover:bg-subtle/10"
+                onClick={handleGithubClick}
+              >
                 <FaGithub size={20} className="mr-2" />
                 Github
               </button>
