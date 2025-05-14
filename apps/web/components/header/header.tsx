@@ -41,15 +41,17 @@ export default function Header({ fixed = true }: { fixed?: boolean }) {
 
   useEffect(() => {
     const checkAuth = async () => {
-      const auth = await userLib.get();
+      if (!isAuthenticated) {
+        const auth = await userLib.get();
 
-      if (auth.success) {
-        setIsAuthenticated(true);
-        setUser(auth.data!);
+        if (auth.success) {
+          setIsAuthenticated(true);
+          setUser(auth.data!);
+        }
       }
     };
     checkAuth();
-  }, []);
+  }, [isAuthenticated]);
 
   const dropdownVariants = {
     hidden: { opacity: 0, y: -5, scale: 0.95 },
