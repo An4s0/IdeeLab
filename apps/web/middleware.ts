@@ -23,6 +23,11 @@ export async function middleware(request: NextRequest) {
     return NextResponse.redirect(new URL("/login", url));
   }
 
+  const resVerify = await user.get();
+  if (!resVerify.data?.isVerified) {
+    return NextResponse.redirect(new URL("/verify-email", url));
+  }
+
   if (isAuthPage) {
     return NextResponse.redirect(new URL("/", url));
   }
