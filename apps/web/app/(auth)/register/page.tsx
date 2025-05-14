@@ -6,6 +6,6 @@ export const metadata: Metadata = {
 
 import RegisterPage from "./register";
 
-export default function Home() {
+export default function Register() {
   return <RegisterPage />;
 }

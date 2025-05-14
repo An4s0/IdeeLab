@@ -6,6 +6,6 @@ export const metadata: Metadata = {
 
 import LoginPage from "./login";
 
-export default function Home() {
+export default function Login() {
   return <LoginPage />;
 }
