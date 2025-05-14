@@ -13,7 +13,13 @@
         "NEXT_PUBLIC_API_URL",
         "BASE_PORT",
         "API_PORT",
-        "JWT_SECRET"
+        "JWT_SECRET",
+        "GITHUB_CLIENT_ID",
+        "GITHUB_CLIENT_SECRET",
+        "GITHUB_CALLBACK_URL",
+        "GOOGLE_CLIENT_ID",
+        "GOOGLE_CLIENT_SECRET",
+        "GOOGLE_CALLBACK_URL"
       ]
     },
     "lint": {
