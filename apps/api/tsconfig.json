@@ -1,12 +1,9 @@
 {
     "extends": "@repo/typescript-config/base.json",
     "compilerOptions": {
-        "esModuleInterop": true,
-        "outDir": "./dist",
+        "outDir": "dist",
         "rootDir": "./",
         "baseUrl": ".",
-        "module": "ESNext",
-        "moduleResolution": "Bundler",
         "paths": {
             "@/*": [
                 "./*"
