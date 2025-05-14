@@ -1,7 +1,7 @@
 import { Router } from "express";
 const router: Router = Router();
-import { verifyToken } from "@/utils/jwt";
-import { ApiResponse } from "@/types";
+import { verifyToken } from "../../utils/jwt";
+import { ApiResponse } from "../../types";
 
 router.get("/verify-token", async (req, res) => {
   try {

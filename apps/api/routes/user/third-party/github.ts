@@ -1,8 +1,8 @@
 import { Router } from "express";
 const router: Router = Router();
-import User from "@/models/user";
+import User from "../../../models/user";
 import axios from "axios";
-import { generateToken } from "@/utils/jwt";
+import { generateToken } from "../../../utils/jwt";
 
 router.get("/", async (req, res) => {
   const githubAuthURL = `https://github.com/login/oauth/authorize?client_id=${process.env.GITHUB_CLIENT_ID}&redirect_uri=${process.env.GITHUB_CALLBACK_URL}&scope=user`;

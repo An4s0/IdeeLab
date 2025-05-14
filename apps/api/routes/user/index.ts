@@ -1,8 +1,8 @@
 import { Router } from "express";
 const router: Router = Router();
-import User from "@/models/user";
-import { verifyToken } from "@/utils/jwt";
-import { ApiResponse } from "@/types";
+import User from "../../models/user";
+import { verifyToken } from "../../utils/jwt";
+import { ApiResponse } from "../../types";
 
 import register from "./register";
 import login from "./login";

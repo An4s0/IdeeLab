@@ -1,9 +1,9 @@
 import { Router } from "express";
 const router: Router = Router();
 import bcrypt from "bcryptjs";
-import { ApiResponse } from "@/types";
-import User from "@/models/user";
-import { generateToken } from "@/utils/jwt";
+import { ApiResponse } from "../../types";
+import User from "../../models/user";
+import { generateToken } from "../../utils/jwt";
 
 router.post("/register", async (req, res) => {
   try {
