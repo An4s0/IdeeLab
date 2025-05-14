@@ -6,7 +6,7 @@ export async function middleware(request: NextRequest) {
   const token = request.cookies.get("token")?.value;
 
   const isAuthPage = ["/login", "/register"].some((path) =>
-    url.pathname.startsWith(path)
+    url.pathname.startsWith(path),
   );
 
   if (!token) {
