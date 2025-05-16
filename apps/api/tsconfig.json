@@ -10,12 +10,7 @@
         "skipLibCheck": true,
         "outDir": "dist",
         "rootDir": "./",
-        "baseUrl": ".",
-        "paths": {
-            "@/*": [
-                "./*"
-            ],
-        }
+        "baseUrl": "."
     },
     "include": [
         "**/*.ts"
