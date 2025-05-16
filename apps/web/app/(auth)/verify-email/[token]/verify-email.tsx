@@ -1,4 +1,5 @@
 "use client";
+import { useParams } from "next/navigation";
 import { useState } from "react";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
@@ -7,14 +8,15 @@ import cookies from "@/lib/cookies";
 import { ApiResponse } from "@/types";
 
 export default function VerifyEmailPage() {
+  const params = useParams();
+  const verifyToken = params.token;
   const [error, setError] = useState<string | null>(null);
-  const [buttonMessage, setButtonMessage] = useState<string>(
-    "Resend Verification Email",
-  );
+  const [buttonMessage, setButtonMessage] =
+    useState<string>("Verify Your Email");
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
 
-  const handleResendEmail = async () => {
+  const handleVerifyEmail = async () => {
     setError(null);
     setSuccess(false);
     setLoading(true);
@@ -28,7 +30,8 @@ export default function VerifyEmailPage() {
       }
 
       const res = await axios({
-        url: process.env.NEXT_PUBLIC_API_URL + "/auth/send-verify-email",
+        url:
+          process.env.NEXT_PUBLIC_API_URL + "/auth/verify-email/" + verifyToken,
         method: "post",
         headers: {
           "Content-Type": "application/json",
@@ -40,9 +43,9 @@ export default function VerifyEmailPage() {
 
       if (data.success) {
         setSuccess(true);
-        setButtonMessage("Verification email sent!");
+        setButtonMessage("Email verified!");
         setTimeout(() => {
-          setButtonMessage("Resend Verification Email");
+          setButtonMessage("Go to Home");
           setSuccess(false);
         }, 5000);
       } else {
@@ -74,24 +77,29 @@ export default function VerifyEmailPage() {
 
         {success && (
           <p className="mt-4 text-md text-green-600">
-            Verification email has been sent successfully!
+            Your email has been verified successfully!
           </p>
         )}
 
         <p className="mt-4 text-md text-subtle">
-          Please check your email for a verification link. If you didn&apos;t
-          receive an email, please check your spam folder or request a new
-          verification link.
+          Please click the button below to verify your email address. If you
+          have already verified your email, you can ignore this message.
         </p>
 
         <button
           className={`mt-6 px-4 py-2 rounded-md text-white font-medium transition cursor-pointer
             ${loading ? "bg-primary/70 cursor-not-allowed" : "bg-primary hover:bg-primary/80"}
           `}
-          onClick={handleResendEmail}
+          onClick={() => {
+            if (buttonMessage === "Verify Your Email") {
+              handleVerifyEmail();
+            } else {
+              window.location.href = "/";
+            }
+          }}
           disabled={loading}
         >
-          {loading ? "Sending..." : buttonMessage}
+          {loading ? "Verifying..." : buttonMessage}
         </button>
       </div>
       <Footer />
