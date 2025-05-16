@@ -79,52 +79,16 @@ const user = {
       }
     }
   },
-  verifyToken: async (
-    token: string,
-  ): Promise<ApiResponse<{ token: string }>> => {
+  get: async (token: string): Promise<ApiResponse<User>> => {
     try {
-      const res = await axios({
-        url: process.env.NEXT_PUBLIC_API_URL + "/auth/verify-token",
-        method: "get",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${token}`,
-        },
-      });
+      const tokenC = cookies.get("token");
 
-      const data = await res.data;
-
-      return data as ApiResponse<{ token: string }>;
-    } catch (error) {
-      if (axios.isAxiosError(error)) {
-        const err = error.response?.data as Partial<ApiResponse> | undefined;
-        return {
-          success: false,
-          message: err?.message ?? "Unknown error occurred from server",
-        } as ApiResponse<{ token: string }>;
-      } else {
-        return {
-          success: false,
-          message: "Something went wrong",
-        } as ApiResponse<{ token: string }>;
-      }
-    }
-  },
-  get: async (): Promise<ApiResponse<User>> => {
-    try {
-      const token = cookies.get("token");
-      if (!token) {
-        return {
-          success: false,
-          message: "No token provided",
-        };
-      }
       const res = await axios({
         url: process.env.NEXT_PUBLIC_API_URL + "/auth",
         method: "get",
         headers: {
           "Content-Type": "application/json",
-          Authorization: `Bearer ${token}`,
+          Authorization: `Bearer ${token || tokenC}`,
         },
       });
 
