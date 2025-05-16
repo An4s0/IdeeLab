@@ -50,12 +50,11 @@ export default function HomePage() {
                   <div className="relative h-full w-8 bg-white/20"></div>
                 </div>
               </Link>
-
               <Link
-                href="/login"
+                href="/leaderboard"
                 className="w-full sm:w-auto flex items-center justify-center h-14 px-8 border border-subtle/30 rounded-xl font-medium transition-all hover:bg-foreground/5 active:scale-95"
               >
-                Get Started Free
+                Join the Best
               </Link>
             </div>
 
@@ -194,7 +193,7 @@ export default function HomePage() {
               </div>
 
               <Link
-                href="/register"
+                href="/challenges"
                 className="w-full md:w-auto whitespace-nowrap inline-flex h-14 items-center justify-center rounded-xl bg-primary px-8 font-medium text-white transition-all hover:bg-primary/90"
               >
                 Start Coding Now
