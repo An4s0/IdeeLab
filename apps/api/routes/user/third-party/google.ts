@@ -76,7 +76,7 @@ router.get("/callback", async (req, res) => {
         username: googleUser.name,
         email: googleUser.email,
         picture: googleUser.picture,
-        isVerified: googleUser.email_verified,
+        isVerified: true,
         provider: "google",
         providerId: googleUser.sub,
         providerAccessToken: access_token,
