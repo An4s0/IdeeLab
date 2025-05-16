@@ -6,19 +6,20 @@ import { ApiResponse } from "../../types";
 
 import register from "./register";
 import login from "./login";
-import VerifyToken from "./verifyToken";
+import VerifyEmail from "./verify-email";
 import github from "./third-party/github";
 import google from "./third-party/google";
 
 router.use("/", register);
 router.use("/", login);
-router.use("/", VerifyToken);
+router.use("/", VerifyEmail);
 router.use("/github", github);
 router.use("/google", google);
 
 router.get("/", async (req, res) => {
   try {
     const token = req.headers["authorization"]?.split(" ")[1];
+
     if (!token) {
       res.status(401).json({
         success: false,
