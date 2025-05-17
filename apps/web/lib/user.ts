@@ -17,7 +17,7 @@ const user = {
   ): Promise<ApiResponse<{ token: string }>> => {
     try {
       const res = await axios({
-        url: process.env.NEXT_PUBLIC_API_URL + "/auth/register",
+        url: process.env.NEXT_PUBLIC_API_URL + "/user/register",
         method: "post",
         headers: {
           "Content-Type": "application/json",
@@ -51,7 +51,7 @@ const user = {
   }): Promise<ApiResponse<{ token: string }>> => {
     try {
       const res = await axios({
-        url: process.env.NEXT_PUBLIC_API_URL + "/auth/login",
+        url: process.env.NEXT_PUBLIC_API_URL + "/user/login",
         method: "post",
         headers: {
           "Content-Type": "application/json",
@@ -79,12 +79,12 @@ const user = {
       }
     }
   },
-  get: async (token: string): Promise<ApiResponse<User>> => {
+  me: async (token?: string): Promise<ApiResponse<User>> => {
     try {
       const tokenC = cookies.get("token");
 
       const res = await axios({
-        url: process.env.NEXT_PUBLIC_API_URL + "/auth",
+        url: process.env.NEXT_PUBLIC_API_URL + "/user/me",
         method: "get",
         headers: {
           "Content-Type": "application/json",
