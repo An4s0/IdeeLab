@@ -1,15 +1,15 @@
 import { Router } from "express";
-const router: Router = Router();
 import User from "../../../models/user";
 import axios from "axios";
 import { generateToken } from "../../../utils/jwt";
+const router: Router = Router();
 
-router.get("/", async (req, res) => {
+router.get("/google", async (req, res) => {
   const googleAuthURL = `https://accounts.google.com/o/oauth2/v2/auth?client_id=${process.env.GOOGLE_CLIENT_ID}&redirect_uri=${process.env.GOOGLE_CALLBACK_URL}&response_type=code&scope=openid%20email%20profile&access_type=offline&prompt=consent`;
   res.redirect(googleAuthURL);
 });
 
-router.get("/callback", async (req, res) => {
+router.get("/auth/callback/google", async (req, res) => {
   try {
     const { code } = req.query;
 

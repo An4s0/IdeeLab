@@ -1,15 +1,15 @@
 import { Router } from "express";
-const router: Router = Router();
-import User from "../../../models/user";
 import axios from "axios";
+import User from "../../../models/user";
 import { generateToken } from "../../../utils/jwt";
+const router: Router = Router();
 
-router.get("/", async (req, res) => {
+router.get("/github", async (req, res) => {
   const githubAuthURL = `https://github.com/login/oauth/authorize?client_id=${process.env.GITHUB_CLIENT_ID}&redirect_uri=${process.env.GITHUB_CALLBACK_URL}&scope=user`;
   res.redirect(githubAuthURL);
 });
 
-router.get("/callback", async (req, res) => {
+router.get("/auth/callback/github", async (req, res) => {
   try {
     const { code } = req.query;
 

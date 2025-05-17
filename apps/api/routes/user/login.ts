@@ -1,30 +1,41 @@
 import { Router } from "express";
-const router: Router = Router();
 import bcrypt from "bcryptjs";
 import { ApiResponse } from "../../types";
 import User from "../../models/user";
 import { generateToken } from "../../utils/jwt";
+const router: Router = Router();
+
+interface LoginData {
+  email: string;
+  password: string;
+}
+
+function validateLoginData(data: LoginData): string | null {
+  const { email, password } = data || {};
+  if (!data) return "Request body is missing";
+
+  if (!email) return "Email is required";
+  if (!password) return "Password is required";
+
+  if (!email.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)) return "Email is not valid";
+
+  return null;
+}
 
 router.post("/login", async (req, res) => {
   try {
+    const errorMsg = validateLoginData(req.body);
+    if (errorMsg) {
+      res.status(400).json({
+        success: false,
+        message: errorMsg,
+      } as ApiResponse);
+      return;
+    }
+
     const { email, password } = req.body;
-    if (!email || !password) {
-      res.status(400).json({
-        success: false,
-        message: "Please fill all the fields",
-      } as ApiResponse);
-      return;
-    }
-
-    if (!email.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)) {
-      res.status(400).json({
-        success: false,
-        message: "Email is not valid",
-      } as ApiResponse);
-      return;
-    }
-
     const existingUser = await User.findOne({ email });
+
     if (!existingUser) {
       res.status(400).json({
         success: false,
@@ -42,28 +53,22 @@ router.post("/login", async (req, res) => {
       return;
     }
 
-    const payload = {
+    const token = generateToken({
       id: existingUser._id,
-      username: existingUser.username,
       email: existingUser.email,
-    };
-
-    const token = generateToken(payload);
+    });
 
     res.status(200).json({
       success: true,
       message: "Login successful",
-      data: {
-        token,
-      },
+      data: { token },
     } as ApiResponse<{ token: string }>);
   } catch (error) {
+    console.error("Error in /login route:", error);
     res.status(500).json({
       success: false,
-      message: "Internal server error",
+      message: "Internal server error occurred",
     } as ApiResponse);
-
-    console.error("Error in /login route:", error);
   }
 });
 
