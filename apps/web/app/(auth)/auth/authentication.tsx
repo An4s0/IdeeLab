@@ -17,7 +17,7 @@ export default function AuthenticationPage() {
   return (
     <div className="flex flex-col items-center justify-center h-screen">
       <h1 className="text-2xl font-bold">Authentication</h1>
-      <p className="mt-4 text-gray-600">Redirecting...</p>
+      <p className="mt-4 text-subtle">Redirecting...</p>
     </div>
   );
 }
