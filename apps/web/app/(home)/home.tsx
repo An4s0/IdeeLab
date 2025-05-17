@@ -1,14 +1,71 @@
 "use client";
+import { useState } from "react";
 import Link from "next/link";
-import { FaArrowRight, FaJava, FaPython, FaGolang } from "react-icons/fa6";
-import { RiJavascriptFill } from "react-icons/ri";
+import {
+  FaArrowDown,
+  FaArrowUp,
+  FaUserCheck,
+  FaChartLine,
+  FaArrowRight,
+  FaJava,
+  FaPython,
+  FaGolang,
+} from "react-icons/fa6";
+import { LiaUserCogSolid } from "react-icons/lia";
+import { GiDiamondTrophy } from "react-icons/gi";
+import { HiMiniUserGroup, HiSparkles } from "react-icons/hi2";
+import { PiUsersThreeFill } from "react-icons/pi";
+import { RiJavascriptFill, RiPieChartLine } from "react-icons/ri";
 import { TbBrandCpp, TbBrandCSharp } from "react-icons/tb";
 import { DiRuby } from "react-icons/di";
 import { BiLogoTypescript } from "react-icons/bi";
+
 import Header from "@/components/header";
 import Footer from "@/components/footer";
 
 export default function HomePage() {
+  const faqs = [
+    {
+      question: "What is IdeeLab?",
+      answer:
+        "IdeeLab is a platform offering daily and weekly coding challenges to help developers grow and sharpen their skills through consistency and fun competition.",
+    },
+    {
+      question: "Is IdeeLab free to use?",
+      answer:
+        "Yes! You can start solving challenges for free. Premium features may be added in the future to enhance the experience.",
+    },
+    {
+      question: "How do I get started?",
+      answer:
+        "Simply create an account and start solving challenges. You can also track your progress.",
+    },
+    {
+      question: "What types of challenges are available?",
+      answer:
+        "We offer a variety of challenges ranging from algorithms and data structures to real-world problems. New challenges are added daily!",
+    },
+    {
+      question: "Can I track my progress?",
+      answer:
+        "Absolutely! You can view your progress, streaks, and performance over time through our analytics dashboard.",
+    },
+    {
+      question: "Can I create my own challenges?",
+      answer:
+        "Currently, we are focusing on curated challenges. However, we plan to introduce a feature for users to create and share their own challenges in the future.",
+    },
+  ];
+
+  const [activeFAQ, setActiveFAQ] = useState<number | null>(null);
+  const toggleFAQ = (index: number) => {
+    if (activeFAQ === index) {
+      setActiveFAQ(null);
+    } else {
+      setActiveFAQ(index);
+    }
+  };
+
   return (
     <main className="relative">
       <Header />
@@ -81,6 +138,141 @@ export default function HomePage() {
               <div className="flex flex-col items-center">
                 <span className="font-bold text-2xl text-foreground">100%</span>
                 <span>free</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Features Section */}
+        <section className="bg-foreground/3 py-10 mt-20">
+          <div className="flex flex-col items-center justify-center space-y-2 max-w-6xl mx-auto px-2 md:px-1">
+            <h2 className="text-3xl font-semibold sm:text-4xl">
+              Why choose <span className="text-primary">IdeeLab</span>?
+            </h2>
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-2 w-full mt-8 px-4">
+              <div className="group border border-outline/50 bg-feature-bg rounded-xl col-span-2 h-88 px-6 py-8 cursor-pointer hover:border-outline flex justify-between">
+                <div className="w-full md:w-1/2 flex flex-col justify-between">
+                  <div>
+                    <h2 className="font-semibold mb-2 flex justify-start items-center">
+                      <FaChartLine
+                        size={20}
+                        className="inline-block mr-2 text-foreground"
+                      />
+                      Real-Time Progress Tracking
+                    </h2>
+                    <p className="text-sm text-subtle">
+                      Track your progress with real-time analytics. See how you
+                      improve over time and stay motivated.
+                    </p>
+                  </div>
+                  <ul className="text-sm text-subtle space-y-1 pl-1">
+                    <li className="flex items-center">
+                      <span className="mr-2 text-primary">✔</span> Live stats
+                      on every challenge
+                    </li>
+                    <li className="flex items-center">
+                      <span className="mr-2 text-primary">✔</span> Visual
+                      progress over time
+                    </li>
+                    <li className="flex items-center">
+                      <span className="mr-2 text-primary">✔</span> Consistency
+                      streak tracking
+                    </li>
+                  </ul>
+                </div>
+                <RiPieChartLine
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="0.2"
+                  size={220}
+                  className="text-outline/50 group-hover:text-subtle/70 m-8 transition-colors duration-300 hidden md:block"
+                />
+              </div>
+              <div className="group border border-outline/50 bg-feature-bg rounded-xl col-span-2 lg:col-span-1  h-88 px-6 py-8 cursor-pointer hover:border-outline flex flex-col justify-between">
+                <div className="w-full">
+                  <h2 className="font-semibold mb-2 flex justify-start items-center">
+                    <HiSparkles
+                      size={20}
+                      className="inline-block mr-2 text-foreground"
+                    />
+                    Daily Curated Challenges
+                  </h2>
+                  <p className="text-sm text-subtle">
+                    Fresh and exciting challenges every day to sharpen your
+                    skills and keep you engaged.
+                  </p>
+                </div>
+                <div className="flex justify-center items-center">
+                  <GiDiamondTrophy
+                    size={180}
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="5"
+                    className="text-outline/50 group-hover:text-subtle/70 transition-colors duration-300"
+                  />
+                </div>
+              </div>
+              <div className="group border border-outline/50 bg-feature-bg rounded-xl col-span-2 lg:col-span-1 h-88 px-6 py-8 cursor-pointer hover:border-outline flex flex-col justify-between">
+                <div className="w-full">
+                  <h2 className="font-semibold mb-2 flex justify-start items-center">
+                    <FaUserCheck
+                      size={20}
+                      className="inline-block mr-2 text-foreground"
+                    />
+                    Personalized Experience
+                  </h2>
+                  <p className="text-sm text-subtle">
+                    Challenges, recommendations, and feedback tailored to your
+                    skill level and goals.
+                  </p>
+                </div>
+                <div className="flex justify-center items-center">
+                  <LiaUserCogSolid
+                    size={180}
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="0.3"
+                    className="text-outline/50 group-hover:text-subtle/70 transition-colors duration-300"
+                  />
+                </div>
+              </div>
+              <div className="group border border-outline/50 bg-feature-bg rounded-xl col-span-2 h-88 px-6 py-8 cursor-pointer hover:border-outline flex justify-between">
+                <div className="w-full md:w-1/2 flex flex-col justify-between">
+                  <div>
+                    <h2 className="font-semibold mb-2 flex justify-start items-center">
+                      <PiUsersThreeFill
+                        size={20}
+                        className="inline-block mr-2 text-foreground"
+                      />
+                      Community & Collaboration
+                    </h2>
+                    <p className="text-sm text-subtle">
+                      Learn and grow with a passionate community of coders.
+                      Share solutions, give feedback, and grow together.
+                    </p>
+                  </div>
+                  <ul className="text-sm text-subtle space-y-1 pl-1">
+                    <li className="flex items-center">
+                      <span className="mr-2 text-primary">✔</span> Public
+                      solutions & discussions
+                    </li>
+                    <li className="flex items-center">
+                      <span className="mr-2 text-primary">✔</span> Challenge
+                      leaderboards
+                    </li>
+                    <li className="flex items-center">
+                      <span className="mr-2 text-primary">✔</span> Peer reviews
+                      & feedback
+                    </li>
+                  </ul>
+                </div>
+                <HiMiniUserGroup
+                  size={220}
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="0.2"
+                  className="text-outline/50 group-hover:text-subtle/70 m-8 transition-colors duration-300 hidden md:block"
+                />
               </div>
             </div>
           </div>
@@ -179,6 +371,7 @@ export default function HomePage() {
           </div>
         </section>
 
+        {/* Call to Action Section */}
         <section className="mx-auto max-w-5xl px-4 mb-24">
           <div className="relative rounded-3xl overflow-hidden bg-gradient-to-br from-primary/20 to-primary/5 border border-primary/20 p-8 md:p-12">
             <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-8">
@@ -201,8 +394,48 @@ export default function HomePage() {
             </div>
           </div>
         </section>
-      </div>
 
+        {/* FAQ Section */}
+        <section className="flex flex-col items-center justify-center space-y-2 mt-32 max-w-6xl mx-auto px-2 md:px-1 mb-32 ">
+          <h2 className="text-3xl font-semibold sm:text-4xl">
+            FA<span className="text-primary">Q</span>
+          </h2>
+          <div className="flex flex-col gap-4 mt-8 w-full px-4 transition">
+            {faqs.map((faq, index) => (
+              <div key={index}>
+                <div
+                  className="border border-outline/50 bg-feature-bg rounded-xl px-6 py-4 cursor-pointer hover:border-outline"
+                  onClick={() => toggleFAQ(index)}
+                >
+                  <div className="flex justify-between items-center">
+                    <h2 className="font-semibold">{faq.question}</h2>
+                    {activeFAQ === index ? (
+                      <FaArrowUp
+                        size={20}
+                        className="transition-transform transform"
+                      />
+                    ) : (
+                      <FaArrowDown
+                        size={20}
+                        className="transition-transform transform"
+                      />
+                    )}
+                  </div>
+
+                  {activeFAQ === index && (
+                    <div
+                      className={`mt-4 text-sm text-subtle overflow-hidden transition-all duration-300'
+                    }`}
+                    >
+                      {faq.answer}
+                    </div>
+                  )}
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+      </div>
       <Footer />
     </main>
   );
