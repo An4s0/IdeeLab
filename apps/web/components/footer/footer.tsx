@@ -12,11 +12,20 @@ type ThemeIcon = {
 
 const platformLinks = [
   { name: "Challenges", href: "/challenges" },
+  { name: "Contest", href: "/contest" },
   { name: "Leaderboard", href: "/leaderboard" },
+  { name: "Track Progress", href: "/progress" },
+];
+
+const resourceLinks = [
+  { name: "Documentation", href: "/docs" },
+  { name: "Community Forum", href: "/community" },
+  { name: "Blog Posts", href: "/blog" },
+  { name: "Help Center", href: "/support" },
 ];
 
 const contactLinks = [
-  { name: "GitHub", href: "https://github.com/orgs/IdeeLab", external: true },
+  { name: "GitHub", href: "https://github.com/An4s0/IdeeLab", external: true },
   { name: "Terms of Service", href: "/terms" },
   { name: "Privacy Policy", href: "/privacy" },
 ];
@@ -95,7 +104,7 @@ export default function Footer() {
   const socialIcons = [
     {
       name: "Email",
-      href: "mailto:test@example.com",
+      href: "mailto:support@ideelab.cc",
       icon: (
         <svg
           stroke="currentColor"
@@ -136,7 +145,7 @@ export default function Footer() {
   return (
     <footer className="border-t border-outline/50 bg-background/80 backdrop-blur-sm mt-auto">
       <div className="max-w-6xl mx-auto px-4 py-12 md:py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
           <div className="col-span-1 lg:col-span-2">
             <div className="flex items-center space-x-3 mb-6">
               <motion.div
@@ -154,9 +163,9 @@ export default function Footer() {
               <h1 className="text-xl font-bold">IdeeLab</h1>
             </div>
             <p className="text-sm text-subtle leading-relaxed max-w-md mb-6">
-              Your go-to platform for daily coding challenges, consistent
-              practice, and developer growth. Join thousands of developers who
-              are improving their coding skills every day.
+              Your go-to platform for coding challenges, consistent practice,
+              and developer growth. Join thousands of developers who are
+              improving their coding skills every day.
             </p>
 
             <div className="flex space-x-3">
@@ -181,6 +190,22 @@ export default function Footer() {
             <h3 className="text-base font-semibold mb-4">Platform</h3>
             <ul className="space-y-3 text-subtle text-sm">
               {platformLinks.map((item) => (
+                <li key={item.name}>
+                  <Link
+                    href={item.href}
+                    className="hover:text-primary transition-colors inline-block"
+                  >
+                    {item.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <h3 className="text-base font-semibold mb-4">Resources</h3>
+            <ul className="space-y-3 text-subtle text-sm">
+              {resourceLinks.map((item) => (
                 <li key={item.name}>
                   <Link
                     href={item.href}

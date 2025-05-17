@@ -27,7 +27,7 @@ export default function SubHeader() {
         <div className="flex items-center space-x-4">
           <Link
             href="/register"
-            className="items-center py-1.5 px-4 rounded-lg border border-primary/50 bg-primary text-sm font-medium hover:bg-primary/90 inline-flex transition-all text-white"
+            className="items-center py-1.5 px-4 rounded-md border border-primary/50 bg-primary text-sm font-medium hover:bg-primary/90 inline-flex transition-all text-white"
           >
             <VscRunAll className="mr-2" />
             Run Code
