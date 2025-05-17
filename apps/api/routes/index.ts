@@ -1,12 +1,16 @@
 import { Router } from "express";
 const router: Router = Router();
 
-import user from "./user";
-
 router.get("/", (req, res) => {
   res.send("Welcome to the IdeeLab API!");
 });
+import user from "./user";
+router.use("/user", user);
 
-router.use("/auth", user);
+import challenges from "./challenges";
+router.use("/challenges", challenges);
+
+import leaderboard from "./leaderboard";
+router.use("/leaderboard", leaderboard);
 
 export default router;
