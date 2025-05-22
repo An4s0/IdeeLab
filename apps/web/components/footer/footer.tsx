@@ -19,7 +19,6 @@ const platformLinks = [
 
 const resourceLinks = [
   { name: "About IdeeLab", href: "/about" },
-  { name: "Blog", href: "/blog" },
   { name: "FAQ", href: "/faq" },
   { name: "Support", href: "/support" },
 ];
