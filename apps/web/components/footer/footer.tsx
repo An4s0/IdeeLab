@@ -25,7 +25,11 @@ const resourceLinks = [
 
 const contactLinks = [
   { name: "GitHub Org", href: "https://github.com/IdeeLab", external: true },
-  { name: "GitHub Issue", href: "https://github.com/An4s0/IdeeLab/issues", external: true },
+  {
+    name: "GitHub Issue",
+    href: "https://github.com/An4s0/IdeeLab/issues",
+    external: true,
+  },
   { name: "Terms of Service", href: "/terms" },
   { name: "Privacy Policy", href: "/privacy" },
 ];
@@ -121,7 +125,8 @@ export default function Footer() {
         >
           <path
             fillRule="nonzero"
-            d="M403.229 0h78.506L310.219 196.04 512 462.799H354.002L230.261 301.007 88.669 462.799h-78.56l183.455-209.683L0 0h161.999l111.856 147.88L403.229 0zm-27.556 415.805h43.505L138.363 44.527h-46.68l283.99 371.278z" />
+            d="M403.229 0h78.506L310.219 196.04 512 462.799H354.002L230.261 301.007 88.669 462.799h-78.56l183.455-209.683L0 0h161.999l111.856 147.88L403.229 0zm-27.556 415.805h43.505L138.363 44.527h-46.68l283.99 371.278z"
+          />
         </svg>
       ),
     },
@@ -186,7 +191,9 @@ export default function Footer() {
               <h1 className="text-xl font-bold">IdeeLab</h1>
             </div>
             <p className="text-sm text-subtle leading-relaxed max-w-md mb-6">
-              Share and explore creative programming ideas on IdeeLab. Discover inspiring project concepts, vote on your favorites, and spark your next build.
+              Share and explore creative programming ideas on IdeeLab. Discover
+              inspiring project concepts, vote on your favorites, and spark
+              your next build.
             </p>
 
             <div className="flex space-x-3">
@@ -271,10 +278,11 @@ export default function Footer() {
                 key={index}
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
-                className={`p-1.5 rounded-full cursor-pointer ${theme === icon.name
-                  ? "bg-primary/10 text-primary"
-                  : "hover:bg-outline/10"
-                  }`}
+                className={`p-1.5 rounded-full cursor-pointer ${
+                  theme === icon.name
+                    ? "bg-primary/10 text-primary"
+                    : "hover:bg-outline/10"
+                }`}
                 onClick={() => setTheme(icon.name)}
                 aria-label={`Switch to ${icon.name} theme`}
               >
