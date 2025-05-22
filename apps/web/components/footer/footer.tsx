@@ -10,22 +10,23 @@ type ThemeIcon = {
   name: string;
 };
 
+// Footer links
 const platformLinks = [
-  { name: "Challenges", href: "/challenges" },
-  { name: "Contest", href: "/contest" },
-  { name: "Leaderboard", href: "/leaderboard" },
-  { name: "Track Progress", href: "/profile" },
+  { name: "Discover Ideas", href: "/discover" },
+  { name: "Share Idea", href: "/share" },
+  { name: "Idea Generator", href: "/generator" },
 ];
 
 const resourceLinks = [
-  { name: "Documentation", href: "/docs" },
-  { name: "Community Forum", href: "/community" },
-  { name: "Blog Posts", href: "/blog" },
-  { name: "Help Center", href: "/support" },
+  { name: "About IdeeLab", href: "/about" },
+  { name: "Blog", href: "/blog" },
+  { name: "FAQ", href: "/faq" },
+  { name: "Support", href: "/support" },
 ];
 
 const contactLinks = [
-  { name: "GitHub", href: "https://github.com/An4s0/IdeeLab", external: true },
+  { name: "GitHub Org", href: "https://github.com/IdeeLab", external: true },
+  { name: "GitHub Issue", href: "https://github.com/An4s0/IdeeLab/issues", external: true },
   { name: "Terms of Service", href: "/terms" },
   { name: "Privacy Policy", href: "/privacy" },
 ];
@@ -103,6 +104,29 @@ export default function Footer() {
 
   const socialIcons = [
     {
+      name: "X",
+      href: "https://X.com/IdeeLab",
+      icon: (
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          shapeRendering="geometricPrecision"
+          textRendering="geometricPrecision"
+          imageRendering="optimizeQuality"
+          fillRule="evenodd"
+          clipRule="evenodd"
+          stroke="currentColor"
+          fill="currentColor"
+          height="18"
+          width="18"
+          viewBox="0 0 512 462.799"
+        >
+          <path
+            fillRule="nonzero"
+            d="M403.229 0h78.506L310.219 196.04 512 462.799H354.002L230.261 301.007 88.669 462.799h-78.56l183.455-209.683L0 0h161.999l111.856 147.88L403.229 0zm-27.556 415.805h43.505L138.363 44.527h-46.68l283.99 371.278z" />
+        </svg>
+      ),
+    },
+    {
       name: "Email",
       href: "mailto:support@ideelab.cc",
       icon: (
@@ -163,7 +187,7 @@ export default function Footer() {
               <h1 className="text-xl font-bold">IdeeLab</h1>
             </div>
             <p className="text-sm text-subtle leading-relaxed max-w-md mb-6">
-             Share and explore creative programming ideas on IdeeLab. Discover inspiring project concepts, vote on your favorites, and spark your next build.
+              Share and explore creative programming ideas on IdeeLab. Discover inspiring project concepts, vote on your favorites, and spark your next build.
             </p>
 
             <div className="flex space-x-3">
@@ -237,7 +261,7 @@ export default function Footer() {
       </div>
 
       <div className="border-t border-outline/30">
-        <div className="max-w-6xl mx-auto px-4 flex flex-col sm:flex-row justify-between items-center py-6 space-y-4 sm:space-y-0">
+        <div className="max-w-6xl mx-auto px-4 flex flex-col sm:flex-row justify-between items-center py-2 space-y-4 sm:space-y-0">
           <div className="text-center sm:text-left text-xs text-subtle">
             © {year} IdeeLab. All rights reserved.
           </div>
@@ -249,8 +273,8 @@ export default function Footer() {
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
                 className={`p-1.5 rounded-full cursor-pointer ${theme === icon.name
-                    ? "bg-primary/10 text-primary"
-                    : "hover:bg-outline/10"
+                  ? "bg-primary/10 text-primary"
+                  : "hover:bg-outline/10"
                   }`}
                 onClick={() => setTheme(icon.name)}
                 aria-label={`Switch to ${icon.name} theme`}
