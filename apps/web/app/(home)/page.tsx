@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 export const metadata: Metadata = {
-title: "Discover and Share Creative Programming Ideas",
+  title: "Discover and Share Creative Programming Ideas",
 };
 
 import HomePage from "./home";
