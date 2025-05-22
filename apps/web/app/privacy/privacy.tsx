@@ -16,7 +16,9 @@ export default function PrivacyPage() {
           </p>
 
           <p className="text-subtle mb-6">
-            At IdeeLab, we respect your privacy. This Privacy Policy explains how we collect and use your data when you use our platform to explore and submit programming ideas.
+            At IdeeLab, we respect your privacy. This Privacy Policy explains
+            how we collect and use your data when you use our platform to
+            explore and submit programming ideas.
           </p>
 
           <div className="space-y-6">
@@ -26,16 +28,23 @@ export default function PrivacyPage() {
               </h2>
               <ul className="list-disc list-inside text-subtle space-y-2 ml-2">
                 <li>
-                  <strong>Browsing:</strong> You can browse and explore ideas without creating an account. No personal data is required for viewing.
+                  <strong>Browsing:</strong> You can browse and explore ideas
+                  without creating an account. No personal data is required for
+                  viewing.
                 </li>
                 <li>
-                  <strong>Account Data:</strong> To submit your solution or rate an idea, we collect your email and password upon registration.
+                  <strong>Account Data:</strong> To submit your solution or rate
+                  an idea, we collect your email and password upon registration.
                 </li>
                 <li>
-                  <strong>Submissions:</strong> When you submit your implementation of an idea, we store your code and any associated data.
+                  <strong>Submissions:</strong> When you submit your
+                  implementation of an idea, we store your code and any
+                  associated data.
                 </li>
                 <li>
-                  <strong>Usage Data:</strong> We may collect your IP address and browser type for analytics and to ensure site stability and security.
+                  <strong>Usage Data:</strong> We may collect your IP address
+                  and browser type for analytics and to ensure site stability
+                  and security.
                 </li>
               </ul>
             </div>
@@ -52,11 +61,11 @@ export default function PrivacyPage() {
             </div>
 
             <div>
-              <h2 className="text-xl font-semibold mb-3">
-                3. Cookies
-              </h2>
+              <h2 className="text-xl font-semibold mb-3">3. Cookies</h2>
               <p className="text-subtle mb-2">
-                We use cookies to remember your login session and preferences. You can control or disable cookies through your browser settings.
+                We use cookies to remember your login session and preferences.
+                You can control or disable cookies through your browser
+                settings.
               </p>
             </div>
 
@@ -65,7 +74,8 @@ export default function PrivacyPage() {
               <ul className="list-disc list-inside text-subtle space-y-2 ml-2">
                 <li>We do not sell or trade your personal information.</li>
                 <li>
-                  We may share data with service providers (like hosting platforms) under strict confidentiality agreements.
+                  We may share data with service providers (like hosting
+                  platforms) under strict confidentiality agreements.
                 </li>
                 <li>
                   We may disclose data if required by law or in case of misuse.
@@ -76,7 +86,9 @@ export default function PrivacyPage() {
             <div>
               <h2 className="text-xl font-semibold mb-3">5. Your Rights</h2>
               <ul className="list-disc list-inside text-subtle space-y-2 ml-2">
-                <li>You can request access or deletion of your account and data.</li>
+                <li>
+                  You can request access or deletion of your account and data.
+                </li>
                 <li>You can update your account information at any time.</li>
                 <li>Contact us directly for any privacy-related inquiries.</li>
               </ul>
@@ -87,7 +99,8 @@ export default function PrivacyPage() {
                 6. Changes to This Policy
               </h2>
               <p className="text-subtle">
-                We may update this Privacy Policy periodically. Any changes will be reflected here along with the "Last updated" date.
+                We may update this Privacy Policy periodically. Any changes will
+                be reflected here along with the "Last updated" date.
               </p>
             </div>
           </div>
