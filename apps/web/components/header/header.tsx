@@ -5,7 +5,12 @@ import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 
 // Import icons from react-icons
-import { AiOutlineUser, AiOutlineSetting, AiOutlineSearch, AiOutlineClose } from "react-icons/ai";
+import {
+  AiOutlineUser,
+  AiOutlineSetting,
+  AiOutlineSearch,
+  AiOutlineClose,
+} from "react-icons/ai";
 import { HiOutlineLogout, HiOutlineMenu, HiOutlineX } from "react-icons/hi";
 import { BiCommand } from "react-icons/bi";
 
@@ -38,11 +43,11 @@ export default function Header({ fixed = true }: { fixed?: boolean }) {
   // Effect to handle Ctrl+K shortcut
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
-      if ((event.ctrlKey || event.metaKey) && event.key === 'k') {
+      if ((event.ctrlKey || event.metaKey) && event.key === "k") {
         event.preventDefault();
         handleSearchModalToggle();
       }
-      if (event.key === 'Escape' && searchModal) {
+      if (event.key === "Escape" && searchModal) {
         setSearchModal(false);
       }
     };
@@ -75,16 +80,16 @@ export default function Header({ fixed = true }: { fixed?: boolean }) {
       }
     };
 
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   // Hode the scroll position when the search modal is open
   useEffect(() => {
     if (searchModal) {
-      document.body.style.overflow = 'hidden';
+      document.body.style.overflow = "hidden";
     } else {
-      document.body.style.overflow = 'auto';
+      document.body.style.overflow = "auto";
     }
   }, [searchModal]);
 
@@ -113,7 +118,7 @@ export default function Header({ fixed = true }: { fixed?: boolean }) {
   const modalVariants = {
     hidden: { opacity: 0 },
     visible: { opacity: 1 },
-    exit: { opacity: 0 }
+    exit: { opacity: 0 },
   };
 
   const searchModalVariants = {
@@ -124,8 +129,8 @@ export default function Header({ fixed = true }: { fixed?: boolean }) {
       y: 0,
       transition: {
         duration: 0.2,
-        ease: "easeOut"
-      }
+        ease: "easeOut",
+      },
     },
     exit: {
       opacity: 0,
@@ -133,14 +138,16 @@ export default function Header({ fixed = true }: { fixed?: boolean }) {
       y: -20,
       transition: {
         duration: 0.15,
-        ease: "easeIn"
-      }
-    }
+        ease: "easeIn",
+      },
+    },
   };
 
   return (
     <>
-      <header className={`${fixed ? "fixed" : ""} w-full top-0 z-40 border-b border-outline bg-background/95 backdrop-blur-sm`}>
+      <header
+        className={`${fixed ? "fixed" : ""} w-full top-0 z-40 border-b border-outline bg-background/95 backdrop-blur-sm`}
+      >
         <div className="flex justify-between items-center py-3 px-4 sm:px-4">
           {/* Logo and Desktop Navigation */}
           <div className="flex items-center space-x-8 lg:space-x-14">
@@ -157,7 +164,9 @@ export default function Header({ fixed = true }: { fixed?: boolean }) {
                   className="sm:w-9 sm:h-9"
                 />
               </motion.div>
-              <span className="text-lg sm:text-xl font-bold block">IdeeLab</span>
+              <span className="text-lg sm:text-xl font-bold block">
+                IdeeLab
+              </span>
             </Link>
 
             {/* Desktop Navigation */}
@@ -187,7 +196,9 @@ export default function Header({ fixed = true }: { fixed?: boolean }) {
                 className="flex items-center space-x-3 px-4 py-2 w-80 xl:w-96 rounded-lg border border-outline/30 hover:border-outline/50 focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all bg-background/50 text-left cursor-pointer"
               >
                 <AiOutlineSearch className="w-4 h-4 text-subtle" />
-                <span className="text-sm text-subtle flex-1">Search ideas...</span>
+                <span className="text-sm text-subtle flex-1">
+                  Search ideas...
+                </span>
                 <div className="flex items-center space-x-1 text-xs text-subtle bg-outline/20 px-2 py-1 rounded">
                   <BiCommand className="w-3 h-3" />
                   <span>K</span>
@@ -234,7 +245,9 @@ export default function Header({ fixed = true }: { fixed?: boolean }) {
                       <div className="py-2">
                         <div className="px-4 py-3 border-b border-outline/30">
                           <p className="text-sm font-medium">{user?.name}</p>
-                          <p className="text-xs text-subtle">@{user?.username}</p>
+                          <p className="text-xs text-subtle">
+                            @{user?.username}
+                          </p>
                         </div>
 
                         <div className="py-1">
@@ -244,7 +257,9 @@ export default function Header({ fixed = true }: { fixed?: boolean }) {
                               className="flex items-center space-x-3 px-4 py-2 hover:bg-outline/20 cursor-pointer group transition-colors"
                             >
                               <AiOutlineUser className="w-4 h-4 text-primary" />
-                              <span className="text-sm font-medium">Profile</span>
+                              <span className="text-sm font-medium">
+                                Profile
+                              </span>
                             </motion.div>
                           </Link>
 
@@ -254,7 +269,9 @@ export default function Header({ fixed = true }: { fixed?: boolean }) {
                               className="flex items-center space-x-3 px-4 py-2 hover:bg-outline/20 cursor-pointer group transition-colors"
                             >
                               <AiOutlineSetting className="w-4 h-4 text-primary" />
-                              <span className="text-sm font-medium">Settings</span>
+                              <span className="text-sm font-medium">
+                                Settings
+                              </span>
                             </motion.div>
                           </Link>
                         </div>
@@ -267,7 +284,9 @@ export default function Header({ fixed = true }: { fixed?: boolean }) {
                             className="flex items-center space-x-3 px-4 py-2 hover:bg-outline/20 cursor-pointer group transition-colors"
                           >
                             <HiOutlineLogout className="w-4 h-4 text-red-500" />
-                            <span className="text-sm font-medium text-red-500">Logout</span>
+                            <span className="text-sm font-medium text-red-500">
+                              Logout
+                            </span>
                           </motion.div>
                         </Link>
                       </div>
@@ -311,9 +330,7 @@ export default function Header({ fixed = true }: { fixed?: boolean }) {
         {/* Mobile Menu */}
         <AnimatePresence>
           {mobileMenu && (
-            <div
-              className="md:hidden absolute h-screen left-0 right-0 bg-background/99 backdrop-blur-sm"
-            >
+            <div className="md:hidden absolute h-screen left-0 right-0 bg-background/99 backdrop-blur-sm">
               <div className="px-4 py-6 space-y-4">
                 <nav className="space-y-2">
                   <Link
@@ -339,7 +356,9 @@ export default function Header({ fixed = true }: { fixed?: boolean }) {
                     className="flex items-center space-x-3 px-4 py-2 w-full rounded-lg border border-outline/30 hover:border-outline/50 focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all bg-background/50 text-left cursor-pointer"
                   >
                     <AiOutlineSearch className="w-4 h-4 text-subtle" />
-                    <span className="text-sm text-subtle flex-1">Search ideas...</span>
+                    <span className="text-sm text-subtle flex-1">
+                      Search ideas...
+                    </span>
                     <div className="flex items-center space-x-1 text-xs text-subtle bg-outline/20 px-2 py-1 rounded">
                       <BiCommand className="w-3 h-3" />
                       <span>K</span>
@@ -356,7 +375,9 @@ export default function Header({ fixed = true }: { fixed?: boolean }) {
                         className="h-26 w-26 rounded-full border-2 border-transparent hover:border-primary/30 transition-all"
                       />
                       <span className="text-md font-medium">{user?.name}</span>
-                      <span className="text-sm text-subtle">@{user?.username}</span>
+                      <span className="text-sm text-subtle">
+                        @{user?.username}
+                      </span>
                     </div>
 
                     <div className="flex space-x-2 items-center justify-center text-center">
@@ -462,27 +483,45 @@ export default function Header({ fixed = true }: { fixed?: boolean }) {
                     </div>
                     <div className="space-y-3">
                       <div className="p-3 rounded-lg hover:bg-outline/10 transition-colors cursor-pointer">
-                        <div className="font-medium text-foreground mb-1">Sample Idea 1</div>
-                        <div className="text-sm text-subtle">A brief description of the idea...</div>
+                        <div className="font-medium text-foreground mb-1">
+                          Sample Idea 1
+                        </div>
+                        <div className="text-sm text-subtle">
+                          A brief description of the idea...
+                        </div>
                       </div>
                       <div className="p-3 rounded-lg hover:bg-outline/10 transition-colors cursor-pointer">
-                        <div className="font-medium text-foreground mb-1">Sample Idea 2</div>
-                        <div className="text-sm text-subtle">A brief description of the idea...</div>
+                        <div className="font-medium text-foreground mb-1">
+                          Sample Idea 2
+                        </div>
+                        <div className="text-sm text-subtle">
+                          A brief description of the idea...
+                        </div>
                       </div>
                       <div className="p-3 rounded-lg hover:bg-outline/10 transition-colors cursor-pointer">
-                        <div className="font-medium text-foreground mb-1">Sample Idea 3</div>
-                        <div className="text-sm text-subtle">A brief description of the idea...</div>
+                        <div className="font-medium text-foreground mb-1">
+                          Sample Idea 3
+                        </div>
+                        <div className="text-sm text-subtle">
+                          A brief description of the idea...
+                        </div>
                       </div>
                       <div className="p-3 rounded-lg hover:bg-outline/10 transition-colors cursor-pointer">
-                        <div className="font-medium text-foreground mb-1">Sample Idea 4</div>
-                        <div className="text-sm text-subtle">A brief description of the idea...</div>
+                        <div className="font-medium text-foreground mb-1">
+                          Sample Idea 4
+                        </div>
+                        <div className="text-sm text-subtle">
+                          A brief description of the idea...
+                        </div>
                       </div>
                     </div>
                   </div>
                 ) : (
                   <div className="p-8 text-center">
                     <AiOutlineSearch className="w-12 h-12 text-subtle mx-auto mb-4" />
-                    <div className="text-foreground font-medium mb-2">Search Ideas</div>
+                    <div className="text-foreground font-medium mb-2">
+                      Search Ideas
+                    </div>
                     <div className="text-sm text-subtle">
                       Start typing to search through ideas and categories
                     </div>
@@ -495,11 +534,15 @@ export default function Header({ fixed = true }: { fixed?: boolean }) {
                 <div className="flex items-center justify-between text-xs text-subtle">
                   <div className="flex items-center space-x-4">
                     <div className="flex items-center space-x-1">
-                      <kbd className="px-2 py-1 bg-outline/20 rounded text-xs">↵</kbd>
+                      <kbd className="px-2 py-1 bg-outline/20 rounded text-xs">
+                        ↵
+                      </kbd>
                       <span>to select</span>
                     </div>
                     <div className="flex items-center space-x-1">
-                      <kbd className="px-2 py-1 bg-outline/20 rounded text-xs">esc</kbd>
+                      <kbd className="px-2 py-1 bg-outline/20 rounded text-xs">
+                        esc
+                      </kbd>
                       <span>to close</span>
                     </div>
                   </div>
