@@ -1,11 +1,11 @@
-'use client';
+"use client";
 import { useState } from "react";
 import Link from "next/link";
 
 // import layout components (Header, Footer)
 import Header from "@/components/header";
 import Footer from "@/components/footer";
-import ideas from "./ideas"
+import ideas from "./ideas";
 
 // import icons from react-icons
 import { FaFire, FaClock, FaEye } from "react-icons/fa";
@@ -21,15 +21,21 @@ export default function HomePage() {
 
   const getDifficultyColor = (difficulty: string) => {
     switch (difficulty) {
-      case 'Beginner': return 'bg-green-100/10 text-green-500 border-green-200/5';
-      case 'Intermediate': return 'bg-yellow-100/10 text-yellow-500 border-yellow-200/5';
-      case 'Advanced': return 'bg-red-100/10 text-red-500 border-red-200/5';
-      default: return 'bg-gray-100/10 text-gray-500 border-gray-200/5';
+      case "Beginner":
+        return "bg-green-100/10 text-green-500 border-green-200/5";
+      case "Intermediate":
+        return "bg-yellow-100/10 text-yellow-500 border-yellow-200/5";
+      case "Advanced":
+        return "bg-red-100/10 text-red-500 border-red-200/5";
+      default:
+        return "bg-gray-100/10 text-gray-500 border-gray-200/5";
     }
   };
 
   function timeAgo(dateString: string): string {
-    const seconds = Math.floor((Date.now() - new Date(dateString).getTime()) / 1000);
+    const seconds = Math.floor(
+      (Date.now() - new Date(dateString).getTime()) / 1000,
+    );
 
     if (seconds < 60) return `${seconds} seconds ago`;
 
@@ -75,9 +81,7 @@ export default function HomePage() {
               <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-primary/3 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 
               {idea.isHot && (
-                <div
-                  className="absolute top-4 right-4 flex items-center gap-1 px-2 py-1 bg-gradient-to-r from-orange-500 to-red-500 text-white text-xs font-bold rounded-full"
-                >
+                <div className="absolute top-4 right-4 flex items-center gap-1 px-2 py-1 bg-gradient-to-r from-orange-500 to-red-500 text-white text-xs font-bold rounded-full">
                   <FaFire size={10} />
                   HOT
                 </div>
@@ -89,15 +93,14 @@ export default function HomePage() {
                     <span className="px-3 py-1 bg-primary/10 text-primary text-xs font-semibold rounded-full">
                       {idea.category}
                     </span>
-                    <span className={`px-2 py-1 text-xs font-medium rounded-full border ${getDifficultyColor(idea.difficulty)}`}>
+                    <span
+                      className={`px-2 py-1 text-xs font-medium rounded-full border ${getDifficultyColor(idea.difficulty)}`}
+                    >
                       {idea.difficulty}
                     </span>
                   </div>
                 </div>
-                <Link
-                  href={`/ideas/${idea.id}`}
-                  className=""
-                >
+                <Link href={`/ideas/${idea.id}`} className="">
                   <h3 className="text-xl font-bold text-foreground mb-3 hover:text-primary transition-colors">
                     {idea.title}
                   </h3>
@@ -113,28 +116,28 @@ export default function HomePage() {
                   </div>
                   <div className="flex items-center gap-1">
                     <FaClock size={12} />
-                    <span>
-                      {timeAgo(idea.createdAt.toString())}
-                    </span>
+                    <span>{timeAgo(idea.createdAt.toString())}</span>
                   </div>
                 </div>
 
                 <div className="flex items-center justify-between mb-4">
                   <div className="flex items-center gap-4">
-                    <div
-                      className="flex items-center gap-1 px-2 py-1 rounded-full bg-green-50/5 hover:bg-green-100/10 transition-colors cursor-pointer"
-                    >
+                    <div className="flex items-center gap-1 px-2 py-1 rounded-full bg-green-50/5 hover:bg-green-100/10 transition-colors cursor-pointer">
                       <BiSolidUpvote size={16} className="text-green-600" />
-                      <span className="text-green-700 font-semibold text-sm">{idea.upvotes}</span>
+                      <span className="text-green-700 font-semibold text-sm">
+                        {idea.upvotes}
+                      </span>
                     </div>
-                    <div
-                      className="flex items-center gap-1 px-2 py-1 rounded-full bg-red-50/5 hover:bg-red-100/10 transition-colors cursor-pointer"
-                    >
+                    <div className="flex items-center gap-1 px-2 py-1 rounded-full bg-red-50/5 hover:bg-red-100/10 transition-colors cursor-pointer">
                       <BiSolidDownvote size={16} className="text-red-500" />
-                      <span className="text-red-700 font-semibold text-sm">{idea.downvotes}</span>
+                      <span className="text-red-700 font-semibold text-sm">
+                        {idea.downvotes}
+                      </span>
                     </div>
                   </div>
-                  <span className="text-sm text-subtle font-medium">{idea.comments} comments</span>
+                  <span className="text-sm text-subtle font-medium">
+                    {idea.comments} comments
+                  </span>
                 </div>
 
                 <div className="flex flex-wrap gap-2">
@@ -163,7 +166,9 @@ export default function HomePage() {
             Page {page} of {Math.ceil(ideas.length / ideasPerPage)}
           </span>
           <button
-            onClick={() => setPage((prev) => (endIndex < ideas.length ? prev + 1 : prev))}
+            onClick={() =>
+              setPage((prev) => (endIndex < ideas.length ? prev + 1 : prev))
+            }
             disabled={endIndex >= ideas.length}
             className="px-4 py-2 rounded bg-outline/30 disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer hover:bg-primary/50 transition-colors"
           >
