@@ -2,7 +2,7 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Privacy Policy",
   description:
-    "This is the privacy policy for our application. We value your privacy and are committed to protecting your personal information.",
+    "Learn how IdeeLab collects, uses, and protects your data while you browse and share programming ideas.",
 };
 
 import PrivacyPage from "./privacy";
