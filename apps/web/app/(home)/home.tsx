@@ -1,4 +1,4 @@
-'use client';
+"use client";
 import Link from "next/link";
 import { motion } from "framer-motion";
 
@@ -7,7 +7,15 @@ import Header from "@/components/header";
 import Footer from "@/components/footer";
 
 // import icons from react-icons
-import { FaArrowRight, FaFire, FaClock, FaEye, FaCode, FaUsers, FaRocket } from "react-icons/fa";
+import {
+  FaArrowRight,
+  FaFire,
+  FaClock,
+  FaEye,
+  FaCode,
+  FaUsers,
+  FaRocket,
+} from "react-icons/fa";
 import { BiSolidUpvote, BiSolidDownvote } from "react-icons/bi";
 import { HiSparkles, HiLightBulb } from "react-icons/hi";
 import { BiInfinite } from "react-icons/bi";
@@ -17,7 +25,8 @@ export default function HomePage() {
     {
       id: 1,
       title: "AI-Powered Code Review Assistant",
-      summary: "A VS Code extension that provides intelligent code suggestions and reviews using machine learning to improve code quality and catch potential bugs.",
+      summary:
+        "A VS Code extension that provides intelligent code suggestions and reviews using machine learning to improve code quality and catch potential bugs.",
       description: "This is a detailed description of Idea 1.",
       category: "Web Development",
       tags: ["AI", "VS Code", "Code Quality"],
@@ -27,12 +36,13 @@ export default function HomePage() {
       views: 1250,
       createdAt: new Date(),
       isHot: true,
-      difficulty: "Intermediate"
+      difficulty: "Intermediate",
     },
     {
       id: 2,
       title: "Real-time Collaborative Whiteboard",
-      summary: "A web-based whiteboard application with real-time collaboration, drawing tools, and integration with popular project management tools.",
+      summary:
+        "A web-based whiteboard application with real-time collaboration, drawing tools, and integration with popular project management tools.",
       description: "This is a detailed description of Idea 2.",
       category: "Frontend",
       tags: ["React", "WebSocket", "Collaboration"],
@@ -42,12 +52,13 @@ export default function HomePage() {
       views: 892,
       createdAt: new Date(),
       isHot: false,
-      difficulty: "Advanced"
+      difficulty: "Advanced",
     },
     {
       id: 3,
       title: "Personal Finance Tracker PWA",
-      summary: "A progressive web app for tracking expenses, budgeting, and financial goal setting with offline support and data visualization.",
+      summary:
+        "A progressive web app for tracking expenses, budgeting, and financial goal setting with offline support and data visualization.",
       description: "This is a detailed description of Idea 3.",
       category: "Mobile",
       tags: ["PWA", "Finance", "Charts"],
@@ -57,12 +68,13 @@ export default function HomePage() {
       views: 643,
       createdAt: new Date(),
       isHot: false,
-      difficulty: "Beginner"
+      difficulty: "Beginner",
     },
     {
       id: 4,
       title: "Smart Home IoT Dashboard",
-      summary: "A comprehensive dashboard for managing IoT devices with automation rules, energy monitoring, and mobile notifications.",
+      summary:
+        "A comprehensive dashboard for managing IoT devices with automation rules, energy monitoring, and mobile notifications.",
       description: "This is a detailed description of Idea 4.",
       category: "IoT",
       tags: ["IoT", "Dashboard", "Automation"],
@@ -72,7 +84,7 @@ export default function HomePage() {
       views: 976,
       createdAt: new Date(),
       isHot: true,
-      difficulty: "Advanced"
+      difficulty: "Advanced",
     },
   ];
 
@@ -82,16 +94,16 @@ export default function HomePage() {
       opacity: 1,
       transition: {
         staggerChildren: 0.1,
-        delayChildren: 0.2
-      }
-    }
+        delayChildren: 0.2,
+      },
+    },
   };
 
   const cardVariants = {
     hidden: {
       opacity: 0,
       y: 30,
-      scale: 0.95
+      scale: 0.95,
     },
     visible: {
       opacity: 1,
@@ -99,9 +111,9 @@ export default function HomePage() {
       scale: 1,
       transition: {
         duration: 0.5,
-        ease: [0.25, 0.46, 0.45, 0.94]
-      }
-    }
+        ease: [0.25, 0.46, 0.45, 0.94],
+      },
+    },
   };
 
   const headerVariants = {
@@ -109,15 +121,15 @@ export default function HomePage() {
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.6, ease: "easeOut" }
-    }
+      transition: { duration: 0.6, ease: "easeOut" },
+    },
   };
 
   const itemVariants = {
     hidden: {
       opacity: 0,
       y: 30,
-      filter: "blur(10px)"
+      filter: "blur(10px)",
     },
     visible: {
       opacity: 1,
@@ -125,9 +137,9 @@ export default function HomePage() {
       filter: "blur(0px)",
       transition: {
         duration: 0.8,
-        ease: [0.25, 0.46, 0.45, 0.94]
-      }
-    }
+        ease: [0.25, 0.46, 0.45, 0.94],
+      },
+    },
   };
 
   const badgeVariants = {
@@ -138,9 +150,9 @@ export default function HomePage() {
       y: 0,
       transition: {
         duration: 0.6,
-        ease: "easeOut"
-      }
-    }
+        ease: "easeOut",
+      },
+    },
   };
 
   const titleVariants = {
@@ -150,9 +162,9 @@ export default function HomePage() {
       y: 0,
       transition: {
         duration: 1,
-        ease: [0.25, 0.46, 0.45, 0.94]
-      }
-    }
+        ease: [0.25, 0.46, 0.45, 0.94],
+      },
+    },
   };
 
   const buttonVariants = {
@@ -163,9 +175,9 @@ export default function HomePage() {
       scale: 1,
       transition: {
         duration: 0.6,
-        ease: "easeOut"
-      }
-    }
+        ease: "easeOut",
+      },
+    },
   };
 
   const statsVariants = {
@@ -175,9 +187,9 @@ export default function HomePage() {
       scale: 1,
       transition: {
         duration: 0.8,
-        ease: "easeOut"
-      }
-    }
+        ease: "easeOut",
+      },
+    },
   };
 
   const floatingVariants = {
@@ -187,17 +199,21 @@ export default function HomePage() {
       transition: {
         duration: 4,
         repeat: Infinity,
-        ease: "easeInOut"
-      }
-    }
+        ease: "easeInOut",
+      },
+    },
   };
 
   const getDifficultyColor = (difficulty: string) => {
     switch (difficulty) {
-      case 'Beginner': return 'bg-green-100/10 text-green-500 border-green-200/';
-      case 'Intermediate': return 'bg-yellow-100/10 text-yellow-500 border-yellow-200/';
-      case 'Advanced': return 'bg-red-100/10 text-red-500 border-red-200/';
-      default: return 'bg-gray-100/10 text-gray-500 border-gray-200/';
+      case "Beginner":
+        return "bg-green-100/10 text-green-500 border-green-200/";
+      case "Intermediate":
+        return "bg-yellow-100/10 text-yellow-500 border-yellow-200/";
+      case "Advanced":
+        return "bg-red-100/10 text-red-500 border-red-200/";
+      default:
+        return "bg-gray-100/10 text-gray-500 border-gray-200/";
     }
   };
 
@@ -217,7 +233,7 @@ export default function HomePage() {
               transition={{
                 duration: 3,
                 repeat: Infinity,
-                ease: "easeInOut"
+                ease: "easeInOut",
               }}
             />
             <motion.div
@@ -230,7 +246,7 @@ export default function HomePage() {
                 duration: 4,
                 repeat: Infinity,
                 ease: "easeInOut",
-                delay: 1
+                delay: 1,
               }}
             />
             <motion.div
@@ -243,7 +259,7 @@ export default function HomePage() {
                 duration: 5,
                 repeat: Infinity,
                 ease: "easeInOut",
-                delay: 2
+                delay: 2,
               }}
             />
           </div>
@@ -278,13 +294,12 @@ export default function HomePage() {
             initial="hidden"
             animate="visible"
           >
-
             <motion.div variants={badgeVariants}>
               <motion.span
                 className="inline-flex items-center gap-2 bg-gradient-to-r from-primary/15 to-primary/10 text-primary px-6 py-2 rounded-full text-xs md:text-base font-semibold mb-4 border border-primary/20 backdrop-blur-sm"
                 whileHover={{
                   scale: 1.05,
-                  boxShadow: "0 10px 25px rgba(var(--primary), 0.15)"
+                  boxShadow: "0 10px 25px rgba(var(--primary), 0.15)",
                 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -335,7 +350,7 @@ export default function HomePage() {
                     transition={{
                       duration: 3,
                       repeat: Infinity,
-                      ease: "easeInOut"
+                      ease: "easeInOut",
                     }}
                   />
                 </motion.span>
@@ -346,7 +361,8 @@ export default function HomePage() {
               className="text-subtle text-sm md:text-lg max-w-2xl mx-auto leading-relaxed"
               variants={itemVariants}
             >
-              IdeeLab is where developers share creative project ideas, vote on what inspires them, and discover their next build — together.
+              IdeeLab is where developers share creative project ideas, vote on
+              what inspires them, and discover their next build — together.
             </motion.p>
 
             <motion.div
@@ -366,7 +382,11 @@ export default function HomePage() {
                     Explore Ideas
                     <motion.div
                       animate={{ x: [0, 4, 0] }}
-                      transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+                      transition={{
+                        duration: 1.5,
+                        repeat: Infinity,
+                        ease: "easeInOut",
+                      }}
                     >
                       <FaArrowRight size={16} />
                     </motion.div>
@@ -407,7 +427,7 @@ export default function HomePage() {
                   className="flex items-center gap-2 px-4 py-2 bg-white/5 backdrop-blur-sm rounded-full border border-subtle/20 transition-all hover:bg-white/10 hover:border-primary/30 hover:shadow-md cursor-pointer"
                   whileHover={{
                     scale: 1.05,
-                    y: -2
+                    y: -2,
                   }}
                   whileTap={{ scale: 0.95 }}
                   initial={{ opacity: 0, y: 20 }}
@@ -434,13 +454,23 @@ export default function HomePage() {
                 <motion.span
                   className="font-bold text-3xl md:text-4xl bg-clip-text text-transparent bg-gradient-to-b from-foreground to-foreground/50"
                   animate={{
-                    textShadow: ["0 0 0px rgba(var(--primary), 0)", "0 0 20px rgba(var(--primary), 0.3)", "0 0 0px rgba(var(--primary), 0)"]
+                    textShadow: [
+                      "0 0 0px rgba(var(--primary), 0)",
+                      "0 0 20px rgba(var(--primary), 0.3)",
+                      "0 0 0px rgba(var(--primary), 0)",
+                    ],
                   }}
-                  transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+                  transition={{
+                    duration: 2,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                  }}
                 >
                   200+
                 </motion.span>
-                <span className="group-hover:text-foreground transition-colors">ideas shared</span>
+                <span className="group-hover:text-foreground transition-colors">
+                  ideas shared
+                </span>
               </motion.div>
 
               <motion.div
@@ -452,12 +482,18 @@ export default function HomePage() {
               >
                 <motion.span
                   className="font-bold text-3xl md:text-4xl text-foreground flex items-center gap-1"
-                  transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                  transition={{
+                    duration: 4,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                  }}
                 >
                   <BiInfinite className="text-primary" />
                   100%
                 </motion.span>
-                <span className="group-hover:text-foreground transition-colors">free forever</span>
+                <span className="group-hover:text-foreground transition-colors">
+                  free forever
+                </span>
               </motion.div>
             </motion.div>
           </motion.div>
@@ -491,7 +527,8 @@ export default function HomePage() {
                 Top Ideas from Our Community
               </h2>
               <p className="text-subtle text-lg max-w-2xl mx-auto">
-                Discover the most innovative and popular project ideas from our community of builders
+                Discover the most innovative and popular project ideas from our
+                community of builders
               </p>
             </motion.div>
 
@@ -509,7 +546,11 @@ export default function HomePage() {
                 <span>View All Ideas</span>
                 <motion.div
                   animate={{ x: [0, 4, 0] }}
-                  transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+                  transition={{
+                    duration: 1.5,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                  }}
                 >
                   <FaArrowRight size={14} />
                 </motion.div>
@@ -529,7 +570,7 @@ export default function HomePage() {
                   variants={cardVariants}
                   whileHover={{
                     y: -8,
-                    transition: { duration: 0.2 }
+                    transition: { duration: 0.2 },
                   }}
                   className="group"
                 >
@@ -548,7 +589,7 @@ export default function HomePage() {
                         transition={{
                           duration: 2,
                           repeat: Infinity,
-                          ease: "easeInOut"
+                          ease: "easeInOut",
                         }}
                       >
                         <FaFire size={10} />
@@ -562,7 +603,9 @@ export default function HomePage() {
                           <span className="px-3 py-1 bg-primary/10 text-primary text-xs font-semibold rounded-full">
                             {idea.category}
                           </span>
-                          <span className={`px-2 py-1 text-xs font-medium rounded-full border ${getDifficultyColor(idea.difficulty)}`}>
+                          <span
+                            className={`px-2 py-1 text-xs font-medium rounded-full border ${getDifficultyColor(idea.difficulty)}`}
+                          >
                             {idea.difficulty}
                           </span>
                         </div>
@@ -594,19 +637,31 @@ export default function HomePage() {
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
                           >
-                            <BiSolidUpvote size={16} className="text-green-600" />
-                            <span className="text-green-700 font-semibold text-sm">{idea.upvotes}</span>
+                            <BiSolidUpvote
+                              size={16}
+                              className="text-green-600"
+                            />
+                            <span className="text-green-700 font-semibold text-sm">
+                              {idea.upvotes}
+                            </span>
                           </motion.div>
                           <motion.div
                             className="flex items-center gap-1 px-2 py-1 rounded-full bg-red-50/5 hover:bg-red-100/10 transition-colors cursor-pointer"
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
                           >
-                            <BiSolidDownvote size={16} className="text-red-500" />
-                            <span className="text-red-700 font-semibold text-sm">{idea.downvotes}</span>
+                            <BiSolidDownvote
+                              size={16}
+                              className="text-red-500"
+                            />
+                            <span className="text-red-700 font-semibold text-sm">
+                              {idea.downvotes}
+                            </span>
                           </motion.div>
                         </div>
-                        <span className="text-sm text-subtle font-medium">{idea.comments} comments</span>
+                        <span className="text-sm text-subtle font-medium">
+                          {idea.comments} comments
+                        </span>
                       </div>
 
                       <div className="flex flex-wrap gap-2">
@@ -633,7 +688,9 @@ export default function HomePage() {
               viewport={{ once: true }}
               transition={{ delay: 0.5 }}
             >
-              <p className="text-subtle mb-6">Ready to share your own brilliant idea?</p>
+              <p className="text-subtle mb-6">
+                Ready to share your own brilliant idea?
+              </p>
               <Link
                 href="/share"
                 className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary text-white font-semibold rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-primary/25"
