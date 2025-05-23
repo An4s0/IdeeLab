@@ -5,7 +5,7 @@ import {
   createVerificationToken,
   findVerificationTokenBy,
   deleteVerificationToken,
-} from "sql/queries/verification-tokens";
+} from "sql/queries/verification-token";
 import generateStr from "utils/generateStr";
 import sendVerificationEmail from "utils/send-verification-email";
 
