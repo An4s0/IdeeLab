@@ -2,7 +2,7 @@ import { Router } from "express";
 import bcrypt from "bcryptjs";
 import { generateToken } from "utils/jwt";
 import { findUserBy, createUser } from "sql/queries/user";
-import UserValidation from "../../validations/user.validation";
+import UserValidation from "validations/user.validation";
 
 const router: Router = Router();
 
@@ -64,7 +64,6 @@ router.post("/register", async (req, res, next) => {
     delete newUser.password;
 
     res.status(201).json({
-      success: true,
       message: "User registered successfully",
       data: {
         user: newUser,
