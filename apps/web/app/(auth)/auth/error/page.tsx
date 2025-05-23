@@ -12,7 +12,7 @@ export default function ErrorBridgePage() {
       localStorage.setItem("auth_error", msg);
     }
     router.push("/login");
-  }, []);
+  }, [router]);
 
   return <p>Redirecting...</p>;
 }
