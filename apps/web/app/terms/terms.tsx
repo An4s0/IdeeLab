@@ -72,7 +72,7 @@ export default function TermsPage() {
               <ul className="list-disc list-inside space-y-2 text-subtle ml-2">
                 <li>
                   Users may submit their implementation of a given idea or rate
-                  the idea's usefulness.
+                  the idea&apos;s usefulness.
                 </li>
                 <li>
                   Ratings and feedback are optional and serve only to help
