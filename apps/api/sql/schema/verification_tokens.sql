@@ -1,6 +1,7 @@
 -- Verification tokens table
 -- This table stores tokens used for email verification and password reset.
 CREATE TABLE verification_tokens (
+  -- Unique identifier for each token
   id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
 
   -- Token information
