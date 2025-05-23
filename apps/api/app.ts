@@ -14,8 +14,8 @@ const start = Date.now();
 app.use(Logger);
 app.use(express.json());
 app.use(cors());
-app.use("/", routes);
 app.use(checkJsonContentType);
+app.use("/", routes);
 app.use(errorHandler);
 
 app.listen(process.env.API_PORT, async () => {
