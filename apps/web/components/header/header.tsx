@@ -172,7 +172,7 @@ export default function Header({ fixed = true }: { fixed?: boolean }) {
             {/* Desktop Navigation */}
             <nav className="hidden md:flex items-center space-x-5">
               <Link
-                href="/discover"
+                href="/ideas"
                 className="text-sm font-medium text-foreground hover:text-primary transition-colors duration-200"
               >
                 Discover
@@ -334,11 +334,11 @@ export default function Header({ fixed = true }: { fixed?: boolean }) {
               <div className="px-4 py-6 space-y-4">
                 <nav className="space-y-2">
                   <Link
-                    href="/discover"
+                    href="/ideas"
                     className="block font-medium text-foreground transition-colors px-5 py-3 border border-outline/30 rounded-lg hover:bg-outline/15"
                     onClick={() => setMobileMenu(false)}
                   >
-                    Discover
+                    Discover Ideas
                   </Link>
                   <Link
                     href="/generator"

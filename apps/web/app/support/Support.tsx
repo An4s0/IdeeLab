@@ -2,7 +2,7 @@
 import Header from "@/components/header";
 import Footer from "@/components/footer";
 
-// import icons from 
+// import icons from
 import { CiMail } from "react-icons/ci";
 import { FaGithub, FaBug, FaExternalLinkAlt } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
@@ -15,11 +15,10 @@ export default function SupportPage() {
       <div className="flex-grow container mx-auto py-12 max-w-5xl px-6">
         {/* Hero Section */}
         <div className="text-center mb-16">
-          <h1 className="text-3xl md:text-4xl font-bold mb-4">
-            Get Support
-          </h1>
+          <h1 className="text-3xl md:text-4xl font-bold mb-4">Get Support</h1>
           <p className="text-lg text-subtle max-w-3xl mx-auto leading-relaxed">
-            Need help? We're here for you. Choose the best way to get in touch based on your needs.
+            Need help? We're here for you. Choose the best way to get in touch
+            based on your needs.
           </p>
         </div>
 
@@ -32,7 +31,8 @@ export default function SupportPage() {
             <div className="flex-1">
               <h3 className="text-lg font-semibold">Email Support</h3>
               <p className="text-subtle">
-                Get personalized help via email. We typically respond within 24 hours.
+                Get personalized help via email. We typically respond within 24
+                hours.
               </p>
             </div>
             <a
@@ -52,7 +52,8 @@ export default function SupportPage() {
             <div className="flex-1">
               <h3 className="text-lg font-semibold">Report Issues</h3>
               <p className="text-subtle">
-                Found a bug or have a feature request? Create an issue on GitHub.
+                Found a bug or have a feature request? Create an issue on
+                GitHub.
               </p>
             </div>
             <a
@@ -98,7 +99,9 @@ export default function SupportPage() {
                 <FaGithub className="w-10 h-10 mr-3" />
                 <div>
                   <h3 className="text-lg font-semibold">GitHub Repository</h3>
-                  <p className="text-subtle">Browse source code and contribute</p>
+                  <p className="text-subtle">
+                    Browse source code and contribute
+                  </p>
                 </div>
               </div>
               <div className="space-y-3">

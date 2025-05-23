@@ -12,7 +12,7 @@ type ThemeIcon = {
 
 // Footer links
 const platformLinks = [
-  { name: "Discover Ideas", href: "/discover" },
+  { name: "Discover Ideas", href: "/ideas" },
   { name: "Share Idea", href: "/share" },
   { name: "Idea Generator", href: "/generator" },
 ];
