@@ -1,9 +1,8 @@
 import axios from "axios";
-import { ApiResponse, User } from "@/types";
+import { ApiResponse, UserType } from "@/types";
 import cookies from "../cookies";
 
-interface RegisterDataResponse {
-  user: User;
+interface RegisterDataResponse extends UserType {
   token: string;
 }
 
