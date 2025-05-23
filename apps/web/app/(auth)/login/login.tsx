@@ -49,7 +49,7 @@ export default function LoginPage() {
     const login = await user.login({
       email: data.email,
       password: data.password,
-    })
+    });
 
     if (login.success) {
       if (!login.data?.user.verified) {
