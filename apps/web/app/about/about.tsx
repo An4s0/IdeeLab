@@ -14,9 +14,10 @@ export default function AboutPage() {
 
           <p className="text-subtle text-center max-w-3xl mx-auto mb-12">
             IdeeLab is a platform designed to inspire developers through daily
-            programming ideas and challenges. Whether you're just starting your
-            coding journey or you're an experienced developer looking for fresh
-            concepts, IdeeLab helps you grow through hands-on exploration.
+            programming ideas and challenges. Whether you&apos;re just starting
+            your coding journey or you&apos;re an experienced developer looking
+            for fresh concepts, IdeeLab helps you grow through hands-on
+            exploration.
           </p>
 
           <div className="space-y-10">
@@ -31,7 +32,7 @@ export default function AboutPage() {
             </section>
 
             <section>
-              <h2 className="text-xl font-semibold mb-2">Who It's For</h2>
+              <h2 className="text-xl font-semibold mb-2">Who It&apos;s For</h2>
               <p className="text-subtle">
                 IdeeLab is for learners, hobbyists, and professionals who want
                 to sharpen their skills, contribute to creative projects, or
