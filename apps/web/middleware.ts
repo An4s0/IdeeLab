@@ -7,13 +7,12 @@ export async function middleware(request: NextRequest) {
   const token = cookieStore.get("token")?.value;
 
   const userData = await user.me(token);
-  console.log("userData", userData);
 
   if (!userData.success) {
     return NextResponse.redirect(new URL("/login", request.url));
   }
 
-  if (!userData.data?.user.verified) {
+  if (!userData.data?.verified) {
     return NextResponse.redirect(new URL("/verify-email", request.url));
   }
 }
