@@ -3,8 +3,8 @@ export const metadata: Metadata = {
   title: "Discover and Share Creative Programming Ideas",
 };
 
-import DiscoverPage from "./discover";
+import IdeasPage from "./ideas";
 
 export default function Discover() {
-  return <DiscoverPage />;
+  return <IdeasPage />;
 }
