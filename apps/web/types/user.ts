@@ -10,7 +10,7 @@ export interface User {
   role: string;
   points: number;
   provider: string;
-  
-  created_at: string; 
+
+  created_at: string;
   updated_at: string;
 }
