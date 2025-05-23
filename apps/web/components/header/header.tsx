@@ -16,12 +16,12 @@ import {
 } from "react-icons/ai";
 import { HiOutlineLogout, HiOutlineMenu, HiOutlineX } from "react-icons/hi";
 import { BiCommand } from "react-icons/bi";
-import { User } from "@/types";
+import { UserType } from "@/types";
 
 export default function Header({ fixed = true }: { fixed?: boolean }) {
   // State to manage user authentication and dropdown visibility
   const [isAuthenticated, setIsAuthenticated] = useState(false);
-  const [user, setUser] = useState<User | null>(null);
+  const [user, setUser] = useState<UserType | null>(null);
   const [userDropdown, setUserDropdown] = useState(false);
   const [mobileMenu, setMobileMenu] = useState(false);
   const [searchModal, setSearchModal] = useState(false);
@@ -79,7 +79,7 @@ export default function Header({ fixed = true }: { fixed?: boolean }) {
 
         if (auth.success) {
           setIsAuthenticated(true);
-          setUser(auth.data?.user!);
+          setUser(auth.data!);
         }
       }
     };
@@ -164,7 +164,7 @@ export default function Header({ fixed = true }: { fixed?: boolean }) {
       >
         <div className="flex justify-between items-center py-3 px-4 sm:px-4">
           {/* Logo and Desktop Navigation */}
-          <div className="flex items-center space-x-8 lg:space-x-14">
+          <div className="flex items-center space-x-8 lg:space-x-12">
             <Link href="/" className="flex items-center space-x-2 group">
               <motion.div
                 whileHover={{ rotate: 10 }}
@@ -195,7 +195,13 @@ export default function Header({ fixed = true }: { fixed?: boolean }) {
                 href="/generator"
                 className="text-sm font-medium text-foreground hover:text-primary transition-colors duration-200"
               >
-                Idea Generator
+                Generator
+              </Link>
+              <Link
+                href="/share"
+                className="text-sm font-medium text-foreground hover:text-primary transition-colors duration-200"
+              >
+                Share Your Idea
               </Link>
             </nav>
           </div>
@@ -361,6 +367,13 @@ export default function Header({ fixed = true }: { fixed?: boolean }) {
                   >
                     Idea Generator
                   </Link>
+                  <Link
+                    href="/share"
+                    className="block font-medium text-foreground transition-colors px-5 py-3 border border-outline/30 rounded-lg hover:bg-outline/15"
+                    onClick={() => setMobileMenu(false)}
+                  >
+                    Share Your Idea
+                  </Link>
                 </nav>
 
                 <div className="flex items-center">
@@ -493,7 +506,7 @@ export default function Header({ fixed = true }: { fixed?: boolean }) {
                 {searchQuery.length > 0 ? (
                   <div className="p-4">
                     <div className="text-sm text-subtle mb-4">
-                      Search results for "{searchQuery}"
+                      Search results for &quot;{searchQuery}&quot;
                     </div>
                     <div className="space-y-3">
                       <div className="p-3 rounded-lg hover:bg-outline/10 transition-colors cursor-pointer">
