@@ -8,6 +8,9 @@ router.use("/", register);
 import login from "./login";
 router.use("/", login);
 
+import verifyEmail from "./verify-email";
+router.use("/", verifyEmail);
+
 import me from "./me";
 router.use("/", me);
 
