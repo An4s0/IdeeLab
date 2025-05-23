@@ -29,7 +29,6 @@ export default function VerifyEmailPage() {
     } else {
       setError(verificationToken.message || "Failed to verified email");
     }
-
   };
 
   return (
