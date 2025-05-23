@@ -94,6 +94,9 @@ importers:
       '@repo/ui':
         specifier: workspace:*
         version: link:../../packages/ui
+      axios:
+        specifier: ^1.9.0
+        version: 1.9.0
       framer-motion:
         specifier: ^12.12.1
         version: 12.12.1(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
