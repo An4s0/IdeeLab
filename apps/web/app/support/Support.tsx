@@ -17,8 +17,8 @@ export default function SupportPage() {
         <div className="text-center mb-16">
           <h1 className="text-3xl md:text-4xl font-bold mb-4">Get Support</h1>
           <p className="text-lg text-subtle max-w-3xl mx-auto leading-relaxed">
-            Need help? We're here for you. Choose the best way to get in touch
-            based on your needs.
+            Need help? We&apos;re here for you. Choose the best way to get in
+            touch based on your needs.
           </p>
         </div>
 
