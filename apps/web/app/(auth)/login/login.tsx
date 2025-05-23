@@ -52,7 +52,7 @@ export default function LoginPage() {
     });
 
     if (login.success) {
-      if (!login.data?.user.verified) {
+      if (!login.data?.verified) {
         window.location.href = "/verify-email";
       } else {
         window.location.href = "/";
