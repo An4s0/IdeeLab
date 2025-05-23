@@ -1,6 +1,7 @@
 import { Router } from "express";
 import { generateToken } from "utils/jwt";
 import { createUser, findUserBy, updateUser } from "sql/queries/user";
+import generateStr from "utils/generateStr";
 import axios from "axios";
 
 const router: Router = Router();
@@ -66,7 +67,7 @@ router.get("/callback/google", async (req, res) => {
       if (user.provider === "google") {
         await updateUser(user.id, {
           name: googleUser.name,
-          username: generateVerificationToken(10),
+          username: generateStr(10),
           picture: googleUser.picture,
         });
       } else {
@@ -82,7 +83,7 @@ router.get("/callback/google", async (req, res) => {
       user = await createUser({
         name: googleUser.name || "IdeeLab User",
         email: googleUser.email,
-        username: generateVerificationToken(10),
+        username: generateStr(10),
         password: "",
         picture: googleUser.picture,
         provider: "google",
@@ -105,16 +106,5 @@ router.get("/callback/google", async (req, res) => {
     );
   }
 });
-
-function generateVerificationToken(length: number): string {
-  const characters =
-    "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-  let result = "";
-  for (let i = 0; i < length; i++) {
-    const randomIndex = Math.floor(Math.random() * characters.length);
-    result += characters.charAt(randomIndex);
-  }
-  return result;
-}
 
 export default router;
