@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "tsx watch app.ts",
-    "build": "tsc",
+    "build": "tsup app.ts --format esm,cjs --out-dir dist",
     "start": "node dist/app.js",
     "lint": "eslint .",
     "check-types": "tsc --noEmit"
@@ -28,6 +28,7 @@
     "@types/nodemailer": "^6.4.17",
     "@types/pg": "^8.15.2",
     "eslint": "^9.27.0",
+    "tsup": "^8.5.0",
     "tsx": "^4.19.4",
     "typescript": "^5.8.3"
   }
