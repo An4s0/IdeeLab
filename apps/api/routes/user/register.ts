@@ -64,6 +64,7 @@ router.post("/register", async (req, res, next) => {
     delete newUser.password;
 
     res.status(201).json({
+      success: true,
       message: "User registered successfully",
       data: {
         user: newUser,

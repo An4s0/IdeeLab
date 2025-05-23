@@ -11,7 +11,7 @@ import sendVerificationEmail from "utils/send-verification-email";
 
 const router: Router = Router();
 
-router.post("/verify-email", async (req, res, next) => {
+router.get("/verify-email", async (req, res, next) => {
   try {
     // Validate request headers
     const authHeader = req.headers.authorization;

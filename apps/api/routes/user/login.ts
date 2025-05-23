@@ -31,7 +31,7 @@ router.post("/login", async (req, res, next) => {
     if (!user) {
       throw {
         status: 404,
-        message: "User not found",
+        message: "Invalid email or password",
       };
     }
 
@@ -50,6 +50,7 @@ router.post("/login", async (req, res, next) => {
     delete user.password;
 
     res.status(200).json({
+      success: true,
       message: "User logged in successfully",
       data: {
         user,

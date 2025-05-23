@@ -36,6 +36,7 @@ router.get("/me", async (req, res, next) => {
     delete user.password;
 
     res.status(200).json({
+      success: true,
       message: "User retrieved successfully",
       data: {
         user,
