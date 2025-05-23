@@ -5,12 +5,16 @@ import express from "express";
 import cors from "cors";
 import os from "os";
 import { dependencies } from "./package.json";
+import { Logger, checkJsonContentType, errorHandler } from "middlewares";
 
 const app = express();
 const start = Date.now();
 
 app.use(express.json());
 app.use(cors());
+app.use(Logger);
+app.use(checkJsonContentType);
+app.use(errorHandler);
 
 app.listen(process.env.API_PORT, async () => {
   const ip =
