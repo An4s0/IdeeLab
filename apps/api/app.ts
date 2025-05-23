@@ -11,10 +11,10 @@ import routes from "./routes";
 const app = express();
 const start = Date.now();
 
+app.use(Logger);
 app.use(express.json());
 app.use(cors());
 app.use("/", routes);
-app.use(Logger);
 app.use(checkJsonContentType);
 app.use(errorHandler);
 
