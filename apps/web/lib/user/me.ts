@@ -1,14 +1,10 @@
 import axios from "axios";
-import { ApiResponse, User } from "@/types";
+import { ApiResponse, UserType } from "@/types";
 import cookies from "@/lib/cookies";
-
-interface MeDataResponse {
-  user: User;
-}
 
 export default async function me(
   tokenC?: string,
-): Promise<ApiResponse<MeDataResponse>> {
+): Promise<ApiResponse<UserType>> {
   try {
     // Get the token from cookies
     const token = cookies.get("token");
