@@ -24,7 +24,9 @@ export default async function initTable(tableName: string) {
       );
       const sql = fs.readFileSync(sqlFile, "utf8");
       await pool.query(sql);
-      console.log(` \x1b[92m✓\x1b[0m Table "${tableName}" created successfully.`);
+      console.log(
+        ` \x1b[92m✓\x1b[0m Table "${tableName}" created successfully.`,
+      );
     }
   } catch (error) {
     throw error;
