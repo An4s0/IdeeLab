@@ -16,14 +16,15 @@ export default function VerifyEmailPage() {
     setError(null);
     setSuccess(false);
 
-    const verificationToken = await user.verifyEmail()
+    const verificationToken = await user.verifyEmail();
 
     if (verificationToken.success) {
       setSuccess(true);
     } else {
-      setError(verificationToken.message || "Failed to send verification email");
+      setError(
+        verificationToken.message || "Failed to send verification email",
+      );
     }
-
   };
 
   return (
