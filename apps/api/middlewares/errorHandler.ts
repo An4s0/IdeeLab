@@ -10,6 +10,7 @@ export const errorHandler = (
   // Zod validation error
   if (err instanceof ZodError) {
     res.status(400).json({
+      success: false,
       message: "Validation error",
       errors: err.errors,
     });
@@ -19,6 +20,7 @@ export const errorHandler = (
   // Custom error with status
   if (err.status && err.message) {
     res.status(err.status).json({
+      success: false,
       message: err.message,
     });
     return;
@@ -30,6 +32,7 @@ export const errorHandler = (
 
   // Generic internal server error
   res.status(500).json({
+    success: false,
     message: "Internal server error",
     error: err.message || "Unknown error",
   });
