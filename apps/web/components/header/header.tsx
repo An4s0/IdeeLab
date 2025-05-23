@@ -4,6 +4,9 @@ import Link from "next/link";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 
+// Import library
+import userLib from "@/lib/user";
+
 // Import icons from react-icons
 import {
   AiOutlineUser,
@@ -13,10 +16,12 @@ import {
 } from "react-icons/ai";
 import { HiOutlineLogout, HiOutlineMenu, HiOutlineX } from "react-icons/hi";
 import { BiCommand } from "react-icons/bi";
+import { User } from "@/types";
 
 export default function Header({ fixed = true }: { fixed?: boolean }) {
   // State to manage user authentication and dropdown visibility
-  const [isAuthenticated, setIsAuthenticated] = useState(true);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [user, setUser] = useState<User | null>(null);
   const [userDropdown, setUserDropdown] = useState(false);
   const [mobileMenu, setMobileMenu] = useState(false);
   const [searchModal, setSearchModal] = useState(false);
@@ -24,12 +29,6 @@ export default function Header({ fixed = true }: { fixed?: boolean }) {
 
   const userDropdownRef = useRef<HTMLDivElement>(null);
   const searchInputRef = useRef<HTMLInputElement>(null);
-
-  const user = {
-    name: "Anas Almutary",
-    username: "anas",
-    picture: "/default.png",
-  };
 
   const handleUserDropdownToggle = () => setUserDropdown(!userDropdown);
   const handleMobileMenuToggle = () => setMobileMenu(!mobileMenu);
@@ -71,6 +70,21 @@ export default function Header({ fixed = true }: { fixed?: boolean }) {
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
+
+  // Effect to check user authentication status
+  useEffect(() => {
+    const checkAuth = async () => {
+      if (!isAuthenticated) {
+        const auth = await userLib.me();
+
+        if (auth.success) {
+          setIsAuthenticated(true);
+          setUser(auth.data?.user!);
+        }
+      }
+    };
+    checkAuth();
+  }, [isAuthenticated]);
 
   // Close mobile menu when screen size changes
   useEffect(() => {
