@@ -39,7 +39,7 @@ router.get("/me", async (req, res, next) => {
       success: true,
       message: "User retrieved successfully",
       data: {
-        user,
+        ...user,
       },
     });
   } catch (error) {
