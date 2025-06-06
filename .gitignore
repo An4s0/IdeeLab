@@ -27,6 +27,7 @@ out/
 build
 dist
 
+apps/web/*
 
 # Debug
 npm-debug.log*
