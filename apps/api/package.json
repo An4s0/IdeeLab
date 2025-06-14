@@ -10,15 +10,20 @@
     "check-types": "tsc --noEmit"
   },
   "dependencies": {
+    "compression": "^1.8.0",
     "cors": "^2.8.5",
     "express": "^5.1.0",
+    "helmet": "^8.1.0",
+    "jsonwebtoken": "^9.0.2",
     "pg": "^8.16.0"
   },
   "devDependencies": {
     "@repo/eslint-config": "workspace:*",
     "@repo/typescript-config": "workspace:*",
+    "@types/compression": "^1.8.1",
     "@types/cors": "^2.8.19",
     "@types/express": "^5.0.3",
+    "@types/jsonwebtoken": "^9.0.9",
     "@types/pg": "^8.15.4",
     "tsup": "^8.5.0",
     "tsx": "^4.20.3",
