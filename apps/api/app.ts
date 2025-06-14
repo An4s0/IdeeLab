@@ -8,15 +8,18 @@ import helmet from 'helmet';
 import routes from './routes';
 import os from "os";
 import { dependencies } from "./package.json";
-import { ErrorHandler } from './middlewares/errorHandler';
+import { ErrorHandler, Logger, RateLimiter, XSS } from './middlewares';
 
 const app: Application = express();
 const start = Date.now();
 
+app.use(Logger);
 app.use(cors());
 app.use(compression());
 app.use(helmet());
 app.use(express.json());
+app.use(RateLimiter);
+app.use(XSS);
 app.use(routes);
 app.use(ErrorHandler);
 
