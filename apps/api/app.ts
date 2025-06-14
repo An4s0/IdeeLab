@@ -6,9 +6,6 @@ import cors from 'cors';
 import routes from './routes';
 import os from "os";
 import { dependencies } from "./package.json";
-import pool from './database';
-pool
-  .connect()
 
 const app: Application = express();
 const start = Date.now();
