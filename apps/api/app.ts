@@ -3,16 +3,22 @@ dotenv.config({ path: `../../.env` });
 
 import express, { Application } from 'express';
 import cors from 'cors';
+import compression from 'compression';
+import helmet from 'helmet';
 import routes from './routes';
 import os from "os";
 import { dependencies } from "./package.json";
+import { ErrorHandler } from './middlewares/errorHandler';
 
 const app: Application = express();
 const start = Date.now();
 
 app.use(cors());
+app.use(compression());
+app.use(helmet());
 app.use(express.json());
 app.use(routes);
+app.use(ErrorHandler);
 
 app.listen(process.env.API_PORT, async () => {
   const ip =
