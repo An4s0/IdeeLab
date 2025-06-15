@@ -6,7 +6,7 @@
     "dev": "tsx watch app.ts",
     "build": "tsup app.ts --format esm,cjs --out-dir dist",
     "start": "node dist/app.js",
-    "lint": "eslint .",
+    "lint": "eslint . --max-warnings 0",
     "check-types": "tsc --noEmit"
   },
   "dependencies": {
@@ -21,6 +21,7 @@
   "devDependencies": {
     "@repo/eslint-config": "workspace:*",
     "@repo/typescript-config": "workspace:*",
+    "@repo/validations": "workspace:*",
     "@types/compression": "^1.8.1",
     "@types/cors": "^2.8.19",
     "@types/express": "^5.0.3",
