@@ -5,10 +5,36 @@
     "build": {
       "dependsOn": ["^build"],
       "inputs": ["$TURBO_DEFAULT$", ".env*"],
-      "outputs": [".next/**", "!.next/cache/**"]
+      "outputs": [".next/**", "!.next/cache/**","dist/**"],
+      "env":[
+        "NODE_ENV",
+        "BASE_URL",
+        "API_URL",
+        "BASE_PORT",
+        "API_PORT",
+        "DB_USER",
+        "DB_HOST",
+        "DB_NAME",
+        "DB_PASSWORD",
+        "DB_PORT",
+        "JWT_SECRET"
+      ]
     },
     "lint": {
-      "dependsOn": ["^lint"]
+      "dependsOn": ["^lint"],
+      "env": [
+        "NODE_ENV",
+        "BASE_URL",
+        "API_URL",
+        "BASE_PORT",
+        "API_PORT",
+        "DB_USER",
+        "DB_HOST",
+        "DB_NAME",
+        "DB_PASSWORD",
+        "DB_PORT",
+        "JWT_SECRET"
+      ]
     },
     "check-types": {
       "dependsOn": ["^check-types"]
