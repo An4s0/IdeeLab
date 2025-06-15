@@ -1,14 +1,14 @@
-import dotenv from 'dotenv';
+import dotenv from "dotenv";
 dotenv.config({ path: `../../.env` });
 
-import express, { Application } from 'express';
-import cors from 'cors';
-import compression from 'compression';
-import helmet from 'helmet';
-import routes from './routes';
+import express, { Application } from "express";
+import cors from "cors";
+import compression from "compression";
+import helmet from "helmet";
+import routes from "./routes";
 import os from "os";
 import { dependencies } from "./package.json";
-import { ErrorHandler, Logger, RateLimiter, XSS } from './middlewares';
+import { ErrorHandler, Logger, RateLimiter, XSS } from "./middlewares";
 
 const app: Application = express();
 const start = Date.now();
@@ -30,7 +30,7 @@ app.listen(process.env.API_PORT, async () => {
       .find((i) => i?.family === "IPv4" && !i.internal)?.address || "localhost";
 
   console.log(
-    `\n   \x1b[95m▲ Express v${dependencies.express}\x1b[0m ${process.env.NODE_ENV === "development" ? "(Dev mode)" : "(Prod mode)"}`,
+    `\n   \x1b[36m▲ Express v${dependencies.express}\x1b[0m ${process.env.NODE_ENV === "development" ? "(Dev mode)" : "(Prod mode)"}`,
   );
   console.log(`   - Local:        http://localhost:${process.env.API_PORT}`);
   console.log(`   - Network:      http://${ip}:${process.env.API_PORT}\n`);
