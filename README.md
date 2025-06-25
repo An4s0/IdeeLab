@@ -1,6 +1,6 @@
 <div align="center">
 
-  <img src="assets/logo.png" alt="logo" width="100" height="auto" />
+  <img src="assets/brand/logos/png/logo.png" alt="logo" width="100" height="auto" />
   <h1>IdeeLab</h1>
   
   <p>
