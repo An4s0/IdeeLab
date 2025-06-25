@@ -16,7 +16,7 @@
   },
   "status": {
     "success": "#29a744",
-    "warning": "fec106",
+    "warning": "#fec106",
     "error": "#dd3544"
   }
 }
