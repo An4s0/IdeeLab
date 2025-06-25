@@ -1,0 +1,22 @@
+{
+  "primary": "#f97316",
+  "background": {
+    "light": "#fff7ed",
+    "dark": "#1c1917"
+  },
+  "text": {
+    "primary": {
+      "light": "#1c1917",
+      "dark": "#fffbeb"
+    },
+    "secondary": {
+      "light": "#666666",
+      "dark": "#999999"
+    }
+  },
+  "status": {
+    "success": "#29a744",
+    "warning": "fec106",
+    "error": "#dd3544"
+  }
+}
