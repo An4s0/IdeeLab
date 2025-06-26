@@ -19,10 +19,12 @@ Contains the official color palette of the brand.
 Contains the primary and alternate versions of the IdeeLab logo.
 
 ### png/
+
 - `logo.png`: Standard logo on a light background.
 - `logo.white.png`: Logo in white, for use on dark backgrounds.
 
 ### svg/
+
 - `logo.svg`: Scalable version of the main logo.
 - `logo.white.svg`: White logo (for dark backgrounds), optimized for web use.
 
@@ -35,10 +37,12 @@ Contains the primary and alternate versions of the IdeeLab logo.
 Typography files and references used in the project branding.
 
 ### fonts/
+
 - `FiraCode-Regular.ttf` – Primary typeface used for body text and other elements.
 - Includes all font weights (Light, Regular, Medium, SemiBold, Bold).
 
 ### font-sample.png
+
 A visual guide showing how the font looks in different weights and sizes.
 
 ---
@@ -54,4 +58,3 @@ A visual guide showing how the font looks in different weights and sizes.
 ## License & Permissions
 
 These brand assets are for official use within the IdeeLab project only. For external or third-party use, please contact the maintainers for permission.
-
