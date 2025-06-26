@@ -99,8 +99,7 @@ export default function PrivacyPage() {
               </h2>
               <p className="text-subtle">
                 We may update this Privacy Policy periodically. Any changes will
-                be reflected here along with the &quot;Last updated&quot;
-                date.
+                be reflected here along with the &quot;Last updated&quot; date.
               </p>
             </div>
           </div>
