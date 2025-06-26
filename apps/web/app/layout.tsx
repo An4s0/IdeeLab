@@ -67,8 +67,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={firaCode.variable} suppressHydrationWarning>
-      <body>
+    <html lang="en" suppressHydrationWarning>
+      <body className={`${firaCode.className}`}>
         <AppProviders>{children}</AppProviders>
       </body>
     </html>
