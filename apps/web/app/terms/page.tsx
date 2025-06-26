@@ -6,7 +6,6 @@ export const metadata: Metadata = {
     "Review the terms and conditions for using IdeeLab to explore, share, and manage your programming ideas.",
 };
 
-
 export default function terms() {
   return <TermsPage />;
 }
