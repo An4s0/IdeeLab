@@ -1,9 +1,10 @@
 import { Metadata } from "next";
 import AboutPage from "./about";
+
 export const metadata: Metadata = {
   title: "About Us",
   description:
-    "Learn more about IdeeLab — a platform that provides creative programming ideas and daily challenges to inspire developers and help them grow through hands-on projects.",
+    "Discover how IdeeLab inspires developers with creative programming ideas.",
 };
 
 export default function FAQ() {
