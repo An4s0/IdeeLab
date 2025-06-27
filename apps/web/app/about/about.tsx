@@ -13,7 +13,7 @@ export default function AboutPage() {
 
           <p className="text-subtle text-center max-w-3xl mx-auto mb-12">
             IdeeLab is a platform designed to spark creativity through unique
-            programming ideas. Whether you're a beginner or a seasoned
+            programming ideas. Whether you&apos;re a beginner or a seasoned
             developer, explore fresh, community-driven concepts to fuel your
             next project.
           </p>
