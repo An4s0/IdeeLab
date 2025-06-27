@@ -12,8 +12,8 @@ type ThemeIcon = {
 
 const platformLinks = [
   { name: "Discover Ideas", href: "/ideas" },
-  { name: "Share Idea", href: "/share" },
   { name: "Idea Generator", href: "/generator" },
+  { name: "Share Idea", href: "/share" },
 ];
 
 const resourceLinks = [
