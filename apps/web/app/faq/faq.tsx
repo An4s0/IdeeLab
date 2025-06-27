@@ -42,8 +42,9 @@ export default function FAQPage() {
                 3. Can I submit my own project ideas?
               </h2>
               <p className="text-subtle">
-                Currently, only the admin team can post new ideas. In the
-                future, we may allow community submissions with moderation.
+                Anyone can submit ideas, but they require admin approval before
+                becoming public. This ensures the platform maintains
+                high-quality, distinctive programming ideas.
               </p>
             </div>
 
@@ -84,8 +85,9 @@ export default function FAQPage() {
                 7. How often are new ideas published?
               </h2>
               <p className="text-subtle">
-                We aim to publish new ideas regularly. Stay tuned to our
-                homepage or social channels for updates.
+                We regularly review submitted ideas and publish approved ones to
+                keep the platform fresh and inspiring. Follow our homepage or
+                social channels for the latest updates.
               </p>
             </div>
           </div>
