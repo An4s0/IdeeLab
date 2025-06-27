@@ -160,7 +160,7 @@ export function Header({ fixed = true }: { fixed?: boolean }) {
               <motion.button
                 whileTap={{ scale: 0.98 }}
                 onClick={handleSearchModalToggle}
-                className="flex items-center space-x-3 px-4 py-2 w-96 rounded-lg border border-outline/30 hover:border-outline/50 focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all bg-background/50 text-left cursor-pointer"
+                className="flex items-center space-x-3 px-4 py-2 w-92 rounded-lg border border-outline/30 hover:border-outline/50 focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all bg-background/50 text-left cursor-pointer"
               >
                 <AiOutlineSearch className="w-4 h-4 text-subtle" />
                 <span className="text-sm text-subtle flex-1">
@@ -253,7 +253,7 @@ export function Header({ fixed = true }: { fixed?: boolean }) {
                 </AnimatePresence>
               </div>
             ) : (
-              <div className="hidden sm:flex items-center space-x-3">
+              <div className="hidden md:flex items-center space-x-3">
                 <Link
                   href="/login"
                   className="py-2 px-4 rounded-lg text-sm font-medium hover:text-primary transition-colors"
