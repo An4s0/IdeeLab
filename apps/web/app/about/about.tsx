@@ -12,50 +12,48 @@ export default function AboutPage() {
           </h1>
 
           <p className="text-subtle text-center max-w-3xl mx-auto mb-12">
-            IdeeLab is a platform designed to inspire developers through daily
-            programming ideas and challenges. Whether you&apos;re just starting
-            your coding journey or you&apos;re an experienced developer looking
-            for fresh concepts, IdeeLab helps you grow through hands-on
-            exploration.
+            IdeeLab is a platform designed to spark creativity through unique
+            programming ideas. Whether you're a beginner or a seasoned
+            developer, explore fresh, community-driven concepts to fuel your
+            next project.
           </p>
 
           <div className="space-y-10">
             <section>
               <h2 className="text-xl font-semibold mb-2">Our Mission</h2>
               <p className="text-subtle">
-                We aim to cultivate creativity in software development by
-                offering a wide range of project ideas that span different
-                difficulty levels and domains. IdeeLab helps developers practice
-                real-world skills by working on meaningful challenges.
+                We aim to fuel innovation in software development by providing a
+                wide range of programming ideas across categories, tech stacks,
+                and skill levels. IdeeLab empowers developers to discover new
+                possibilities and start meaningful projects.
               </p>
             </section>
 
             <section>
               <h2 className="text-xl font-semibold mb-2">Who It&apos;s For</h2>
               <p className="text-subtle">
-                IdeeLab is for learners, hobbyists, and professionals who want
-                to sharpen their skills, contribute to creative projects, or
-                simply find inspiration for their next build.
+                IdeeLab is for learners, hobbyists, and professionals who seek
+                fresh inspiration, want to brainstorm solo projects, or are
+                looking for portfolio-worthy concepts.
               </p>
             </section>
 
             <section>
               <h2 className="text-xl font-semibold mb-2">What We Offer</h2>
               <ul className="list-disc list-inside text-subtle ml-4 space-y-2">
-                <li>Daily programming ideas across multiple categories</li>
-                <li>Difficulty-based challenge levels: Beginner to Expert</li>
+                <li>Curated programming project ideas to spark creativity</li>
+                <li>Ideas organized by category, tags, and goal</li>
                 <li>Hands-on projects that encourage practical learning</li>
-                <li>Optional ratings and feedback from the community</li>
+                <li>Flexible concepts — build them your way, in your time</li>
               </ul>
             </section>
 
             <section>
               <h2 className="text-xl font-semibold mb-2">Our Vision</h2>
               <p className="text-subtle">
-                We believe that practical creativity is the key to mastery in
-                programming. IdeeLab is here to spark ideas, encourage
-                experimentation, and empower developers to build things that
-                matter.
+                We believe that creativity is the foundation of great software.
+                IdeeLab exists to encourage exploration, support innovation, and
+                help developers turn ideas into reality — their way.
               </p>
             </section>
           </div>
