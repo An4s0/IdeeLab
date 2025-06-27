@@ -190,9 +190,7 @@ export function Footer() {
               <h1 className="text-xl font-bold">IdeeLab</h1>
             </div>
             <p className="text-sm text-subtle leading-relaxed max-w-md mb-6">
-              Share and explore creative programming ideas on IdeeLab. Discover
-              inspiring project concepts, vote on your favorites, and spark
-              your next build.
+              A platform to submit, explore, and get inspired by creative programming ideas — filtered by category, difficulty, and more.
             </p>
 
             <div className="flex space-x-3">
