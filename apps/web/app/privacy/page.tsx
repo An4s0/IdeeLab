@@ -1,9 +1,10 @@
 import { Metadata } from "next";
 import PrivacyPage from "./privacy";
+
 export const metadata: Metadata = {
   title: "Privacy Policy",
   description:
-    "Learn how IdeeLab collects, uses, and protects your data while you browse and share programming ideas.",
+    "Understand how IdeeLab handles your data when browsing or sharing programming ideas.",
 };
 
 export default function Privacy() {
