@@ -11,7 +11,7 @@ export default function TermsPage() {
             Terms of Service
           </h1>
           <p className="text-subtle mb-8 text-center">
-            Last updated: May 22, 2025
+            Last updated: June 27, 2025
           </p>
 
           <div className="space-y-6">
@@ -36,8 +36,8 @@ export default function TermsPage() {
               <h2 className="text-xl font-semibold mb-3">2. Accounts</h2>
               <ul className="list-disc list-inside space-y-2 text-subtle ml-2">
                 <li>
-                  Registration is required only to submit your solutions or rate
-                  ideas.
+                  Registration may be required to submit new ideas or access
+                  additional features.
                 </li>
                 <li>
                   You are responsible for keeping your login credentials safe.
@@ -58,24 +58,28 @@ export default function TermsPage() {
                   permission.
                 </li>
                 <li>
-                  By submitting your code or feedback, you grant us the right to
-                  display it on the platform.
+                  By submitting ideas or content, you grant us permission to
+                  display and moderate it on the platform.
                 </li>
               </ul>
             </div>
 
             <div className="pb-4">
               <h2 className="text-xl font-semibold mb-3">
-                4. Submissions and Ratings
+                4. Idea Submissions
               </h2>
               <ul className="list-disc list-inside space-y-2 text-subtle ml-2">
                 <li>
-                  Users may submit their implementation of a given idea or rate
-                  the idea&apos;s usefulness.
+                  Users can suggest new programming ideas, which are subject to
+                  admin approval before publication to ensure quality.
                 </li>
                 <li>
-                  Ratings and feedback are optional and serve only to help
-                  others discover valuable content.
+                  Each idea can be upvoted or downvoted by the community to help
+                  surface the most useful and inspiring content.
+                </li>
+                <li>
+                  Comments are also allowed to enable constructive feedback and
+                  discussion around submitted ideas.
                 </li>
               </ul>
             </div>
