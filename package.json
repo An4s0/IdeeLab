@@ -2,6 +2,10 @@
   "name": "IdeeLab",
   "description": "IdeeLab – A collaborative platform for developers to share, vote, and discuss programming ideas. Discover your next project today!",
   "scripts": {},
+   "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
   "keywords": [
     "IdeeLab",
     "developers",
@@ -21,9 +25,5 @@
   },
   "license": "MIT",
   "author": "Anas Almutary",
-  "repository": {
-    "type": "git",
-    "url": ""
-  },
   "packageManager": "pnpm@10.15.0"
 }
