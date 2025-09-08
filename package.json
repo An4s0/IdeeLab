@@ -1,0 +1,29 @@
+{
+  "name": "IdeeLab",
+  "description": "IdeeLab – A collaborative platform for developers to share, vote, and discuss programming ideas. Discover your next project today!",
+  "scripts": {},
+  "keywords": [
+    "IdeeLab",
+    "developers",
+    "projects",
+    "coding",
+    "collaboration",
+    "innovation",
+    "ideas",
+    "community",
+    "open-source",
+    "inspiration"
+  ],
+  "homepage": "https://ideelab.cc/",
+  "bugs": {
+    "url": "https://github.com/An4s0/IdeeLab/issues",
+    "email": "support@ideelab.cc"
+  },
+  "license": "MIT",
+  "author": "Anas Almutary",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "packageManager": "pnpm@10.15.0"
+}
