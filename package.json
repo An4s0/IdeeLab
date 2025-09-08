@@ -1,8 +1,13 @@
 {
   "name": "IdeeLab",
   "description": "IdeeLab – A collaborative platform for developers to share, vote, and discuss programming ideas. Discover your next project today!",
-  "scripts": {},
-   "workspaces": [
+  "scripts": {
+    "format": "prettier --write \"apps/**/*.{js,jsx,ts,tsx,json,css}\" \"packages/**/*.{js,ts,tsx,json,css}\"",
+    "format:check": "prettier --check \"apps/**/*.{js,jsx,ts,tsx,json,css}\" \"packages/**/*.{js,ts,tsx,json,css}\"",
+    "lint": "eslint 'apps/**/*.{js,jsx,ts,tsx}' 'packages/**/*.{js,ts,tsx}'",
+    "lint:fix": "eslint 'apps/**/*.{js,jsx,ts,tsx}' 'packages/**/*.{js,ts,tsx}' --fix"
+  },
+  "workspaces": [
     "apps/*",
     "packages/*"
   ],
@@ -25,5 +30,15 @@
   },
   "license": "MIT",
   "author": "Anas Almutary",
-  "packageManager": "pnpm@10.15.0"
+  "packageManager": "pnpm@10.15.1",
+  "devDependencies": {
+    "@eslint/js": "^9.35.0",
+    "@types/node": "^24.3.1",
+    "eslint": "^9.35.0",
+    "eslint-plugin-react": "^7.37.5",
+    "globals": "^16.3.0",
+    "prettier": "3.6.2",
+    "typescript": "^5.9.2",
+    "typescript-eslint": "^8.42.0"
+  }
 }
