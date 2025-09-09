@@ -1,0 +1,12 @@
+node_modules
+
+dist
+build
+out
+
+.env*
+
+logs
+*.log
+
+.vscode
