@@ -2,7 +2,12 @@
   "name": "ideelab",
   "description": "IdeeLab – A collaborative platform for developers to share, vote, and discuss programming ideas. Discover your next project today!",
   "scripts": {
-    
+    "dev": "pnpm -r run dev",
+    "start": "pnpm -r run start",
+    "build": "pnpm -r run build",
+    "lint": "pnpm -r run lint",
+    "format": "prettier --write .",
+    "test": "pnpm -r run test"
   },
   "workspaces": [
     "apps/*",
@@ -12,5 +17,10 @@
   "license": "MIT",
   "packageManager": "pnpm@10.15.1",
   "devDependencies": {
+    "@eslint/js": "^9.35.0",
+    "eslint": "^9.35.0",
+    "globals": "^16.3.0",
+    "typescript": "^5.9.2",
+    "typescript-eslint": "^8.43.0"
   }
 }
