@@ -1,1 +1,38 @@
 @import "tailwindcss";
+
+:root {
+  --bg-light: hsl(0, 0%, 90%);
+  --bg-lighter: hsl(0, 0%, 95%);
+  --bg-lightest: hsl(0, 0%, 100%);
+
+  --text: hsl(0, 0%, 5%);
+  --subtle: hsl(0, 0%, 30%);
+
+  --border: hsl(0, 0%, 80%);
+}
+
+.dark {
+  --bg-light: hsl(0, 0%, 0%);
+  --bg-lighter: hsl(0, 0%, 5%);
+  --bg-lightest: hsl(0, 0%, 10%);
+
+  --text: hsl(0, 0%, 95%);
+  --subtle: hsl(0, 0%, 70%);
+
+  --border: hsl(0, 0%, 20%);
+}
+
+@theme {
+  --color-bglt: var(--bg-light);
+  --color-bgltr: var(--bg-lighter);
+  --color-bgltst: var(--bg-lightest);
+
+  --color-subtle: var(--subtle);
+
+  --color-br: var(--border);
+}
+
+body {
+  background-color: var(--bg-light);
+  color: var(--text);
+}
