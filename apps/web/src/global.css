@@ -61,6 +61,7 @@
 @theme {
   --color-bg: var(--bg);
   --color-bglt: var(--bglt);
+  --color-bgltr: var(--bgltr);
 
   --color-subtle: var(--subtle);
 
