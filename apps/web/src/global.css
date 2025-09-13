@@ -1,45 +1,46 @@
 @import "tailwindcss";
 
 @font-face {
-  font-family: 'FiraCode';
-  src: url('@ideelab/assets/fonts/FiraCode-Light.ttf') format('truetype');
+  font-family: "FiraCode";
+  src: url("@ideelab/assets/fonts/FiraCode-Light.ttf") format("truetype");
   font-weight: 300;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'FiraCode';
-  src: url('@ideelab/assets/fonts/FiraCode-Regular.ttf') format('truetype');
+  font-family: "FiraCode";
+  src: url("@ideelab/assets/fonts/FiraCode-Regular.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'FiraCode';
-  src: url('@ideelab/assets/fonts/FiraCode-Medium.ttf') format('truetype');
+  font-family: "FiraCode";
+  src: url("@ideelab/assets/fonts/FiraCode-Medium.ttf") format("truetype");
   font-weight: 500;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'FiraCode';
-  src: url('@ideelab/assets/fonts/FiraCode-SemiBold.ttf') format('truetype');
+  font-family: "FiraCode";
+  src: url("@ideelab/assets/fonts/FiraCode-SemiBold.ttf") format("truetype");
   font-weight: 600;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'FiraCode';
-  src: url('@ideelab/assets/fonts/FiraCode-Bold.ttf') format('truetype');
+  font-family: "FiraCode";
+  src: url("@ideelab/assets/fonts/FiraCode-Bold.ttf") format("truetype");
   font-weight: 700;
   font-style: normal;
 }
-
 
 :root {
   --bg: hsl(0, 0%, 95%);
   --bglt: hsl(0, 0%, 90%);
   --bgltr: hsl(0, 0%, 85%);
+
+  --primary: #f97316;
 
   --text: hsl(0, 0%, 5%);
   --subtle: hsl(0, 0%, 30%);
@@ -52,6 +53,8 @@
   --bglt: hsl(0, 0%, 10%);
   --bgltr: hsl(0, 0%, 15%);
 
+  --primary: #f97316;
+
   --text: hsl(0, 0%, 95%);
   --subtle: hsl(0, 0%, 70%);
 
@@ -63,6 +66,8 @@
   --color-bglt: var(--bglt);
   --color-bgltr: var(--bgltr);
 
+  --color-primary: var(--primary);
+
   --color-subtle: var(--subtle);
 
   --color-br: var(--border);
@@ -71,6 +76,10 @@
 body {
   background-color: var(--bg);
   color: var(--text);
-  font-family: 'FiraCode', monospace;
+  font-family: "FiraCode", monospace;
   font-weight: 400;
+}
+
+button {
+  cursor: pointer;
 }
