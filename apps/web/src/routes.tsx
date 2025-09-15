@@ -1,10 +1,14 @@
+import React, { Suspense } from "react";
 import { Routes, Route } from "react-router-dom";
-import HomePage from "./pages/home/page";
+import { Loading } from "@/components/loading";
 
 export default function AppRoutes() {
+  const HomePage = React.lazy(() => import("./pages/home/page"));
   return (
-    <Routes>
-      <Route path="/" element={<HomePage />} />
-    </Routes>
+    <Suspense fallback={<Loading />}>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+      </Routes>
+    </Suspense>
   );
 }
