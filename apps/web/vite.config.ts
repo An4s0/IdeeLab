@@ -8,8 +8,8 @@ export default defineConfig({
   plugins: [
     react(),
     visualizer({
-      filename: "dist/bundle-report.html", 
-      template: "treemap", 
+      filename: "dist/bundle-report.html",
+      template: "treemap",
       gzipSize: true,
       brotliSize: true,
     }),
