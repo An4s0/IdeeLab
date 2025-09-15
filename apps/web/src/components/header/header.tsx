@@ -107,7 +107,7 @@ export function Header() {
         ) : (
           <>
             <Link to="/" className="flex items-center gap-2">
-              <img src={IdeeLabSvg} alt="IdeeLab" className="w-8 h-8" />
+              <img src={IdeeLabSvg} alt="" className="w-8 h-8" />
               <span className="text-lg font-bold tracking-tight">IdeeLab</span>
             </Link>
 
@@ -127,12 +127,14 @@ export function Header() {
               <Link
                 className="p-2 rounded-lg bg-primary hover:bg-primary/90"
                 to={"/new"}
+                aria-label="Create new idea"
               >
                 <Plus className="w-5 h-5 text-white" />
               </Link>
               <Link
                 className="p-2 rounded-lg hover:bg-bgltr"
                 to={"/notifications"}
+                aria-label="View notifications"
               >
                 <Bell className="w-5 h-5 text-subtle" />
               </Link>
@@ -284,6 +286,7 @@ export function Header() {
             <button
               className="md:hidden ml-auto p-2 rounded-lg hover:bg-bglt"
               onClick={() => setMobileSearchOpen(true)}
+              aria-label="Open search"
             >
               <Search className="w-5 h-5 text-subtle" />
             </button>

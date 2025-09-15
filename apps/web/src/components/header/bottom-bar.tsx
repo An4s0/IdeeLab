@@ -23,6 +23,7 @@ export function BottomBar() {
       <NavLink
         to="/new"
         className="relative -mt-10 bg-primary p-4 rounded-full shadow-lg flex items-center justify-center text-white hover:bg-primary/90"
+        aria-label="Create new idea"
       >
         <Plus className="w-6 h-6" />
       </NavLink>
