@@ -6,5 +6,5 @@ export function useTitle(title: string) {
   useEffect(() => {
     if (!documentEx) return;
     if (document.title !== title) document.title = title;
-  }, []);
+  }, [documentEx, title]);
 }
