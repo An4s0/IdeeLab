@@ -36,9 +36,9 @@
 }
 
 :root {
-  --bg: hsl(0, 0%, 95%);
-  --bglt: hsl(0, 0%, 90%);
-  --bgltr: hsl(0, 0%, 85%);
+  --bg: hsl(0, 0%, 100%);
+  --bglt: hsl(0, 0%, 98%);
+  --bgltr: hsl(0, 0%, 94%);
 
   --primary: #f97316;
 
@@ -50,8 +50,8 @@
 
 .dark {
   --bg: hsl(0, 0%, 5%);
-  --bglt: hsl(0, 0%, 10%);
-  --bgltr: hsl(0, 0%, 15%);
+  --bglt: hsl(0, 0%, 7%);
+  --bgltr: hsl(0, 0%, 11%);
 
   --primary: #f97316;
 
