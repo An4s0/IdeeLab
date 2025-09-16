@@ -7,7 +7,7 @@ export function Loading() {
 
   return (
     <main
-      className={`w-full h-screen flex items-center justify-center`}
+      className={"w-full h-screen flex items-center justify-center"}
       style={{ backgroundColor: bgColor }}
     >
       <img
