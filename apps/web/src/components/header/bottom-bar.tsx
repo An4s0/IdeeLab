@@ -21,7 +21,7 @@ export function BottomBar() {
       </NavLink>
 
       <NavLink
-        to="/explore"
+        to="/ideas"
         className={({ isActive, isPending }) =>
           navLinkClass(isActive, isPending)
         }
