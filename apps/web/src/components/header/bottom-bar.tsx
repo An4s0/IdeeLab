@@ -1,12 +1,20 @@
 import { Home, Compass, Plus, Bell, User } from "lucide-react";
 import { NavLink } from "react-router-dom";
 
+function navLinkClass(isActive: boolean, isPending?: boolean) {
+  return `flex flex-col items-center hover:text-primary ${
+    isPending ? "text-text" : isActive ? "text-primary" : "text-subtle"
+  }`;
+}
+
 export function BottomBar() {
   return (
-    <nav className="fixed bottom-0 left-0 w-full h-16 bg-bglt border-t border-br flex items-center justify-around md:hidden z-50 rounded-t-2xl">
+    <nav className="fixed bottom-0 left-0 w-full h-16 bg-bglt border-t border-br flex items-center justify-around md:hidden z-50 rounded-t-2xl px-2">
       <NavLink
         to="/"
-        className="flex flex-col items-center text-subtle hover:text-primary"
+        className={({ isActive, isPending }) =>
+          navLinkClass(isActive, isPending)
+        }
       >
         <Home className="w-6 h-6" />
         <span className="text-xs">Home</span>
@@ -14,7 +22,9 @@ export function BottomBar() {
 
       <NavLink
         to="/explore"
-        className="flex flex-col items-center text-subtle hover:text-primary"
+        className={({ isActive, isPending }) =>
+          navLinkClass(isActive, isPending)
+        }
       >
         <Compass className="w-6 h-6" />
         <span className="text-xs">Explore</span>
@@ -30,7 +40,9 @@ export function BottomBar() {
 
       <NavLink
         to="/notifications"
-        className="flex flex-col items-center text-subtle hover:text-primary"
+        className={({ isActive, isPending }) =>
+          navLinkClass(isActive, isPending)
+        }
       >
         <Bell className="w-6 h-6" />
         <span className="text-xs">Alerts</span>
@@ -38,7 +50,9 @@ export function BottomBar() {
 
       <NavLink
         to="/profile"
-        className="flex flex-col items-center text-subtle hover:text-primary"
+        className={({ isActive, isPending }) =>
+          navLinkClass(isActive, isPending)
+        }
       >
         <User className="w-6 h-6" />
         <span className="text-xs">Profile</span>
