@@ -126,7 +126,7 @@ export function Header() {
             <div className="hidden md:flex items-center gap-1 ml-auto">
               <Link
                 className="p-2 rounded-lg bg-primary hover:bg-primary/90"
-                to={"/new"}
+                to={"/ideas/new"}
                 aria-label="Create new idea"
               >
                 <Plus className="w-5 h-5 text-white" />

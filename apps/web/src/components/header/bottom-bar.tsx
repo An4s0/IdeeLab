@@ -31,7 +31,7 @@ export function BottomBar() {
       </NavLink>
 
       <NavLink
-        to="/new"
+        to="/ideas/new"
         className="relative -mt-10 bg-primary p-4 rounded-full shadow-lg flex items-center justify-center text-white hover:bg-primary/90"
         aria-label="Create new idea"
       >
