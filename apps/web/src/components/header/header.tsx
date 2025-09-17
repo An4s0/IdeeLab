@@ -16,7 +16,7 @@ import {
   HelpCircle,
   LogOut,
 } from "lucide-react";
-import { useTheme } from "@/hooks/useTheme";
+import { useTheme } from "@/hooks";
 import { BottomBar } from "./bottom-bar";
 import IdeeLabSvg from "@ideelab/assets/logos/logo.svg";
 
