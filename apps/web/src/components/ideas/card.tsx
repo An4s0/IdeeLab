@@ -39,7 +39,7 @@ export default function IdeaCard({ idea }: { idea: IdeaType }) {
           </span>
           <span
             className={`px-2 py-1 text-xs font-medium rounded-full border ${getDifficultyColor(
-              idea.difficulty
+              idea.difficulty,
             )}`}
           >
             {idea.difficulty}
@@ -69,15 +69,11 @@ export default function IdeaCard({ idea }: { idea: IdeaType }) {
           <div className="flex items-center gap-4">
             <button className="flex items-center gap-1 px-2 py-1 rounded-full bg-subtle/10 hover:bg-subtle/7 text-green">
               <ThumbsUp size={16} />
-              <span className="font-semibold text-sm">
-                {idea.upvotes}
-              </span>
+              <span className="font-semibold text-sm">{idea.upvotes}</span>
             </button>
             <button className="flex items-center gap-1 px-2 py-1 rounded-full bg-subtle/10 hover:bg-subtle/7 text-red">
               <ThumbsDown size={16} />
-              <span className="font-semibold text-sm">
-                {idea.downvotes}
-              </span>
+              <span className="font-semibold text-sm">{idea.downvotes}</span>
             </button>
           </div>
           <span className="text-sm text-subtle font-medium">
