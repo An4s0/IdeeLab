@@ -149,6 +149,7 @@ export default function HomePage() {
           title="Saved"
           subtitle="Your favorite ideas saved for quick access"
         />
+        <br />
       </main>
     </>
   );
