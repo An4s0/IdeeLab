@@ -51,16 +51,15 @@
   --bgltr: hsl(0, 0%, 94%);
 
   --primary: #f97316;
-  --primary-dark: hsl(25, 95%, 37%);
 
   --text: hsl(0, 0%, 5%);
   --subtle: hsl(0, 0%, 30%);
 
   --border: hsl(0, 0%, 80%);
 
-  --green: hsl(120, 60%, 30%);
-  --yellow: hsl(45, 100%, 25%);
-  --red: hsl(0, 75%, 35%);
+  --green: hsl(142, 72%, 35%);
+  --yellow: hsl(45, 100%, 40%);
+  --red: hsl(0, 85%, 45%);
 }
 
 .dark {
@@ -69,16 +68,15 @@
   --bgltr: hsl(0, 0%, 11%);
 
   --primary: #f97316;
-  --primary-dark: hsl(25, 95%, 38%);
 
   --text: hsl(0, 0%, 95%);
   --subtle: hsl(0, 0%, 70%);
 
   --border: hsl(0, 0%, 20%);
 
-  --green: hsl(120, 60%, 60%);
-  --yellow: hsl(45, 100%, 60%);
-  --red: hsl(0, 75%, 70%);
+  --green: hsl(142, 70%, 55%);
+  --yellow: hsl(45, 100%, 55%);
+  --red: hsl(0, 80%, 65%);
 }
 
 @theme {
@@ -87,7 +85,6 @@
   --color-bgltr: var(--bgltr);
 
   --color-primary: var(--primary);
-  --color-primary-dark: var(--primary-dark);
 
   --color-subtle: var(--subtle);
 
