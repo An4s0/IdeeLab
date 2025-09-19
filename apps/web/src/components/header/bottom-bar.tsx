@@ -3,11 +3,7 @@ import { NavLink } from "react-router-dom";
 
 function navLinkClass(isActive: boolean, isPending?: boolean) {
   return `flex flex-col items-center hover:text-primary ${
-    isPending
-      ? "text-text"
-      : isActive
-        ? "text-primary"
-        : "text-subtle"
+    isPending ? "text-text" : isActive ? "text-primary" : "text-subtle"
   }`;
 }
 

@@ -47,7 +47,7 @@ export default function IdeaCard({ idea }: { idea: IdeaType }) {
           </span>
           <span
             className={`px-2 py-1 text-xs font-medium rounded-full border ${getDifficultyColor(
-              idea.difficulty
+              idea.difficulty,
             )}`}
           >
             {idea.difficulty}

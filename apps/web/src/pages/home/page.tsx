@@ -1,7 +1,7 @@
 import { useTitle } from "@/hooks";
 import { Header } from "@/components/header";
 import { Link } from "react-router-dom";
-import { Lightbulb, ArrowRight } from "lucide-react";
+import { Sparkles, ArrowRight } from "lucide-react";
 import { IdeasGrid } from "@/components/ideas/ideas-grid";
 import type { IdeaType } from "@/types";
 
@@ -117,24 +117,38 @@ export default function HomePage() {
 
           <div className="absolute inset-0 flex flex-col items-center justify-center text-center z-10 px-4">
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold flex items-center gap-2">
-              <Lightbulb className="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 lg:w-12 lg:h-12" />
-              Idea of the Day
+              <Sparkles className="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 lg:w-12 lg:h-12" />
+              Spark Ideas
             </h2>
 
             <p className="mt-3 text-sm sm:text-base md:text-lg text-subtle max-w-md lg:max-w-lg leading-relaxed font-medium">
-              AI-powered resume builder that writes CVs for you.
+              Discover and explore creative ideas shared by our community.
             </p>
 
             <Link
-              to="/ideas/1"
-              className="mt-5 px-5 py-2.5 bg-primary-dark text-white rounded-lg font-medium flex items-center gap-2 hover:bg-primary transition"
+              to="/ideas"
+              className="mt-5 px-5 py-2.5 bg-primary text-white rounded-lg font-medium flex items-center gap-2 hover:bg-primary/90 transition"
             >
-              Explore Idea
+              Explore Ideas
               <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
             </Link>
           </div>
         </div>
-        <IdeasGrid ideas={ideasSample} />
+        <IdeasGrid
+          ideas={ideasSample}
+          title="Trending"
+          subtitle="Check out what’s popular right now"
+        />
+        <IdeasGrid
+          ideas={ideasSample}
+          title="Recommended"
+          subtitle="Ideas picked for you based on your interests and activity"
+        />
+        <IdeasGrid
+          ideas={ideasSample}
+          title="Saved"
+          subtitle="Your favorite ideas saved for quick access"
+        />
       </main>
     </>
   );

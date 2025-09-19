@@ -17,11 +17,7 @@ export function IdeasGrid({
           <h2 className="text-xl md:text-2xl font-bold text-foreground">
             {title}
           </h2>
-          {subtitle && (
-            <p className="text-subtle max-w-2xl">
-              {subtitle}
-            </p>
-          )}
+          {subtitle && <p className="text-subtle max-w-2xl">{subtitle}</p>}
           <div className="mt-2 h-px bg-primary/30 w-16"></div>
         </div>
       )}
