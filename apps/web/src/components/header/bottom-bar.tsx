@@ -6,7 +6,7 @@ function navLinkClass(isActive: boolean, isPending?: boolean) {
     isPending
       ? "text-text"
       : isActive
-        ? "text-primary-dark dark:text-primary"
+        ? "text-primary"
         : "text-subtle"
   }`;
 }
