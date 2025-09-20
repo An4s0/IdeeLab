@@ -1,7 +1,10 @@
 import { Header } from "@/components/header";
 import { Link } from "react-router-dom";
+import { useTitle } from "@/hooks";
 
 export default function NotFound() {
+  useTitle("IdeeLab | Page Not Found")
+
   return (
     <>
       <Header />
