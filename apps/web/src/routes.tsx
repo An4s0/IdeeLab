@@ -7,12 +7,16 @@ export default function AppRoutes() {
   const HomePage = React.lazy(() => import("./pages/home/page"));
   const TermsPage = React.lazy(() => import("./pages/terms/page"));
   const PrivacyPage = React.lazy(() => import("./pages/privacy/page"));
+  const AboutPage = React.lazy(() => import("./pages/about/page"));
+  const SupportPage = React.lazy(() => import("./pages/support/page"));
   return (
     <Suspense fallback={<Loading />}>
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/terms" element={<TermsPage />} />
         <Route path="/privacy" element={<PrivacyPage />} />
+        <Route path="/about" element={<AboutPage />} />
+        <Route path="/support" element={<SupportPage />} />
 
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
