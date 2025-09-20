@@ -1,0 +1,23 @@
+import { Header } from "@/components/header";
+import { Link } from "react-router-dom";
+
+export default function NotFound() {
+  return (
+    <>
+      <Header />
+      <main className="flex flex-col items-center justify-center h-16 text-center px-4">
+        <h1 className="text-6xl font-extrabold">404</h1>
+        <p className="text-2xl md:text-3xl mt-4">Oops! Page Not Found</p>
+        <p className="mt-2 text-subtle">
+          The page you are looking for does not exist.
+        </p>
+        <Link
+          to="/"
+          className="mt-5 px-5 py-2.5 bg-primary text-white rounded-lg font-medium flex items-center gap-2 hover:bg-primary/90"
+        >
+          Go Back Home
+        </Link>
+      </main>
+    </>
+  );
+}
