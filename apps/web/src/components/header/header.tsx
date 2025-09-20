@@ -12,7 +12,7 @@ import {
   LifeBuoy,
   Plus,
   Bell,
-  FileText,
+  // FileText,
   HelpCircle,
   LogOut,
 } from "lucide-react";
@@ -76,7 +76,7 @@ export function Header() {
     ],
     [
       { icon: Info, label: "About us", href: "/about" },
-      { icon: FileText, label: "Docs", href: "/docs" },
+      // { icon: FileText, label: "Docs", href: "/docs" },
       { icon: HelpCircle, label: "Support", href: "/support" },
     ],
     [
