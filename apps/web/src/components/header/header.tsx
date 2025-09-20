@@ -12,7 +12,6 @@ import {
   LifeBuoy,
   Plus,
   Bell,
-  // FileText,
   HelpCircle,
   LogOut,
 } from "lucide-react";
@@ -76,12 +75,19 @@ export function Header() {
     ],
     [
       { icon: Info, label: "About us", href: "/about" },
-      // { icon: FileText, label: "Docs", href: "/docs" },
       { icon: HelpCircle, label: "Support", href: "/support" },
     ],
     [
       { icon: UserPlus, label: "Invite Friends", href: "/invite" },
-      { icon: LifeBuoy, label: "Report a Problem", href: "/report" },
+      {
+        icon: LifeBuoy,
+        label: "Report a Problem",
+        action: () =>
+          window.open(
+            "https://github.com/An4s0/IdeeLab/issues/new?template=problem_report.yml",
+            "_blank"
+          ),
+      },
       { icon: LogOut, label: "Logout", href: "/logout" },
     ],
   ];
