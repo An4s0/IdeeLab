@@ -5,7 +5,7 @@ export default function NotFound() {
   return (
     <>
       <Header />
-      <main className="flex flex-col items-center justify-center h-16 text-center px-4">
+      <main className="flex flex-col items-center justify-center h-[calc(100vh-64px)] text-center px-4">
         <h1 className="text-6xl font-extrabold">404</h1>
         <p className="text-2xl md:text-3xl mt-4">Oops! Page Not Found</p>
         <p className="mt-2 text-subtle">
