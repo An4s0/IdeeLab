@@ -2,7 +2,7 @@ import { useTitle } from "@/hooks";
 import { Header } from "@/components/header";
 
 export default function TermsPage() {
-  useTitle("IdeeLab | Terms and Conditions");
+  useTitle("IdeeLab | Terms of Service");
 
   return (
     <>
