@@ -201,7 +201,7 @@ export function Header() {
                                     key={itemIndex}
                                     to={item.href}
                                     className={`w-full flex items-center gap-3 px-2 py-3 text-sm hover:bg-bgltr group rounded-xl ${
-                                      item.href === "/logout"
+                                      item.href === "/auth/logout"
                                         ? "text-red-500"
                                         : "text-subtle"
                                     }`}
@@ -284,7 +284,7 @@ export function Header() {
                 </>
               ) : (
                 <Link
-                  className="px-5 py-2 rounded-lg bg-primary/20 border border-primary/50 text-white hover:bg-primary"
+                  className="px-5 py-1 rounded-lg bg-primary/20 border border-primary/50 text-white hover:bg-primary"
                   to="/auth/login"
                 >
                   Login
