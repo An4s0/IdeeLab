@@ -7,7 +7,7 @@ export default function InvitePage() {
   useTitle("IdeeLab | Invite Friends");
 
   const [inviteLink, _setInviteLink] = useState(
-    "https://ideelab.com/?ref=username"
+    "https://ideelab.com/?ref=username",
   );
   const [copied, setCopied] = useState(false);
 
