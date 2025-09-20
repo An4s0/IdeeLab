@@ -88,7 +88,7 @@ export function Header() {
             "_blank"
           ),
       },
-      { icon: LogOut, label: "Logout", href: "/logout" },
+      { icon: LogOut, label: "Logout", href: "/auth/logout" },
     ],
   ];
 
@@ -130,161 +130,164 @@ export function Header() {
             </div>
             {/* Right side actions */}
             <div className="hidden md:flex items-center gap-1 ml-auto">
-              <Link
-                className="p-2 rounded-lg bg-primary hover:bg-primary/90"
-                to={"/ideas/new"}
-                aria-label="Create new idea"
-              >
-                <Plus className="w-5 h-5 text-white" />
-              </Link>
-              <Link
-                className="p-2 rounded-lg hover:bg-bgltr"
-                to={"/notifications"}
-                aria-label="View notifications"
-              >
-                <Bell className="w-5 h-5 text-subtle" />
-              </Link>
-
               {user ? (
-                <div className="relative" ref={profileRef}>
-                  <div
-                    className="flex items-center gap-2 lg:px-2 lg:py-1 p-[6px] rounded-lg hover:bg-bgltr cursor-pointer"
-                    onClick={() => setIsProfileOpen(!isProfileOpen)}
+                <>
+                  <Link
+                    className="p-2 rounded-lg bg-primary hover:bg-primary/90"
+                    to={"/ideas/new"}
+                    aria-label="Create new idea"
                   >
-                    <img
-                      src={user.picture}
-                      alt="profile"
-                      className="w-8 h-8 rounded-lg"
-                    />
-                    <div className="hidden lg:flex flex-col leading-tight">
-                      <span className="font-semibold text-sm">{user.name}</span>
-                      <span className="text-xs text-subtle">
-                        @{user.username}
-                      </span>
+                    <Plus className="w-5 h-5 text-white" />
+                  </Link>
+                  <Link
+                    className="p-2 rounded-lg hover:bg-bgltr"
+                    to={"/notifications"}
+                    aria-label="View notifications"
+                  >
+                    <Bell className="w-5 h-5 text-subtle" />
+                  </Link>
+                  <div className="relative" ref={profileRef}>
+                    <div
+                      className="flex items-center gap-2 lg:px-2 lg:py-1 p-[6px] rounded-lg hover:bg-bgltr cursor-pointer"
+                      onClick={() => setIsProfileOpen(!isProfileOpen)}
+                    >
+                      <img
+                        src={user.picture}
+                        alt="profile"
+                        className="w-8 h-8 rounded-lg"
+                      />
+                      <div className="hidden lg:flex flex-col leading-tight">
+                        <span className="font-semibold text-sm">
+                          {user.name}
+                        </span>
+                        <span className="text-xs text-subtle">
+                          @{user.username}
+                        </span>
+                      </div>
                     </div>
-                  </div>
 
-                  {isProfileOpen && (
-                    <div className="absolute right-0 mt-3 w-64 p-4 bg-bglt rounded-xl shadow-lg border border-br overflow-hidden z-50 animate-in fade-in slide-in-from-top-2">
-                      {/* User header in dropdown */}
-                      <div className="border-b border-br pb-3">
-                        <div className="flex items-center gap-3">
-                          <div className="relative">
+                    {isProfileOpen && (
+                      <div className="absolute right-0 mt-3 w-64 p-4 bg-bglt rounded-xl shadow-lg border border-br overflow-hidden z-50 animate-in fade-in slide-in-from-top-2">
+                        {/* User header in dropdown */}
+                        <div className="border-b border-br pb-3">
+                          <div className="flex items-center gap-3">
+                            <div className="relative">
+                              <img
+                                src={user.picture}
+                                alt="User Avatar"
+                                className="w-12 h-12 rounded-xl object-cover shadow-sm"
+                              />
+                              <div className="absolute -bottom-1 -right-1 w-4 h-4 bg-green-400 rounded-full border-2 border-br"></div>
+                            </div>
+                            <div className="flex-1 min-w-0">
+                              <p className="font-semibold text-md truncate">
+                                {user.name}
+                              </p>
+                              <p className="text-sm text-subtle truncate">
+                                @{user.username}
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+
+                        {/* Dynamic menu items */}
+                        <div className="py-2">
+                          {menuItems.map((section, sectionIndex) => (
+                            <div key={sectionIndex}>
+                              {section.map((item, itemIndex) => {
+                                const Icon = item.icon;
+                                return item.href ? (
+                                  <Link
+                                    key={itemIndex}
+                                    to={item.href}
+                                    className={`w-full flex items-center gap-3 px-2 py-3 text-sm hover:bg-bgltr group rounded-xl ${
+                                      item.href === "/logout"
+                                        ? "text-red-500"
+                                        : "text-subtle"
+                                    }`}
+                                  >
+                                    <Icon
+                                      className={`w-4 h-4 ${
+                                        item.label === "Light Mode"
+                                          ? "text-yellow-400"
+                                          : item.label === "Dark Mode"
+                                            ? "text-purple-500"
+                                            : ""
+                                      }`}
+                                    />
+                                    <span className="font-medium">
+                                      {item.label}
+                                    </span>
+                                  </Link>
+                                ) : (
+                                  <button
+                                    key={itemIndex}
+                                    onClick={item.action}
+                                    className="w-full flex items-center gap-3 px-2 py-3 text-sm hover:bg-bgltr group rounded-xl text-subtle"
+                                  >
+                                    <Icon
+                                      className={`w-4 h-4 ${
+                                        item.label === "Light Mode"
+                                          ? "text-yellow-400"
+                                          : item.label === "Dark Mode"
+                                            ? "text-purple-500"
+                                            : ""
+                                      }`}
+                                    />
+                                    <span className="font-medium">
+                                      {item.label}
+                                    </span>
+                                  </button>
+                                );
+                              })}
+                              {sectionIndex < menuItems.length - 1 && (
+                                <div className="my-2 h-px bg-br"></div>
+                              )}
+                            </div>
+                          ))}
+                        </div>
+
+                        {/* Footer links */}
+                        <div className="pt-2 border-t border-br">
+                          <div className="flex items-center justify-between">
+                            <div className="flex items-center gap-4">
+                              <Link
+                                to="/terms"
+                                className="text-xs text-subtle hover:underline"
+                              >
+                                Terms
+                              </Link>
+                              <Link
+                                to="/privacy"
+                                className="text-xs text-subtle hover:underline"
+                              >
+                                Privacy
+                              </Link>
+                              <a
+                                href="https://github.com/An4s0/IdeeLab"
+                                target="_blank"
+                                className="text-xs text-subtle hover:underline"
+                              >
+                                Github
+                              </a>
+                            </div>
                             <img
-                              src={user.picture}
-                              alt="User Avatar"
-                              className="w-12 h-12 rounded-xl object-cover shadow-sm"
+                              src={IdeeLabSvg}
+                              alt="IdeeLab"
+                              className="w-5 h-5"
                             />
-                            <div className="absolute -bottom-1 -right-1 w-4 h-4 bg-green-400 rounded-full border-2 border-br"></div>
-                          </div>
-                          <div className="flex-1 min-w-0">
-                            <p className="font-semibold text-md truncate">
-                              {user.name}
-                            </p>
-                            <p className="text-sm text-subtle truncate">
-                              @{user.username}
-                            </p>
                           </div>
                         </div>
                       </div>
-
-                      {/* Dynamic menu items */}
-                      <div className="py-2">
-                        {menuItems.map((section, sectionIndex) => (
-                          <div key={sectionIndex}>
-                            {section.map((item, itemIndex) => {
-                              const Icon = item.icon;
-                              return item.href ? (
-                                <Link
-                                  key={itemIndex}
-                                  to={item.href}
-                                  className={`w-full flex items-center gap-3 px-2 py-3 text-sm hover:bg-bgltr group rounded-xl ${
-                                    item.href === "/logout"
-                                      ? "text-red-500"
-                                      : "text-subtle"
-                                  }`}
-                                >
-                                  <Icon
-                                    className={`w-4 h-4 ${
-                                      item.label === "Light Mode"
-                                        ? "text-yellow-400"
-                                        : item.label === "Dark Mode"
-                                          ? "text-purple-500"
-                                          : ""
-                                    }`}
-                                  />
-                                  <span className="font-medium">
-                                    {item.label}
-                                  </span>
-                                </Link>
-                              ) : (
-                                <button
-                                  key={itemIndex}
-                                  onClick={item.action}
-                                  className="w-full flex items-center gap-3 px-2 py-3 text-sm hover:bg-bgltr group rounded-xl text-subtle"
-                                >
-                                  <Icon
-                                    className={`w-4 h-4 ${
-                                      item.label === "Light Mode"
-                                        ? "text-yellow-400"
-                                        : item.label === "Dark Mode"
-                                          ? "text-purple-500"
-                                          : ""
-                                    }`}
-                                  />
-                                  <span className="font-medium">
-                                    {item.label}
-                                  </span>
-                                </button>
-                              );
-                            })}
-                            {sectionIndex < menuItems.length - 1 && (
-                              <div className="my-2 h-px bg-br"></div>
-                            )}
-                          </div>
-                        ))}
-                      </div>
-
-                      {/* Footer links */}
-                      <div className="pt-2 border-t border-br">
-                        <div className="flex items-center justify-between">
-                          <div className="flex items-center gap-4">
-                            <Link
-                              to="/terms"
-                              className="text-xs text-subtle hover:underline"
-                            >
-                              Terms
-                            </Link>
-                            <Link
-                              to="/privacy"
-                              className="text-xs text-subtle hover:underline"
-                            >
-                              Privacy
-                            </Link>
-                            <a
-                              href="https://github.com/An4s0/IdeeLab"
-                              target="_blank"
-                              className="text-xs text-subtle hover:underline"
-                            >
-                              Github
-                            </a>
-                          </div>
-                          <img
-                            src={IdeeLabSvg}
-                            alt="IdeeLab"
-                            className="w-5 h-5"
-                          />
-                        </div>
-                      </div>
-                    </div>
-                  )}
-                </div>
+                    )}
+                  </div>
+                </>
               ) : (
                 <Link
-                  className="px-4 py-2 rounded-lg bg-primary text-white hover:bg-primary/90"
-                  to="/signin"
+                  className="px-5 py-2 rounded-lg bg-primary/20 border border-primary/50 text-white hover:bg-primary"
+                  to="/auth/login"
                 >
-                  Sign up
+                  Login
                 </Link>
               )}
             </div>
