@@ -5,9 +5,9 @@ export default function AboutPage() {
   useTitle("IdeeLab | About us");
 
   return (
-     <>
+    <>
       <Header />
-      <main className="min-h-screen flex flex-col flex-grow container mx-auto py-20 max-w-7xl">
+      <main className="min-h-[calc(100vh-64px)] flex flex-col flex-grow container mx-auto py-20 max-w-7xl">
         <div className="p-6 md:p-8">
           <h1 className="text-3xl md:text-4xl font-bold text-center mb-6">
             About IdeeLab
