@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { useTitle } from "@/hooks";
 
 export default function NotFound() {
-  useTitle("IdeeLab | Page Not Found")
+  useTitle("IdeeLab | Page Not Found");
 
   return (
     <>

@@ -85,7 +85,7 @@ export function Header() {
         action: () =>
           window.open(
             "https://github.com/An4s0/IdeeLab/issues/new?template=problem_report.yml",
-            "_blank"
+            "_blank",
           ),
       },
       { icon: LogOut, label: "Logout", href: "/auth/logout" },
@@ -167,7 +167,7 @@ export function Header() {
                     </div>
 
                     {isProfileOpen && (
-                      <div className="absolute right-0 mt-3 w-64 p-4 bg-bglt rounded-xl shadow-lg border border-br overflow-hidden z-50 animate-in fade-in slide-in-from-top-2">
+                      <div className="absolute right-0 mt-3 w-64 p-4 bg-bglt rounded-xl shadow-lg shadow-bgltr border border-br overflow-hidden z-50 animate-in fade-in slide-in-from-top-2">
                         {/* User header in dropdown */}
                         <div className="border-b border-br pb-3">
                           <div className="flex items-center gap-3">
