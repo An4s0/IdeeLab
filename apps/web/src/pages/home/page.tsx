@@ -127,10 +127,10 @@ export default function HomePage() {
 
             <Link
               to="/ideas"
-              className="mt-5 px-5 py-2.5 bg-primary text-white rounded-lg font-medium flex items-center gap-2 hover:bg-primary/90 transition"
+              className="mt-5 px-5 py-2.5 bg-primary text-white rounded-lg font-medium flex items-center gap-2 hover:bg-primary/90"
             >
               Explore Ideas
-              <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+              <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
         </div>
