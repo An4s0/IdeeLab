@@ -20,7 +20,7 @@ export type IdeaType = {
 
   // State & difficulty
   status: "draft" | "published" | "archived";
-  difficulty: "beginner" | "intermediate" | "advanced" | "expert";
+  difficulty: "beginner" | "intermediate" | "advanced";
   estimated_time: string;
   is_hot: boolean;
   edited: boolean;
