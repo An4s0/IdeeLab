@@ -91,7 +91,7 @@ export default function IdeasPage() {
                     >
                       <span>{opt}</span>
                       {selected[label as keyof SelectedFilters].includes(
-                        opt
+                        opt,
                       ) && <X size={12} />}
                     </li>
                   ))}
@@ -117,7 +117,7 @@ export default function IdeasPage() {
                     onClick={() => toggleOption(label, opt)}
                   />
                 </div>
-              ))
+              )),
             )}
             <button
               className="ml-2 px-3 py-1 bg-red/10 text-red border-red/5 rounded-full text-sm hover:bg-red/15"
