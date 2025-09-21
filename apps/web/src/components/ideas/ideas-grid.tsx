@@ -11,7 +11,7 @@ export function IdeasGrid({
   subtitle?: string;
 }) {
   return (
-    <div className="mt-8">
+    <div className="mt-3">
       {title && (
         <div className="mb-4">
           <h2 className="text-xl md:text-2xl font-bold text-foreground">
@@ -24,7 +24,7 @@ export function IdeasGrid({
 
       <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-2 mb-12">
         {ideas.map((idea) => (
-          <IdeaCard idea={idea} key={idea.id} />
+          <IdeaCard idea={idea} key={Math.random()} />
         ))}
       </div>
     </div>
