@@ -1,7 +1,7 @@
-import IdeaCard from "./card";
+import { IdeaCard } from "./card";
 import type { IdeaType } from "@/types";
 
-export function IdeasGrid({
+export function IdeaList({
   title,
   ideas,
   subtitle,
@@ -22,11 +22,15 @@ export function IdeasGrid({
         </div>
       )}
 
-      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-2 mb-12">
-        {ideas.map((idea) => (
-          <IdeaCard idea={idea} key={Math.random()} />
-        ))}
-      </div>
+      {ideas.length === 0 ? (
+        <p className="text-subtle mt-4">No ideas found.</p>
+      ) : (
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-4 mb-12">
+          {ideas.map((idea) => (
+            <IdeaCard idea={idea} key={idea.id} />
+          ))}
+        </div>
+      )}
     </div>
   );
 }
