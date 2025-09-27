@@ -12,3 +12,5 @@ logs
 .vscode
 
 .unlighthouse
+
+pnpm-lock.yaml
