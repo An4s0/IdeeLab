@@ -1,14 +1,13 @@
-import { Header } from "@/components/header";
 import { Link } from "react-router-dom";
 import { useTitle } from "@/hooks";
+import { MainLayout } from "@/components/layouts";
 
 export default function NotFound() {
   useTitle("IdeeLab | Page Not Found");
 
   return (
-    <>
-      <Header />
-      <main className="flex flex-col items-center justify-center h-[calc(100vh-64px)] text-center px-4">
+    <MainLayout>
+      <div className="flex flex-col items-center justify-center h-[calc(100vh-128px)] text-center">
         <h1 className="text-6xl font-extrabold">404</h1>
         <p className="text-2xl md:text-3xl mt-4">Oops! Page Not Found</p>
         <p className="mt-2 text-subtle">
@@ -20,7 +19,7 @@ export default function NotFound() {
         >
           Go Back Home
         </Link>
-      </main>
-    </>
+      </div>
+    </MainLayout>
   );
 }
