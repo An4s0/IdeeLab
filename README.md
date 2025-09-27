@@ -1,15 +1,13 @@
-<p align="center">
-  <img src="./apps/web/public/favicon.png" height="38">
-  <b style="font-size: 26px;">IdeeLab</b>
-</p>
 
----
+<h1 align="center">
+  <br>
+  <a href="https://www.ideelab.cc/"><img src="./apps/web/public/favicon.png" alt="IdeeLab" width="200"></a>
+  <br>
+  IdeeLab
+  <br>
+</h1>
 
-<p align="center">
-  <img src="./apps/web/public/og-image.png" alt="IdeeLab Preview" />
-</p>
-
----
+<h4 align="center">A collaborative platform for developers to share, vote, and discuss programming ideas.</h4>
 
 <p align="center">
   <a href="https://ideelab.cc">Website</a> · 
@@ -17,3 +15,12 @@
   <a href="https://github.com/An4s0/IdeeLab/issues">Issues</a> · 
   <a href="https://github.com/An4s0/IdeeLab">Repository</a>
 </p>
+
+<p align="center">
+  <a href="#features">Features</a> •
+  <a href="#getting-started">Getting Started</a> •
+  <a href="#contributing">Contributing</a> •
+  <a href="#license">License</a>
+</p>
+
+![screenshot](./apps/web/public/og-image.png)
