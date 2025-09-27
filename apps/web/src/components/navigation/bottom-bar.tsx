@@ -9,7 +9,7 @@ function navLinkClass(isActive: boolean, isPending?: boolean) {
 
 export function BottomBar() {
   return (
-    <nav className="fixed bottom-0 left-0 w-full h-16 bg-bglt border-t border-br flex items-center justify-around md:hidden z-50 rounded-t-2xl px-2 shadow-sm">
+    <nav className="fixed bottom-0 left-0 w-full h-16 bg-bg border-t border-br flex items-center justify-around md:hidden z-50 rounded-t-2xl px-2 shadow-sm">
       <NavLink
         to="/"
         className={({ isActive, isPending }) =>
