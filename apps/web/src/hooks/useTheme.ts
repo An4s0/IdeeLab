@@ -10,13 +10,7 @@ export function useTheme() {
 
   useEffect(() => {
     const html = document.documentElement;
-
-    if (theme === "dark") {
-      html.classList.add("dark");
-    } else {
-      html.classList.remove("dark");
-    }
-
+    html.classList.toggle("dark", theme === "dark");
     localStorage.setItem("theme", theme);
   }, [theme]);
 
