@@ -6,7 +6,7 @@
   <br>
 </h1>
 
-<h4 align="center">A collaborative platform for developers to share, vote, and discuss programming ideas.</h4>
+<h4 align="center">Discover and explore creative ideas shared by our community.</h4>
 
 <p align="center">
   <a href="https://ideelab.cc">Website</a> · 
