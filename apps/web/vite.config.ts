@@ -4,9 +4,7 @@ import path from "path";
 
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [
-    react(),
-  ],
+  plugins: [react()],
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
@@ -21,8 +19,12 @@ export default defineConfig({
     },
   },
   server: {
-    headers: {
-      "Cache-Control": "public, max-age=31536000, immutable",
+    host: "localhost",
+    port: 3000,
+    hmr: {
+      protocol: "ws",
+      host: "localhost",
+      port: 3000,
     },
   },
 });
