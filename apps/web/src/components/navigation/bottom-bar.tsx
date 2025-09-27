@@ -9,7 +9,7 @@ function navLinkClass(isActive: boolean, isPending?: boolean) {
 
 export function BottomBar() {
   return (
-    <nav className="fixed bottom-0 left-0 w-full h-16 bg-bglt border-t border-br flex items-center justify-around md:hidden z-50 rounded-t-2xl px-2">
+    <nav className="fixed bottom-0 left-0 w-full h-16 bg-bglt border-t border-br flex items-center justify-around md:hidden z-50 rounded-t-2xl px-2 shadow-sm">
       <NavLink
         to="/"
         className={({ isActive, isPending }) =>
@@ -17,7 +17,7 @@ export function BottomBar() {
         }
       >
         <Home className="w-6 h-6" />
-        <span className="text-xs">Home</span>
+        <span className="text-xs mt-1">Home</span>
       </NavLink>
 
       <NavLink
@@ -27,12 +27,12 @@ export function BottomBar() {
         }
       >
         <Compass className="w-6 h-6" />
-        <span className="text-xs">Explore</span>
+        <span className="text-xs mt-1">Explore</span>
       </NavLink>
 
       <NavLink
         to="/ideas/new"
-        className="relative -mt-10 bg-primary p-4 rounded-full shadow-lg flex items-center justify-center text-white hover:bg-primary/90"
+        className="bg-primary p-3 rounded-xl flex items-center justify-center text-white shadow-md hover:bg-primary/90"
         aria-label="Create new idea"
       >
         <Plus className="w-6 h-6" />
@@ -45,7 +45,7 @@ export function BottomBar() {
         }
       >
         <Bell className="w-6 h-6" />
-        <span className="text-xs">Alerts</span>
+        <span className="text-xs mt-1">Alerts</span>
       </NavLink>
 
       <NavLink
@@ -55,7 +55,7 @@ export function BottomBar() {
         }
       >
         <User className="w-6 h-6" />
-        <span className="text-xs">Profile</span>
+        <span className="text-xs mt-1">Profile</span>
       </NavLink>
     </nav>
   );
