@@ -5,7 +5,10 @@ export function MainLayout({ children }: { children: React.ReactNode }) {
   return (
     <>
       <Header />
-      <main className="p-3 mt-16">{children}</main>
+      <main className="p-3 mt-16">
+        {children}
+        <br />
+      </main>
       <BottomBar />
     </>
   );
