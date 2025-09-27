@@ -1,4 +1,3 @@
-
 <h1 align="center">
   <br>
   <a href="https://www.ideelab.cc/"><img src="./apps/web/public/favicon.png" alt="IdeeLab" width="200"></a>
