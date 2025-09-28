@@ -8,6 +8,9 @@
     "lint": "pnpm run -r --parallel lint",
     "format": "pnpm prettier . --write"
   },
+  "engines": {
+    "node": ">=18"
+  },
   "workspaces": [
     "apps/*",
     "packages/*"
