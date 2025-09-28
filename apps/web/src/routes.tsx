@@ -10,7 +10,7 @@ export default function AppRoutes() {
   const PrivacyPage = React.lazy(() => import("./pages/privacy/page"));
   const AboutPage = React.lazy(() => import("./pages/about/page"));
   const SupportPage = React.lazy(() => import("./pages/support/page"));
-  const InvitePage = React.lazy(() => import("./pages/invite/page"));
+
   return (
     <Suspense fallback={<Loading />}>
       <Routes>
@@ -20,7 +20,6 @@ export default function AppRoutes() {
         <Route path="/privacy" element={<PrivacyPage />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/support" element={<SupportPage />} />
-        <Route path="/invite" element={<InvitePage />} />
 
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
