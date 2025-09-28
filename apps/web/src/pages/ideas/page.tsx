@@ -5,8 +5,8 @@ import {
   SlidersHorizontal,
   X,
 } from "lucide-react";
-import { Header } from "@/components/header";
-import { IdeasGrid } from "@/components/ideas/ideas-grid";
+import { Header } from "@/components/navigation";
+import { IdeaList } from "@/components/ideas/list";
 import { useTitle } from "@/hooks";
 import type { IdeaType } from "@/types";
 import ideasSample from "./ideas";
@@ -128,8 +128,8 @@ export default function IdeasPage() {
           </div>
         )}
 
-        {/* Ideas Grid */}
-        <IdeasGrid ideas={filteredIdeas} />
+        {/* Idea List */}
+        <IdeaList ideas={filteredIdeas} />
 
         <br />
       </main>
