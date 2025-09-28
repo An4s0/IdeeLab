@@ -1,28 +1,27 @@
-import { Header } from "@/components/header";
+import { MainLayout } from "@/components/layouts";
 import { useTitle } from "@/hooks";
 
 export default function AboutPage() {
   useTitle("IdeeLab | About us");
 
   return (
-    <>
-      <Header />
-      <main className="min-h-[calc(100vh-64px)] flex flex-col flex-grow container mx-auto py-20 max-w-7xl">
-        <div className="p-6 md:p-8">
-          <h1 className="text-3xl md:text-4xl font-bold text-center mb-6">
+    <MainLayout>
+      <div className="mx-auto max-w-7xl mt-6 md:mt-12">
+        <div className="p-4">
+          <h1 className="mb-6 text-center text-3xl md:text-4xl font-bold">
             About IdeeLab
           </h1>
 
-          <p className="text-subtle text-center max-w-3xl mx-auto mb-12">
+          <p className="mb-12 max-w-3xl mx-auto text-center text-subtle">
             IdeeLab is a platform designed to spark creativity through unique
             programming ideas. Whether you&apos;re a beginner or a seasoned
             developer, explore fresh, community-driven concepts to fuel your
             next project.
           </p>
 
-          <div className="space-y-10">
-            <section>
-              <h2 className="text-xl font-semibold mb-2">Our Mission</h2>
+          <div className="grid gap-10 md:grid-cols-2 md:gap-12">
+            <section className="max-w-3xl">
+              <h2 className="mb-2 text-2xl font-semibold">Our Mission</h2>
               <p className="text-subtle">
                 We aim to fuel innovation in software development by providing a
                 wide range of programming ideas across categories, tech stacks,
@@ -31,8 +30,8 @@ export default function AboutPage() {
               </p>
             </section>
 
-            <section>
-              <h2 className="text-xl font-semibold mb-2">Who It&apos;s For</h2>
+            <section className="max-w-3xl">
+              <h2 className="mb-2 text-2xl font-semibold">Who It&apos;s For</h2>
               <p className="text-subtle">
                 IdeeLab is for learners, hobbyists, and professionals who seek
                 fresh inspiration, want to brainstorm solo projects, or are
@@ -40,9 +39,9 @@ export default function AboutPage() {
               </p>
             </section>
 
-            <section>
-              <h2 className="text-xl font-semibold mb-2">What We Offer</h2>
-              <ul className="list-disc list-inside text-subtle ml-4 space-y-2">
+            <section className="max-w-3xl">
+              <h2 className="mb-2 text-2xl font-semibold">What We Offer</h2>
+              <ul className="ml-4 list-disc list-inside space-y-2 text-subtle">
                 <li>Curated programming project ideas to spark creativity</li>
                 <li>Ideas organized by category, tags, and goal</li>
                 <li>Hands-on projects that encourage practical learning</li>
@@ -50,8 +49,8 @@ export default function AboutPage() {
               </ul>
             </section>
 
-            <section>
-              <h2 className="text-xl font-semibold mb-2">Our Vision</h2>
+            <section className="max-w-3xl">
+              <h2 className="mb-2 text-2xl font-semibold">Our Vision</h2>
               <p className="text-subtle">
                 We believe that creativity is the foundation of great software.
                 IdeeLab exists to encourage exploration, support innovation, and
@@ -60,7 +59,7 @@ export default function AboutPage() {
             </section>
           </div>
         </div>
-      </main>
-    </>
+      </div>
+    </MainLayout>
   );
 }
