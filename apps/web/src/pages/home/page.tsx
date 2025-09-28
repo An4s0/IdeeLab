@@ -1,8 +1,8 @@
 import { useTitle } from "@/hooks";
-import { Header } from "@/components/header";
 import { Link } from "react-router-dom";
 import { Sparkles, ArrowRight } from "lucide-react";
-import { IdeasGrid } from "@/components/ideas/ideas-grid";
+import { MainLayout } from "@/components/layouts";
+import { IdeaList } from "@/components/ideas";
 import type { IdeaType } from "@/types";
 
 export default function HomePage() {
@@ -102,55 +102,49 @@ export default function HomePage() {
   ];
 
   return (
-    <>
-      <Header />
-      <main className="p-3 mt-16">
-        <div className="relative w-full h-60 sm:h-72 md:h-80 lg:h-96 rounded-xl overflow-hidden">
-          <img
-            src="/banner.svg"
-            alt="Banner"
-            className="absolute top-0 left-1/2 h-full w-auto max-w-none -translate-x-1/2 opacity-70 blur-[4px]"
-          />
+    <MainLayout>
+      <div
+        className="relative w-full h-60 sm:h-72 md:h-80 lg:h-96 rounded-xl overflow-hidden bg-center bg-cover"
+        style={{ backgroundImage: "url('/banner.svg')" }}
+      >
+        <div className="absolute inset-0 backdrop-blur-sm opacity-70" />
+        <div className="absolute inset-0 bg-gradient-to-br from-bgltr/20 via-transparent to-bgltr/30" />
+        <div className="absolute inset-0 bg-gradient-to-t from-bgltr/40 via-transparent to-transparent" />
 
-          <div className="absolute inset-0 bg-gradient-to-br from-bgltr/20 via-transparent to-bgltr/30"></div>
-          <div className="absolute inset-0 bg-gradient-to-t from-bgltr/40 via-transparent to-transparent"></div>
+        <div className="absolute inset-0 flex flex-col items-center justify-center text-center z-10 px-4">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight flex items-center gap-2">
+            <Sparkles className="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 lg:w-12 lg:h-12" />
+            Spark Ideas
+          </h2>
 
-          <div className="absolute inset-0 flex flex-col items-center justify-center text-center z-10 px-4">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold flex items-center gap-2">
-              <Sparkles className="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 lg:w-12 lg:h-12" />
-              Spark Ideas
-            </h2>
+          <p className="mt-3 text-sm sm:text-base md:text-lg text-subtle max-w-md lg:max-w-lg leading-snug font-medium">
+            Discover and explore creative ideas shared by our community.
+          </p>
 
-            <p className="mt-3 text-sm sm:text-base md:text-lg text-subtle max-w-md lg:max-w-lg leading-relaxed font-medium">
-              Discover and explore creative ideas shared by our community.
-            </p>
-
-            <Link
-              to="/ideas"
-              className="mt-5 px-5 py-2.5 bg-primary text-white rounded-lg font-medium flex items-center gap-2 hover:bg-primary/90"
-            >
-              Explore Ideas
-              <ArrowRight className="w-4 h-4" />
-            </Link>
-          </div>
+          <Link
+            to="/ideas"
+            className="mt-5 px-5 py-2.5 bg-primary text-white rounded-lg font-medium flex items-center gap-2 hover:bg-primary/90 transition-colors shadow-md hover:shadow-lg"
+          >
+            Explore Ideas
+            <ArrowRight className="w-4 h-4" />
+          </Link>
         </div>
-        <IdeasGrid
-          ideas={ideasSample}
-          title="Trending"
-          subtitle="Check out what’s popular right now"
-        />
-        <IdeasGrid
-          ideas={ideasSample}
-          title="Recommended"
-          subtitle="Ideas picked for you based on your interests and activity"
-        />
-        <IdeasGrid
-          ideas={ideasSample}
-          title="Saved"
-          subtitle="Your favorite ideas saved for quick access"
-        />
-        <br />
-      </main>
-    </>
+      </div>
+      <IdeaList
+        ideas={ideasSample}
+        title="Trending"
+        subtitle="Check out what’s popular right now"
+      />
+      <IdeaList
+        ideas={ideasSample}
+        title="Recommended"
+        subtitle="Ideas picked for you based on your interests and activity"
+      />
+      <IdeaList
+        ideas={ideasSample}
+        title="Saved"
+        subtitle="Your favorite ideas saved for quick access"
+      />
+    </MainLayout>
   );
 }
