@@ -1,6 +1,9 @@
+// External Libraries
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Search, X, Plus, Bell } from "lucide-react";
+
+// Types & Assets
 import IdeeLabSvg from "@ideelab/assets/logos/logo.svg";
 import type { UserType } from "@/types";
 
@@ -65,6 +68,7 @@ export function Header() {
           <div className="hidden md:flex items-center gap-1 ml-auto">
             {user ? (
               <>
+                {/* Create Idea */}
                 <Link
                   className="p-2 rounded-lg bg-primary hover:bg-primary/90"
                   to="/ideas/new"
@@ -72,6 +76,8 @@ export function Header() {
                 >
                   <Plus className="w-5 h-5 text-white" />
                 </Link>
+
+                {/* Notifications */}
                 <Link
                   className="p-2 rounded-lg hover:bg-bgltr"
                   to="/notifications"
@@ -79,6 +85,8 @@ export function Header() {
                 >
                   <Bell className="w-5 h-5 text-subtle" />
                 </Link>
+
+                {/* Profile */}
                 <Link
                   to="/profile"
                   className="flex items-center gap-2 lg:px-2 lg:py-1 p-[6px] rounded-lg hover:bg-bgltr"

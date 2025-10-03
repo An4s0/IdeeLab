@@ -5,7 +5,7 @@ import {
   SlidersHorizontal,
   X,
 } from "lucide-react";
-import { Header } from "@/components/navigation";
+import { Header } from "@/components/navigations";
 import { IdeaList } from "@/components/ideas/list";
 import { useTitle } from "@/hooks";
 import type { IdeaType } from "@/types";

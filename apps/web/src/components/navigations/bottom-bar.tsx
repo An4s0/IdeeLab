@@ -1,6 +1,8 @@
-import { Home, Compass, Plus, Bell, User } from "lucide-react";
+// External Libraries
 import { NavLink } from "react-router-dom";
+import { Home, Compass, Plus, Bell, User } from "lucide-react";
 
+// Nav link classes based on state
 function navLinkClass(isActive: boolean, isPending?: boolean) {
   return `flex flex-col items-center hover:text-primary ${
     isPending ? "text-text" : isActive ? "text-primary" : "text-subtle"
@@ -10,6 +12,7 @@ function navLinkClass(isActive: boolean, isPending?: boolean) {
 export function BottomBar() {
   return (
     <nav className="fixed bottom-0 left-0 w-full h-16 bg-bg border-t border-br flex items-center justify-around md:hidden z-50 rounded-t-2xl px-2 shadow-sm">
+      {/* Home Link */}
       <NavLink
         to="/"
         className={({ isActive, isPending }) =>
@@ -20,6 +23,7 @@ export function BottomBar() {
         <span className="text-xs mt-1">Home</span>
       </NavLink>
 
+      {/* Explore Link */}
       <NavLink
         to="/ideas"
         className={({ isActive, isPending }) =>
@@ -30,6 +34,7 @@ export function BottomBar() {
         <span className="text-xs mt-1">Explore</span>
       </NavLink>
 
+      {/* Create New Idea */}
       <NavLink
         to="/ideas/new"
         className="bg-primary p-3 rounded-xl flex items-center justify-center text-white shadow-md hover:bg-primary/90"
@@ -38,6 +43,7 @@ export function BottomBar() {
         <Plus className="w-6 h-6" />
       </NavLink>
 
+      {/* Notifications */}
       <NavLink
         to="/notifications"
         className={({ isActive, isPending }) =>
@@ -48,6 +54,7 @@ export function BottomBar() {
         <span className="text-xs mt-1">Alerts</span>
       </NavLink>
 
+      {/* Profile */}
       <NavLink
         to="/profile"
         className={({ isActive, isPending }) =>

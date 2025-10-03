@@ -2,7 +2,7 @@
 import type React from "react";
 
 // Components
-import { Header, BottomBar } from "../navigation";
+import { Header, BottomBar } from "../navigations";
 
 export function MainLayout({
   children,
