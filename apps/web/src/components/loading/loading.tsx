@@ -1,5 +1,6 @@
-import IdeeLabSvg from "@ideelab/assets/logos/logo.svg";
+// Hooks & Assets
 import { useTheme } from "@/hooks/useTheme";
+import IdeeLabSvg from "@ideelab/assets/logos/logo.svg";
 
 export function Loading() {
   const { theme } = useTheme();
@@ -10,6 +11,7 @@ export function Loading() {
       className={"w-full h-screen flex items-center justify-center"}
       style={{ backgroundColor: bgColor }}
     >
+      {/* Logo with animation */}
       <img
         src={IdeeLabSvg}
         alt="IdeeLab Logo"
