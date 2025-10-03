@@ -1,6 +1,9 @@
-import { useTitle } from "@/hooks";
+// External Libraries
 import { Link } from "react-router-dom";
 import { Sparkles, ArrowRight } from "lucide-react";
+
+// Hooks & Components
+import { useTitle } from "@/hooks";
 import { MainLayout } from "@/components/layouts";
 import { IdeaList } from "@/components/ideas";
 import type { IdeaType } from "@/types";
@@ -103,6 +106,7 @@ export default function HomePage() {
 
   return (
     <MainLayout>
+      {/* Hero Banner */}
       <div
         className="relative w-full h-60 sm:h-72 md:h-80 lg:h-96 rounded-xl overflow-hidden bg-center bg-cover"
         style={{ backgroundImage: "url('/banner.svg')" }}
@@ -111,6 +115,7 @@ export default function HomePage() {
         <div className="absolute inset-0 bg-gradient-to-br from-bgltr/20 via-transparent to-bgltr/30" />
         <div className="absolute inset-0 bg-gradient-to-t from-bgltr/40 via-transparent to-transparent" />
 
+        {/* Hero Content */}
         <div className="absolute inset-0 flex flex-col items-center justify-center text-center z-10 px-4">
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight flex items-center gap-2">
             <Sparkles className="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 lg:w-12 lg:h-12" />
@@ -130,6 +135,8 @@ export default function HomePage() {
           </Link>
         </div>
       </div>
+
+      {/* Idea Lists */}
       <IdeaList
         ideas={ideasSample}
         title="Trending"

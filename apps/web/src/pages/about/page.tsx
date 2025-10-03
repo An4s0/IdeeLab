@@ -1,5 +1,6 @@
-import { MainLayout } from "@/components/layouts";
+// Hooks & Components
 import { useTitle } from "@/hooks";
+import { MainLayout } from "@/components/layouts";
 
 export default function AboutPage() {
   useTitle("IdeeLab | About us");
