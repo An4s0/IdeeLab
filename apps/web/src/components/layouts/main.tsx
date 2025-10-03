@@ -1,4 +1,7 @@
+// External Libraries
 import type React from "react";
+
+// Components
 import { Header, BottomBar } from "../navigation";
 
 export function MainLayout({
@@ -11,9 +14,12 @@ export function MainLayout({
   return (
     <>
       <Header />
-      <main className={`py-20 px-4 min-h-screen ${classNames}`}>
+
+      {/* Main content */}
+      <main className={`py-20 px-3 min-h-screen ${classNames}`}>
         {children}
       </main>
+
       <BottomBar />
     </>
   );
