@@ -1,3 +1,5 @@
+// External Libraries
+import { Link } from "react-router-dom";
 import {
   Flame,
   Eye,
@@ -7,11 +9,13 @@ import {
   Share2,
   Bookmark,
 } from "lucide-react";
-import { Link } from "react-router-dom";
-import { timeAgo } from "@/utils";
+
+// Types & Utils
 import type { IdeaType } from "@/types";
+import { timeAgo } from "@/utils";
 
 export function IdeaCard({ idea }: { idea: IdeaType }) {
+  // Difficulty color classes
   const getDifficultyColor = (difficulty: string) => {
     difficulty = difficulty.toLowerCase();
     switch (difficulty) {
@@ -27,7 +31,8 @@ export function IdeaCard({ idea }: { idea: IdeaType }) {
   };
 
   return (
-    <div className="group relative rounded-2xl p-6 backdrop-blur-sm border border-subtle/10 hover:border-subtle/30 overflow-hidden">
+    <div className="group relative rounded-2xl p-4 bg-bg border border-subtle/10 hover:border-subtle/30 overflow-hidden">
+      {/* HOT Badge */}
       {idea.is_hot && (
         <div className="absolute top-4 right-4 z-20 flex items-center gap-1 px-2 py-1 bg-gradient-to-r from-orange-500 to-red-500 text-white text-xs font-bold rounded-full">
           <Flame size={10} />
@@ -36,7 +41,7 @@ export function IdeaCard({ idea }: { idea: IdeaType }) {
       )}
 
       <div className="relative z-10">
-        {/* Category and Difficulty */}
+        {/* Category & Difficulty */}
         <div className="flex flex-wrap gap-2 mb-4">
           <span className="px-3 py-1 bg-primary/10 text-primary text-xs font-semibold rounded-full">
             {idea.category}
@@ -49,18 +54,19 @@ export function IdeaCard({ idea }: { idea: IdeaType }) {
         </div>
 
         {/* Title */}
-        <Link to={`/ideas/${idea.slug}`} className="block">
-          <h3 className="text-xl font-bold text-foreground mb-3 hover:text-primary leading-tight">
-            {idea.title}
-          </h3>
+        <Link
+          to={`/ideas/${idea.slug}`}
+          className="text-xl font-bold text-foreground hover:text-primary leading-tight"
+        >
+          {idea.title}
         </Link>
 
         {/* Summary */}
-        <p className="text-subtle text-sm mb-4 line-clamp-3 leading-relaxed">
+        <p className="text-subtle text-sm mt-1 mb-4 line-clamp-3 leading-relaxed">
           {idea.summary}
         </p>
 
-        {/* Meta */}
+        {/* Meta Info */}
         <div className="flex items-center gap-4 mb-6 text-sm text-subtle">
           <div className="flex items-center gap-1.5">
             <Eye size={14} />

@@ -1,5 +1,6 @@
-import { IdeaCard } from "./card";
+// Types & Components
 import type { IdeaType } from "@/types";
+import { IdeaCard } from "./card";
 
 export function IdeaList({
   title,
@@ -12,16 +13,18 @@ export function IdeaList({
 }) {
   return (
     <div className="mt-3">
+      {/* Title & Subtitle */}
       {title && (
         <div className="mb-4">
           <h2 className="text-xl md:text-2xl font-bold text-foreground">
             {title}
           </h2>
-          {subtitle && <p className="text-subtle max-w-2xl">{subtitle}</p>}
+          {subtitle && <p className="text-subtle max-w-2xl mt-1">{subtitle}</p>}
           <div className="mt-2 h-px bg-primary/30 w-16"></div>
         </div>
       )}
 
+      {/* Ideas Grid */}
       {ideas.length === 0 ? (
         <p className="text-subtle mt-4">No ideas found.</p>
       ) : (
